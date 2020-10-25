@@ -1,0 +1,41 @@
+.post{
+    padding:15px 20px;
+    background-color: white;
+    margin:15px 0;
+    width:550px;
+    box-shadow: 0 1px 0 0 #D3D9DE,0 0 0 1px#E7E8EC;
+}
+
+.about{
+    display: flex;
+    width:100%;
+    align-items: center;
+}
+
+.about .avatar{
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.name{
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding:0 15px;
+    line-height: 1.4;
+    color:#2A5895;
+}
+.name:hover{
+    text-decoration: underline;
+    color:#2A5895;
+}
+
+.text{
+    margin:0;
+    margin-top:15px;
+    color:black;
+    font-size: 13px;
+}
+
