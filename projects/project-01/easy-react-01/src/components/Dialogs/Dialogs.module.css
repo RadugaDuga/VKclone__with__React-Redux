@@ -3,3 +3,11 @@
     background-color: white;
     height: 250px;
 }
+
+.dialog_items{
+    display: flex;
+    align-items: center;
+}
+.dialog img{
+    border-radius: 50%;
+}
