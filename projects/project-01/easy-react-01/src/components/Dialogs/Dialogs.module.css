@@ -1,37 +1,73 @@
 .dialogs_messages_wrapper{
     width:795px;
     display:grid;
-    grid-template-columns: 1fr 2.3913fr;
-    grid-gap:15px;
+    grid-template-columns: 230px 550px;
     box-shadow: none;
+    grid-gap:15px;
 }
+
+.messages_wrapper div{
+    background-color: white;
+    height:100%;
+    box-shadow: 0px 0px 10px rgba(0, 104, 184, 0.59);
+}
+
+
+
 
 .dialog_items{
     border-radius: 4px!important;
-    overflow: hidden;
     box-shadow: 0 1px 0 0 #D3D9DE,0 0 0 1px#E7E8EC;
     height: max-content;
+    background:linear-gradient(90deg,white 0% 50%,#4A76A8 50% 100%);
+    border-radius: 4px 0px 0px 4px!important;
 }
-.dialog{
+
+
+.dialog a{
     display: flex;
+    width:230px;
+    box-sizing: border-box;
     padding:10px 20px 10px 20px;
+    text-decoration: none;
+    transition: .3s;
     background-color: white;
-    border-radius: 0px!important;
-    margin:1px 0px;
+    border-radius: 4px 0px 0px 4px!important;
 }
 
 .dialog img{
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 .about {
-    padding-left: 14px;
+    padding: 0px 0px 0px 14px;
     color:black;
     font-weight: 500;
     font-size: 13px;
 }
+
+
+
+
+
 .messages_wrapper{
     padding:15px;
-    background-color: white;
-    box-shadow: 0 1px 0 0 #D3D9DE,0 0 0 1px#E7E8EC;
+    background-color:#4A76A8;
+    box-shadow: 2px 2px 0px rgba(128, 128, 128, 0.479);
+    height:150%;
+}
+
+.messages_wrapper p {
+    margin:0;
+}
+
+
+
+
+.active {
+    transform:translateX(-14px);
+    box-sizing: border-box;
+    box-shadow: 10px 0px 13px -10px rgba(66, 129, 177, 0.789);
 }
