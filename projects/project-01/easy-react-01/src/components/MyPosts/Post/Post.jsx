@@ -11,7 +11,7 @@ const Post = () => {
 				/>
 				<a className={s.name} href="#">
 					Дарья Амеличева <br/>
-                    18 сент. 2020
+                    <span className={s.date}>18 ноя 2020</span>
 				</a>
 			</div>
 			<p className={s.text} >
