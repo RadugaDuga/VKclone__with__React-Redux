@@ -4,6 +4,7 @@
     display:grid;
     grid-template-columns: 230px 550px;
     box-shadow: none;
+    height:2000px;
     grid-gap:15px;
 }
 
@@ -46,9 +47,11 @@
 
 
 .messages_wrapper{
+    position: sticky!important;
+    top:58px!important;
     padding:15px;
     background-color:white;
-    height:150%;
+    height:max-content;
     border-radius: 4px;
     box-shadow: 0 1px 0 0 #D3D9DE,0 0 0 1px#E7E8EC;
 }

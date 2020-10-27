@@ -30,7 +30,10 @@ a img {
 	filter: brightness(82%) contrast(1.1);
 }
 
-.active_link{
-	border-right: 5px solid #a8bdd09e;
+.active_link::after{
+	display: block;
+	content: '';
+	width:5px;
+	height: 5px;
 
 }
