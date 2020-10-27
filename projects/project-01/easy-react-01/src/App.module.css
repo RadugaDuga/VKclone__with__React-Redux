@@ -4,8 +4,9 @@ html {
   background: #EDEEF0;
   height: 110%;
   font-family: 'Roboto', sans-serif;
-
-
+}
+section{
+  height:150vh;
 }
 
 .app_wrapper_content{
@@ -18,6 +19,7 @@ html {
 .app_wrapper {
   color: #42688f;
   width: 960px;
+  height:100%;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
@@ -33,7 +35,7 @@ html {
 }
 
 .header_line {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: -1;
   height: 43px;

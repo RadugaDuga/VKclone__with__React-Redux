@@ -13,6 +13,10 @@ const OneDialog = (props) => {
 	);
 };
 
+const Message = (props) => {
+	return <div className={s.message}>{props.messageText}</div>;
+};
+
 const Dialogs = () => {
 	return (
 		<div className={s.dialogs_messages_wrapper}>
@@ -43,12 +47,7 @@ const Dialogs = () => {
 					img="https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1"
 				/>
 			</div>
-			<div className={s.messages_wrapper}>
-				<div>
-					<p className={s.message}>Эй привет как поживаешь </p>
-					<p className={s.message}>Привет вот учу реакт тут как бы да </p>
-				</div>
-			</div>
+			<div className={s.messages_wrapper}></div>
 		</div>
 	);
 };
