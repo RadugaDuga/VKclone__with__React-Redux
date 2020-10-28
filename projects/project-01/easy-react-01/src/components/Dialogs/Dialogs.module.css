@@ -26,7 +26,7 @@
     box-sizing: border-box;
     padding:10px 20px 10px 20px;
     text-decoration: none;
-    transition: .3s;
+    transition: .15s;
     background-color: white;
     border-radius: 4px 0px 0px 4px;
 }

@@ -8,6 +8,7 @@
 
 .nav a {
 	display: flex;
+	position: relative;
 	align-items: center;
 	text-decoration: none;
 	color: #4a76a8;
@@ -30,10 +31,9 @@ a img {
 	filter: brightness(82%) contrast(1.1);
 }
 
-.active_link::after{
-	display: block;
-	content: '';
-	width:5px;
-	height: 5px;
-
+.active_link{
+	color: #416a99!important;
+}
+.active_link img{
+	filter: brightness(82%) contrast(1.1);
 }

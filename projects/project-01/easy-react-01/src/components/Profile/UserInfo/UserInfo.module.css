@@ -1,4 +1,7 @@
-
+.UserInfo_wrapper{
+    position: sticky;
+    top:-90px;
+}
 .background_image{
     height: 250px;
     width:100%;
@@ -18,25 +21,24 @@
     margin: 0 auto;
     transform:translateY(50%);
     align-items: center;
+    backdrop-filter: blur(20px);
+    border-radius: 100px;
+    padding:10px;
 }
 .avatar_and_info img{
     border-radius: 50%;
-    border:8px solid transparent;
-    width:90px;
-    height: 90px;
-    background-color: #EDEEF0;
+    width:80px;
+    height:80px;
     z-index: 1;
 }
 
 .info {
-    padding:4px 10px 0px 40px;
+    padding-left:10px;
     color:black;
     line-height: 1;
     font-size: 16px;
     border-radius: 10px;
     font-weight: 500;
-    background-color: #EDEEF0;
-    margin-left: -40px;
 }
 .info span{
     position: relative;

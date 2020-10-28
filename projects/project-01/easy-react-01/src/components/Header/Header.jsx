@@ -5,7 +5,7 @@ import logo from '../../images/vk.svg';
 const Header =()=> {
     return(
         <header className={s.header}>
-            <img src={logo}/>
+            <img src={logo} alt='Error 404'/>
         </header >
     );
 }

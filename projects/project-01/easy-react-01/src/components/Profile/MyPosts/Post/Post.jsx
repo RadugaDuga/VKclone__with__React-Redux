@@ -8,8 +8,9 @@ const Post = () => {
 				<img
 					className={s.avatar}
 					src="https://i.scdn.co/image/ab67706c0000bebb163aeea48afe86ed0c55bfcd"
+					alt='Error404'
 				/>
-				<a className={s.name} href="#">
+				<a className={s.name} href="/lol">
 					Дарья Амеличева <br/>
                     <span className={s.date}>18 ноя 2020</span>
 				</a>
