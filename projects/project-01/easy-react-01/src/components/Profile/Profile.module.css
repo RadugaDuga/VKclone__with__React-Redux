@@ -1,0 +1,5 @@
+.profile_wrapper {
+    display:grid;
+    grid-template-columns: 230px 550px;
+    grid-gap: 15px;
+}

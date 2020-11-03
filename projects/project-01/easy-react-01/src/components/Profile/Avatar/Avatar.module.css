@@ -1,0 +1,39 @@
+.avatar_wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    padding:15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+}
+.image{
+    height:100%!important;
+    border-radius: 5px;
+}
+
+.avatar_wrapper .button2 {
+    background:url(../../../images/Profile_Images/dots3.svg);
+    width:36px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top:11px;
+}
+
+.avatar_wrapper .button1{
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 7px;
+    width:157px;
+    height: 30px;
+    font-size: 12.5px;
+    color:#30609e;
+    background-color:#E9EBF0;
+    border: none;
+    margin-top:12px;
+    outline: none;
+    letter-spacing:0.3px;
+}
+
+

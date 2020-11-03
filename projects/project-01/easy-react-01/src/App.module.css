@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 html {
-  background: #EDEEF0;
+  background: #e9ebf0;
   height: 110%;
   font-family: 'Roboto', sans-serif;
 }
@@ -15,7 +15,6 @@ section{
   grid-area: c;
   border-radius: 4px;
 }
-
 
 
 .app_wrapper {
@@ -42,7 +41,6 @@ section{
   z-index: 1;
   height: 43px;
   width: 100%;
-  background-color: red;
-  background-color: #4A76A8;
+  background:linear-gradient(-178deg,#6577ff,#3899ce)
 }
 /*# sourceMappingURL=App.css.map */

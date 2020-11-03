@@ -1,26 +1,33 @@
 import React from "react";
 import s from "./UserInfo.module.css";
 
-
 const UserInfo = (props) => {
 	return (
-		<div className={s.UserInfo_wrapper}>
-			<div className={s.background_image}>
-				<div className={s.avatar_and_info}>
-					<img
-						src="https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=200x0&quality=90&crop=391,0,1365,1365&sign=6da9e5c91d43fd34023c0d2659ef0989&ava=1"
-						alt=""
-					/>
-					<div className={s.info}>
-						Георгий Букиа
-						<br />
-						<span>online</span>
-					</div>
+		<div className={s.container}>
+			<div className={s.info_wrapper}>
+				<div className={s.user_name}>
+					<p>Георгий Букиа <span>&#128123;</span><span className={s.status}>online</span></p>
+					<p>
+						Обнуление - это когда на упаковке с тухлой рыбой переписывают срок
+						годности.
+					</p>
 				</div>
+				<div className={s.about_user}>
+					<p> День рождения:      </p><a><span>26 августа </span></a> 
+					<p> Город:              </p><a><span>Новосибирск</span></a> 
+					<p> Семейное положение: </p><a><span>влюблен    </span></a> 
+				</div>
+				<button className={s.more_button}>Показать подробную информацию..</button>
+			</div>
+			<div className={s.user_stats}>
+				<p>54<span>друга</span></p>
+				<p>38<span>подписчиков</span></p>
+				<p>4<span>фотографии</span></p>
+				<p>2<span>отметки</span></p>
+				<p>36<span>видеозаписей</span></p>
 			</div>
 		</div>
 	);
 };
-
 
 export default UserInfo;

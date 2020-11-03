@@ -11,11 +11,12 @@
 	position: relative;
 	align-items: center;
 	text-decoration: none;
-	color: #4a76a8;
+	color:#3073b1;
 	font-size: 12.5px;
 	padding-left: 9px;
 	font-weight: 500;
 	box-sizing: border-box;
+	border-radius: 5px;
 }
 
 a img {
@@ -24,16 +25,9 @@ a img {
 }
 
 .nav a:hover {
-	background-color: #d7dde2;
+	background-color:#D9DEE9;
 }
 
-.nav a:hover img {
-	filter: brightness(82%) contrast(1.1);
-}
-
-.active_link{
-	color: #416a99!important;
-}
 .active_link img{
-	filter: brightness(82%) contrast(1.1);
+	filter: brightness(88%) contrast(1.1);
 }

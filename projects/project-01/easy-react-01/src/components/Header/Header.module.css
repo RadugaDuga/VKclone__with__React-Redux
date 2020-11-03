@@ -1,6 +1,5 @@
 .header {
   grid-area: h;
-  background-color:#4A76A8;
   display: flex;
   align-items: center;
   position: sticky;

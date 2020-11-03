@@ -1,26 +1,32 @@
 import React from "react";
 import s from "./Post.module.css";
 
-const Post = () => {
+
+
+
+const Post = (props) => {
 	return (
 		<div className={s.post}>
+
 			<div className={s.about}>
-				<img
-					className={s.avatar}
-					src="https://i.scdn.co/image/ab67706c0000bebb163aeea48afe86ed0c55bfcd"
-					alt='Error404'
-				/>
+				<img className={s.avatar} src={props.image} alt='Error404'/>
 				<a className={s.name} href="/lol">
-					Дарья Амеличева <br/>
-                    <span className={s.date}>18 ноя 2020</span>
+					{props.name} <br/>
+                    <span className={s.date}>{props.date}</span>
 				</a>
 			</div>
+
 			<p className={s.text} >
-				Человеческие условия труда Я хочу немного рассказать об условиях труда в
-				немецкой компании, где я работаю. Все уже довольно привыкли читать
-				невероятные истории про офисы Гугла и Эппла, где описывается рай на
-				Земле. Но не только в Кремниевой долине есть приличные работодатели.
+				{props.text}
 			</p>
+
+			<div className={s.stats}>
+				<button className={s.like_button}></button><span>{props.likes_count}</span>
+				<button className={s.comment_button}></button><span>{props.comments_count}</span>
+				<button className={s.repost_button}></button><span>{props.reposts_count}</span>
+				<button className={s.views_button}></button><span>{props.views_count}</span>
+			</div>
+
 		</div>
 	);
 };
