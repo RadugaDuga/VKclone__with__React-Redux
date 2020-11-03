@@ -4,7 +4,10 @@ import Header from "./components/Header/Header";
 import Nav from "./components/Navigation/Nav";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
+import Groups from "./components/Groups/Groups";
+
 import { BrowserRouter, Route } from "react-router-dom";
+
 
 
 const App = (props) => {
@@ -24,6 +27,9 @@ const App = (props) => {
 						<Route path='/Dialogs' render={()=> 
 						<Dialogs Dialogs={props.state.messagesPage.Dialogs} Messages={props.state.messagesPage.Messages} />} />
 
+						<Route path='/Groups' render={()=> <Groups/>}>
+
+						</Route>
 					</div>
 				</div>
 			</section>

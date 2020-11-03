@@ -1,5 +1,6 @@
 
 let state = {
+
     profilePage:{
         PostsData: [
             {
@@ -51,7 +52,8 @@ let state = {
                 views_count: "1001",
                 date: "4 сен 2020",
             },
-]},
+        ]
+    },
         
     messagesPage:{
             
@@ -69,7 +71,12 @@ let state = {
             {id:4 , name:"Сергей Лисенок"  , image:"https://sun1-97.userapi.com/impf/c626527/v626527581/20991/cuR-S7RYIuM.jpg?size=50x0&quality=88&crop=66,85,372,372&sign=3069b00461edc219322e13bce9da507a&ava=1"},
             {id:5 , name:"Георгий Букиа"   , image:"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1"} 
         ]
-    }
+    },
     
+    groupsPage:{
+        groupsData:[
+            
+        ]
+    }
 }
 export default state;
