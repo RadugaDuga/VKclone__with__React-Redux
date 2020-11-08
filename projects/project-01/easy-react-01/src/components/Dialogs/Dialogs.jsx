@@ -20,10 +20,6 @@ const DialogItem = (props) => {
 		</div>
 	);
 };
-
-
-
-
 const Message = (props) => {
 	return <div>{props.messageText}</div>;
 };
@@ -35,15 +31,9 @@ const Message = (props) => {
 const Dialogs = (props) => {
 
 	
-
-
-
-	
 	let MessageElement = props.Messages.map( m => <Message id={m.id} messageText={m.messageText}/>)
-
 	let DialogElement = props.Dialogs.map( d => <DialogItem name={d.name} id={d.id} image={d.image}/>) 
-		
-	
+
 
 	return (
 		<div className={s.dialogs_messages_wrapper}>

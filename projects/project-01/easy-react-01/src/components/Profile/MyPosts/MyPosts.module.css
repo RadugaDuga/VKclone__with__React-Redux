@@ -1,3 +1,72 @@
-.myPosts{
-    margin-top:30px;
+
+.my_posts_wrapper{
+    margin-top:15px;
+    width:550px;
+}
+
+
+
+
+
+.textarea_wrapper{
+    box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding:15px 20px;
+}
+
+.textarea_wrapper img{
+    border-radius: 50%;
+    height:28px;
+    align-self: flex-start;
+}
+
+.textarea{
+    font-size: 13px;
+    width:100%;
+    min-height: 35px;
+    padding:0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-left: 15px;
+    resize: vertical;
+    max-height:none;
+    caret-color: rgb(40, 110, 160);
+}
+
+
+
+
+
+
+
+
+
+.buttons_container{
+    width:120px;
+}
+.button{
+    line-height: 35px;
+    text-align:center;
+    align-self: flex-start;
+    width:max-content;
+    height:35px;
+    border-radius:5px;
+    background:#649af1;
+    padding:0 15px;
+    color:white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left:12px;
+    box-shadow:0px 2.5px 0px 0px rgba(0, 32, 97, 0.157);
+}
+
+.button:active{
+    box-shadow:inset 0px 3px 0px 0px rgba(0, 32, 97, 0.157);
+    transform:translateY(1px);
+    background-color:#6097EE;
 }

@@ -9,9 +9,7 @@ import Groups from "./components/Groups/Groups";
 import { BrowserRouter, Route } from "react-router-dom";
 
 
-
 const App = (props) => {
-
 	return (
 		<BrowserRouter>
 			<section>
@@ -20,16 +18,36 @@ const App = (props) => {
 					<Header />
 					<Nav />
 					<div className={s.app_wrapper_content}>
+						<Route
+							path="/Profile"
+							render={() => (
+								<Profile
+									deletePost={props.deletePost}
+									createPost={props.createPost}
+									updateNewPostText={props.updateNewPostText}
+									profilePage={props.state.profilePage}
+								/>
+							)}
+						/>
 
-						<Route path='/Profile' render={()=> 
-						<Profile PostsData={props.state.profilePage.PostsData}/>}/>
+						<Route
+							path="/Dialogs"
+							render={() => (
+								<Dialogs
+									Dialogs={props.state.messagesPage.Dialogs}
+									Messages={props.state.messagesPage.Messages}
+								/>
+							)}
+						/>
 
-						<Route path='/Dialogs' render={()=> 
-						<Dialogs Dialogs={props.state.messagesPage.Dialogs} Messages={props.state.messagesPage.Messages} />} />
-
-						<Route path='/Groups' render={()=> <Groups/>}>
-
-						</Route>
+						<Route
+							path="/Groups"
+							render={() => (
+								<Groups 
+									groupsData={props.state.groupsPage.groupsData} 
+								/>
+							)}
+						/>
 					</div>
 				</div>
 			</section>
@@ -38,7 +56,3 @@ const App = (props) => {
 };
 
 export default App;
-
-
-
-        

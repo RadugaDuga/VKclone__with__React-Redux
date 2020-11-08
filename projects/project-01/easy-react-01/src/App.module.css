@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 html {
-  background: #e9ebf0;
+  background: #eceff8;
   height: 110%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
 }
 section{
   height:150vh;
 }
-/* *{
-  border:1px solid red;
-} */
+*{
+  font-family: "Roboto";
+}
 .app_wrapper_content{
   grid-area: c;
   border-radius: 4px;
@@ -41,6 +41,6 @@ section{
   z-index: 1;
   height: 43px;
   width: 100%;
-  background:linear-gradient(-178deg,#6577ff,#3899ce)
+  background:linear-gradient(-178deg,#6577ff,#4ab5ee);
 }
 /*# sourceMappingURL=App.css.map */
