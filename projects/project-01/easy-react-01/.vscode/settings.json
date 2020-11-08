@@ -1,5 +1,4 @@
 {
     "editor.wordWrap": "on",
-    "editor.autoClosingQuotes": "beforeWhitespace",
-    "editor.lineNumbers": "off"
+    "editor.autoClosingQuotes": "beforeWhitespace"
 }
