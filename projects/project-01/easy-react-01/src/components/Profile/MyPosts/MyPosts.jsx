@@ -1,6 +1,9 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import { createPost_ActionCreator , deletePost_ActionCreator, updateNewPostText_ActionCreator} from './../../../redux/state';
+
+
 
 const MyPosts = (props) => {
 	let posts = props.PostsData.map((m) => (
@@ -17,34 +20,29 @@ const MyPosts = (props) => {
 		/>
 	));
 
-	let newPostElement = React.createRef();
+	
 
 	let createPost = () => {
-		let text = newPostElement.current.value;
-		text ? props.createPost(text) : alert("Введите текст");
+		props.dispatch(createPost_ActionCreator());
 	};
 
 	let deletePost = () => {
-		if (posts.length < 2) {
-			alert(
-				"Я не буду удалять последний пост, это школьническое ссыкундяйство"
-			);
-		} else {
-			props.deletePost();
-		}
+		props.dispatch(deletePost_ActionCreator())
 	};
 
-	let onPostChange = () => {
+	let updateNewPostText = () => {
 		let text = newPostElement.current.value;
-		props.updateNewPostText(text);
+		props.dispatch(updateNewPostText_ActionCreator(text));
 	};
+
+	let newPostElement = React.createRef();
 
 	return (
 		<div className={s.my_posts_wrapper}>
 			<div className={s.textarea_wrapper}>
 				<img src="https://sun9-38.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=96&crop=391,0,1365,1365&sign=d1f03e80391ec230e6cda87d90940965&ava=1"></img>
 				<textarea
-					onChange={onPostChange}
+					onChange={updateNewPostText}
 					placeholder="Что у вас нового?"
 					className={s.textarea}
 					ref={newPostElement}

@@ -3,6 +3,8 @@ import s from "./Groups.module.css";
 
 const Groups = (props) => {
 
+
+	
 	const GroupItem = (props) => {
 		return (
 				<div className={s.element}>

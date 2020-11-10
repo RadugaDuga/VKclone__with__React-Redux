@@ -9,9 +9,7 @@ let rerenderApp = (state) => {
 	ReactDOM.render(
 		<React.StrictMode>
 			<App
-				updateNewPostText={store.updateNewPostText}
-				deletePost={store.deletePost}
-				createPost={store.createPost}
+				dispatch={store.dispatch.bind(store)}
 				state={store.getState()}
 			/>
 		</React.StrictMode>,

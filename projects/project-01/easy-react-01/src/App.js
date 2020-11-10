@@ -22,10 +22,9 @@ const App = (props) => {
 							path="/Profile"
 							render={() => (
 								<Profile
-									updateNewPostText={props.updateNewPostText}
-									createPost={props.createPost}
-									deletePost={props.deletePost}
-									profilePage={props.store.state.profilePage}
+									dispatch={props.dispatch}
+									profilePage={props.state.profilePage}
+									newPostText={props.state.profilePage.newPostText}
 								/>
 							)}
 						/>
@@ -44,7 +43,7 @@ const App = (props) => {
 							path="/Groups"
 							render={() => (
 								<Groups 
-									groupsData={props.store.state.groupsPage.groupsData} 
+									groupsData={props.state.groupsPage.groupsData} 
 								/>
 							)}
 						/>
