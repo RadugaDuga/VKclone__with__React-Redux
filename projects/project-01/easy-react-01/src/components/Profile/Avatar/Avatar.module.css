@@ -32,17 +32,16 @@
     outline: none;
     cursor: pointer;
     color:#3762B1;
-    background:#E9EBF0;
+    background:#EAEEF7;
     border-radius:5px;
-    transform-style: preserve-3d;
-    perspective: 400px;
+    box-shadow: 0px 1.5px 0px rgba(0, 32, 97, 0.191);
 }
 .button:first-child{
     line-height: 30px;
     text-align:center;
-    text-shadow: 0px 0px 20px rgba(24, 24, 24, 0.348);
     align-self: flex-start;
     width:max-content;
+    font-size: 13px;
     height:30px;
     flex:1;
     padding:0 15px;
@@ -51,7 +50,7 @@
     cursor: pointer;
 }
 .button:last-child {
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 1px;
     font-weight: bold;
     text-align: center;
@@ -59,11 +58,10 @@
     height: 30px;
     margin-left: 10px;
 }
-.button:hover{
-    font-weight: 600;
-}
+
 .button:active{
-    box-shadow:inset 0px 0px 10px rgba(0, 32, 97, 0.191);
-    transform:translateY(1px);
+    box-shadow:inset 0px 1.5px 0px rgba(0, 32, 97, 0.191);
+    transform:translateY(0.5px);
+    background:#E3E8F3;
 }
 

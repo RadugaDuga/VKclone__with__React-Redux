@@ -1,12 +1,12 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import { createPost_ActionCreator , deletePost_ActionCreator, updateNewPostText_ActionCreator} from './../../../redux/state';
+import { addPost_ActionCreator , deletePost_ActionCreator, updateNewPostText_ActionCreator} from './../../../redux/state';
 
 
 
 const MyPosts = (props) => {
-	let posts = props.PostsData.map((m) => (
+	let posts = props.PostsData.map( m => (
 		<Post
 			id={m.id}
 			name={m.name}
@@ -22,8 +22,8 @@ const MyPosts = (props) => {
 
 	
 
-	let createPost = () => {
-		props.dispatch(createPost_ActionCreator());
+	let addPost = () => {
+		props.dispatch(addPost_ActionCreator());
 	};
 
 	let deletePost = () => {
@@ -48,7 +48,7 @@ const MyPosts = (props) => {
 					ref={newPostElement}
 					value={props.newPostText}
 				/>
-				<button className={s.button} onClick={createPost}>
+				<button className={s.button} onClick={addPost}>
 					Опубликовать
 				</button>
 				<button className={s.button} onClick={deletePost}>

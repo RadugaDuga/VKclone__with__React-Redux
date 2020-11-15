@@ -18,24 +18,23 @@
 }
 .info_wrapper .user_name p .status{
     float: right;
-    color:#939393;
+    
     font-size: 12.5px;
-    font-weight: 400;
+    font-weight: 600;
     position: relative;
+    background:linear-gradient(90deg, rgb(0, 0, 0), rgb(255, 255, 255));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    animation: lol-anima .3s ease  ;
 }
-
-.info_wrapper .user_name p .status::before{
-    display: block;
-    content: '';
-    position: absolute;
-    right:110%;
-    width:6px;
-    border-radius: 50%;
-    border:1px solid rgb(17, 204, 17);
-    height:6px;
-    background:linear-gradient(45deg, rgb(98, 255, 98) , rgb(66, 250, 66));
-    top:50%;
-    transform:translateY(-50%);
+@keyframes lol-anima {
+    from{
+        background-position: left;
+    }
+    from{
+        background-position: right;    
+    }
 }
 
 .info_wrapper .user_name p:first-child{
@@ -45,6 +44,7 @@
     font-weight: 500;
     letter-spacing: 0.1px;
     line-height: 23px;
+    
 }
 .info_wrapper .user_name p:last-child{
     margin:0;
@@ -123,6 +123,7 @@
     font-weight: 400;
     font-size: 13px;
     color:#828eac;
+    margin-top: 5px;
 }
 
 /* _____________________ */

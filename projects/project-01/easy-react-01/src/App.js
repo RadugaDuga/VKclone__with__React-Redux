@@ -8,7 +8,6 @@ import Groups from "./components/Groups/Groups";
 
 import { BrowserRouter, Route } from "react-router-dom";
 
-
 const App = (props) => {
 	return (
 		<BrowserRouter>
@@ -33,8 +32,10 @@ const App = (props) => {
 							path="/Dialogs"
 							render={() => (
 								<Dialogs
+									dispatch={props.dispatch}
 									Dialogs={props.state.messagesPage.Dialogs}
 									Messages={props.state.messagesPage.Messages}
+									newMessageText={props.state.messagesPage.newMessageText}
 								/>
 							)}
 						/>

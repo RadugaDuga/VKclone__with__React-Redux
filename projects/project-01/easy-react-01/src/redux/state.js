@@ -1,4 +1,8 @@
 const ADD_POST = "ADD-POST";
+const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
+const ADD_MESSAGE = "ADD_MESSAGE";
+
+
 
 let store = {
 	_state: {
@@ -32,6 +36,7 @@ let store = {
 			],
 			newPostText: "",
 		},
+
 		messagesPage: {
 			Messages: [
 				{ id: 1, messageText: "Привет, что делал сегодня? Я очень скучаю" },
@@ -71,8 +76,23 @@ let store = {
 					image:
 						"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 				},
+				{
+					id: 6,
+					name: "Сергей Лисенок",
+					image:
+						"https://sun1-97.userapi.com/impf/c626527/v626527581/20991/cuR-S7RYIuM.jpg?size=50x0&quality=88&crop=66,85,372,372&sign=3069b00461edc219322e13bce9da507a&ava=1",
+				},
+				{
+					id: 7,
+					name: "Иван Токарев",
+					image:
+						"https://sun1-92.userapi.com/impg/c857736/v857736275/ff93a/91y1W9Lqpc4.jpg?size=50x0&quality=88&crop=484,258,900,900&sign=a0a404392920e5360e4eed2a6b75f4ba&ava=1",
+				}
 			],
+
+			newMessageText: ""
 		},
+
 		groupsPage: {
 			groupsData: [
 				{
@@ -152,9 +172,8 @@ let store = {
 	subscribe(observer) {
 		this._callSubcriber = observer;
 	},
-
 	dispatch(action) {
-		if (action.type === "ADD-POST") {
+		if (action.type === ADD_POST) {
 			let newPost = {
 				id: 5,
 				name: "Георгий Букиа",
@@ -186,17 +205,33 @@ let store = {
 				this._state.profilePage.PostsData.shift();
 				this._callSubcriber(this._state);
 			}
+		} else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+			this._state.messagesPage.newMessageText = action.text;
+			this._callSubcriber(this._state);
+		} else if (action.type === ADD_MESSAGE) {
+			let newMessage = {
+				id: 2,
+				messageText: this._state.messagesPage.newMessageText
+			};
+
+			this._state.messagesPage.Messages.push(newMessage)
+			this._state.messagesPage.newMessageText = "";
+			this._callSubcriber(this._state)
 		}
 	},
 };
 
-
-
-export const createPost_ActionCreator =            () => ({type: ADD_POST})
-export const deletePost_ActionCreator =            () => ({type: "DELETE-POST"})
-export const updateNewPostText_ActionCreator = (text) => ({type: "UPDATE-NEW-POST-TEXT",text: text,})
-
-
+export const addMessage_ActionCreator = ()=>({ type: ADD_MESSAGE });
+export const addPost_ActionCreator = () => ({ type: ADD_POST });
+export const deletePost_ActionCreator = () => ({ type: "DELETE-POST" });
+export const updateNewPostText_ActionCreator = (text) => ({
+	type: "UPDATE-NEW-POST-TEXT",
+	text: text,
+});
+export const updateNewMessageText_ActionCreator = (text) => ({
+	type: UPDATE_NEW_MESSAGE_TEXT,
+	text: text,
+});
 
 export default store;
 window.store = store;

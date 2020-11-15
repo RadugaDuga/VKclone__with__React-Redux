@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./UserInfo.module.css";
 
+
 const UserInfo = (props) => {
 	return (
 		<div className={s.container}>
