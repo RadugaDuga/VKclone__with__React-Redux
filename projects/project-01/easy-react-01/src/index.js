@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import 'reset-css';
 import "./index.css";
 import App from "./App";
-import store from "./redux/state";
+import store from "./redux/redux-store";
 
 let rerenderApp = (state) => {
 	ReactDOM.render(

@@ -3,11 +3,7 @@ import messagesReducer from './messages-reducer';
 import groupsReducer from "./groups-reducer";
 
 
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
-const ADD_MESSAGE = "ADD_MESSAGE";
-const ADD_POST = "ADD_POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
-const DELETE_POST = "DELETE_POST";
+
 
 
 let store = {
@@ -195,6 +191,6 @@ let store = {
 
 
 export default store;
-window.store = store;
+
 
 

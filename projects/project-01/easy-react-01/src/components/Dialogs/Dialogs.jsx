@@ -3,7 +3,7 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import { NavLink } from "react-router-dom";
 import { updateNewMessageText_ActionCreator , addMessage_ActionCreator } from "../../redux/messages-reducer";
-
+import arrow from '../../images/Messages_Images/arrow.svg';
 
 
 const DialogItem = (props) => {
@@ -63,7 +63,7 @@ const Dialogs = (props) => {
 					onChange={newMessageText}
 					value={props.newMessageText}
 				></textarea>
-				<button onClick={addMessage}>sasai</button>
+				<button onClick={addMessage}></button>
 			</div>
 		</div>
 	);
