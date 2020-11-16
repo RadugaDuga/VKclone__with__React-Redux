@@ -1,5 +1,5 @@
 
-import { profileReducer } from './profile-reducer';
+import profileReducer from './profile-reducer';
 import messagesReducer from './messages-reducer';
 import groupsReducer from './groups-reducer';
 const { createStore, combineReducers } = require("redux");

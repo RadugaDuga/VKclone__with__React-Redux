@@ -9,6 +9,7 @@
     grid-template-areas: 
     'd m'
     'd t';
+    
 }
 
 
@@ -25,26 +26,7 @@
     box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
 }
 
-.dialog a{
-    display: flex;
-    width:230px;
-    box-sizing: border-box;
-    padding:10px 20px 10px 20px;
-    text-decoration: none;
-}
 
-.dialog img{
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    transition: .3s;
-}
-.about {
-    padding: 0px 0px 0px 14px;
-    color:black;
-    font-weight: 500;
-    font-size: 13px;
-}
 
 
 
@@ -53,11 +35,12 @@
 .messages_wrapper{
     grid-area: m;
     padding:15px;
-    background-color:white;
+    background-color:#f2f6fc;
     border-radius: 10px;
     box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
     font-size:13px;
     color:black;
+    overflow:hidden;
 }
 .active {
     outline: none;
@@ -100,5 +83,5 @@
 
 .textarea_container button:active {
     box-shadow: inset 0px 3px 0px 0px rgb(91, 128, 214);
-    background-size: 58%;
+    background-size: 56%;
 }

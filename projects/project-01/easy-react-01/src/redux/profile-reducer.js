@@ -3,7 +3,7 @@ const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 const DELETE_POST = "DELETE_POST";
 
 let initialState = {
-	PostsData: [
+	postsData: [
 		{
 			id: 1,
 			name: "Георгий Букиа",
@@ -49,7 +49,7 @@ export const profileReducer = (state = initialState, action) => {
 				date: "18 ноя 2020",
 			};
 			if (state.newPostText) {
-				state.PostsData.unshift(newPost);
+				state.postsData.unshift(newPost);
 				state.newPostText = "";
 			} else {
 				alert("Вы забыли текст ^__^");
@@ -60,12 +60,12 @@ export const profileReducer = (state = initialState, action) => {
 			state.newPostText = action.text;
 			return state;
 		case DELETE_POST:
-			if (state.PostsData.length == 2) {
+			if (state.postsData.length == 2) {
 				alert(
 					"Я не буду удалять последний пост, это школьническое ссыкундяйство"
 				);
 			} else {
-				state.PostsData.shift();
+				state.postsData.shift();
 			}
 			return state;
 

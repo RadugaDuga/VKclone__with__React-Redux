@@ -7,12 +7,14 @@ import "./index.css";
 import App from "./App";
 import store from "./redux/redux-store";
 
+
 let rerenderApp = (state) => {
+	
 	ReactDOM.render(
 		<React.StrictMode>
 			<App
 				dispatch={store.dispatch.bind(store)}
-				state={store.getState()}
+				store={store}
 			/>
 		</React.StrictMode>,
 		document.getElementById("root")
