@@ -1,9 +1,22 @@
 .message{
-    background:#CDE1F9;
+    position: relative;
+    background:#eff6ff;
     padding:10px;
     border-radius: 10px;
-    border:1px solid #DFE9F4;
+    border:1px solid #eaf3ff;
     width:max-content;
     margin-bottom: 10px;
 }
 
+.message::before{
+    display: block;
+    position: absolute;
+    content:'';
+    width:10px;
+    height:10px;
+    background:#ebf3fd;
+    left:-5px;
+    bottom:-2px;
+    clip-path: polygon(49% 0, 100% 0, 100% 35%, 100% 70%, 79% 86%, 44% 93%, 0 94%, 19% 74%, 35% 55%, 46% 28%);
+
+}

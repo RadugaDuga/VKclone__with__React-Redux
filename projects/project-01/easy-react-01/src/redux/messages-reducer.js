@@ -62,6 +62,7 @@ let initialState = {
 const messagesReducer = (state = initialState, action)=>{
     
     switch(action.type){
+        
         case ADD_MESSAGE:
             let newMessage = {
                 id: 2,
@@ -69,6 +70,7 @@ const messagesReducer = (state = initialState, action)=>{
             };
             state.Messages.push(newMessage)
             state.newMessageText = "";
+            console.log('suka');
             return state;
 
         case UPDATE_NEW_MESSAGE_TEXT:

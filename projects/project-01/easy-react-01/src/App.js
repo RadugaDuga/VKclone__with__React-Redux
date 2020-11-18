@@ -4,12 +4,12 @@ import Header from "./components/Header/Header";
 import Nav from "./components/Navigation/Nav";
 import Profile from "./components/Profile/Profile";
 import Groups from "./components/Groups/Groups";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Dialogs_Container from './components/Dialogs/Dialogs_Container';
 
 const App = (props) => {
 	return (
-		<BrowserRouter>
+		
 			<section>
 				<div className={s.header_line}></div>
 				<div className={s.app_wrapper}>
@@ -22,7 +22,7 @@ const App = (props) => {
 						/>
 
 						<Route 
-							path="/Dialogs" render={() => <Dialogs_Container store={props.store}/>} 
+							path="/Dialogs" render={() => <Dialogs_Container />} 
 						/>
 
 						<Route
@@ -34,7 +34,7 @@ const App = (props) => {
 					</div>
 				</div>
 			</section>
-		</BrowserRouter>
+		
 	);
 };
 

@@ -1,21 +1,32 @@
 
-
-.dialog a{
-    display: flex;
-    width:230px;
-    box-sizing: border-box;
-    padding:10px 20px 10px 20px;
-    text-decoration: none;
+.dialog {
+    border-top: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #e1e1e1 0 63%, transparent 63% 100%);
+    margin-bottom: -1px;
 }
+.dialog:hover {
+    border-image-source: linear-gradient(to left, #e1e1e1, #e1e1e1);
+    border-bottom: 1px solid;
+    background-color: #F7F8FA;
+}
+.dialog a{
+    padding:10px 20px;
+    display: flex;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
 
 .dialog img{
     border-radius: 50%;
     width: 50px;
     height: 50px;
     transition: .3s;
+    margin:0;
 }
 .about {
-    padding: 0px 0px 0px 14px;
+    padding: 0px 0px 0px 15px;
     color:black;
     font-weight: 500;
     font-size: 13px;

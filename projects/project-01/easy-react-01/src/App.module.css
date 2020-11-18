@@ -9,7 +9,7 @@ section{
   height:150vh;
 }
 *{
-  font-family: "Roboto";
+  font-family: "Roboto"!important;
 }
 .app_wrapper_content{
   grid-area: c;
