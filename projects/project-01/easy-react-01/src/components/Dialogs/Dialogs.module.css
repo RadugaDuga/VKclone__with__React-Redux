@@ -9,7 +9,6 @@
     grid-template-areas: 
     'd m'
     'd t';
-    
 }
 
 
@@ -35,9 +34,8 @@
     top:58px;
     height: max-content;
 }
-
 .messages_wrapper{
-    height: max-content;
+    height: 70vh;
     grid-area: m;
     padding:15px;
     background-color:white;
@@ -45,8 +43,11 @@
     box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
     font-size:13px;
     color:black;
-    overflow:hidden;
+    overflow:scroll;
     margin-bottom: 15px;
+}
+.messages_wrapper::-webkit-scrollbar{
+    width:0px;
 }
 .active {
     outline: none;

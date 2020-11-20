@@ -4,18 +4,21 @@ import DialogItem from "./Dialog/Dialog";
 import MessageItem from "./Message/Message";
 
 const Dialogs = (props) => {
-	let onUpdateMessageText = (event) => {
-		let text = event.target.value;
+
+
+	let onUpdateMessageText = (e) => {
+		let text = e.target.value;
 		props.updateMessageText(text);
 	};
 	let addMessage = () => {
 		props.addMessage();
 	};
 
-	let MessageElement = props.messagesPage.Messages.map((m) => (
+	
+	let MessageElement = props.Messages.map((m) => (
 		<MessageItem id={m.id} messageText={m.messageText} />
 	));
-	let DialogElement = props.messagesPage.Dialogs.map((d) => (
+	let DialogElement = props.Dialogs.map((d) => (
 		<DialogItem name={d.name} id={d.id} image={d.image} />
 	));
 

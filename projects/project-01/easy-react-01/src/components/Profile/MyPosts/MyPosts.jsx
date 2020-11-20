@@ -5,7 +5,7 @@ import Post from "./Post/Post";
 
 
 const MyPosts = (props) => {
-	let posts = props.postsData.map((m) => (
+	let posts = props.postsData.map(m => (
 		<Post
 			id={m.id}
 			name={m.name}

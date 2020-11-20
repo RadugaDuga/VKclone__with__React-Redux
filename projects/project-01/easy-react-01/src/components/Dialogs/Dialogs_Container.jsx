@@ -6,9 +6,12 @@ import {
 } from "../../redux/messages-reducer";
 import Dialogs from "./Dialogs";
 
+
 let mapStateToProps = (state) => {
 	return {
-		messagesPage: state.messagesPage,
+		Messages: state.messagesPage.Messages,
+		Dialogs: state.messagesPage.Dialogs,
+		newMessageText:state.messagesPage.newMessageText
 	};
 };
 let mapDispatchToProps = (dispatch) => {

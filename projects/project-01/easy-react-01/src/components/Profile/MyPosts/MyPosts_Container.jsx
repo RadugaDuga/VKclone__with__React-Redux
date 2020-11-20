@@ -9,16 +9,17 @@ import { connect } from 'react-redux';
 
 
 
-let mapStateToProps =(state)=>{
+let mapStateToProps = (state)=>{
 	return{
 		postsData:state.profilePage.postsData,
-		newPostText:state.newPostText
+		newPostText:state.profilePage.newPostText
 	}
 }
 
 let mapDispatchToProps = (dispatch)=> {
 	return{
 		addPost: ()=>{
+			
 			dispatch(addPost_ActionCreator());
 		},
 		deletePost: ()=>{

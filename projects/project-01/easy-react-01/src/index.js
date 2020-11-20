@@ -8,21 +8,15 @@ import store from "./redux/redux-store";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
-let rerenderApp = (state) => {
-	ReactDOM.render(
-		<BrowserRouter>
-			<React.StrictMode>
-				<Provider store={store}>
-					<App  />
-				</Provider>
-			</React.StrictMode>
-		</BrowserRouter>,
-		document.getElementById("root")
-	);
-};
-
-rerenderApp(store.getState());
-
-store.subscribe(rerenderApp);
+ReactDOM.render(
+	<BrowserRouter>
+		<React.StrictMode>
+			<Provider store={store}>
+				<App />
+			</Provider>
+		</React.StrictMode>
+	</BrowserRouter>,
+	document.getElementById("root")
+);
 
 serviceWorker.unregister();

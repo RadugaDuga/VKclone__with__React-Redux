@@ -1,8 +1,8 @@
 
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
 const ADD_MESSAGE = "ADD_MESSAGE";
-
-let initialState = {
+ 
+ let initialState = {
     Messages: [
         { id: 1, messageText: "Привет, что делал сегодня? Я очень скучаю" },
         { id: 2, messageText: "Дарова, сидел учил реакт по видосам Димыча" },
@@ -55,27 +55,34 @@ let initialState = {
         }
     ],
 
-    newMessageText: ""
+    newMessageText: "234234"
 }
 
 
-const messagesReducer = (state = initialState, action)=>{
-    
+export const messagesReducer = (state = initialState, action)=>{
+    let stateCopy;
     switch(action.type){
         
         case ADD_MESSAGE:
-            let newMessage = {
-                id: 2,
-                messageText:state.newMessageText
-            };
-            state.Messages.push(newMessage)
-            state.newMessageText = "";
-            console.log('suka');
-            return state;
+            
+            stateCopy = {
+                ...state,
+                Messages:[
+                    ...state.Messages,
+                    {id: 2, messageText:state.newMessageText}
+                ],
+                newMessageText:""
+            }
+            
+            return stateCopy;
 
         case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.text;
-            return state;    
+            stateCopy = {
+                ...state,
+                newMessageText:action.text 
+             }
+            
+            return stateCopy;    
 
         default:  return state;
     }
