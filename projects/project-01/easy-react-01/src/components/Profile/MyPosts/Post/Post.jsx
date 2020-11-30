@@ -10,7 +10,7 @@ const Post = (props) => {
 
 			<div className={s.about}>
 				<img className={s.avatar} src={props.image} alt=''/>
-				<a className={s.name} href="/lol">
+				<a className={s.name} href="#">
 					{props.name} <br/>
                     <span className={s.date}>{props.date}</span>
 				</a>

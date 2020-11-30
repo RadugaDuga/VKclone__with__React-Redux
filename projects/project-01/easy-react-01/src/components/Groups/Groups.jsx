@@ -2,23 +2,21 @@ import React from "react";
 import s from "./Groups.module.css";
 
 const Groups = (props) => {
-
-
-	
 	const GroupItem = (props) => {
 		return (
-				<div className={s.element}>
-					<img src={props.image} alt="" />
-					<div>
-						<a href="#"> {props.name} </a>
-						<p> {props.type} </p>
-						<p> {props.subsCount} <span> подписчиков</span></p>
-					</div>
+			<div className={s.element}>
+				<img src={props.image} alt="" />
+				<div>
+					<a href="#"> {props.name} </a>
+					<p> {props.type} </p>
+					<p>
+						{" "}
+						{props.subsCount} <span> подписчиков</span>
+					</p>
 				</div>
+			</div>
 		);
 	};
-
-	
 
 	let groupElements = props.groupsData.map( g => (
 		<GroupItem
@@ -27,10 +25,10 @@ const Groups = (props) => {
 			name={g.name}
 			type={g.type}
 			subsCount={g.subsCount}
-        />)
-    );
+		/>
+	));
 
-	return <section className={s.wrapper}>{groupElements}</section>;
+	return <div className={s.groups_wrapper}>{groupElements}</div>;
 };
 
 export default Groups;

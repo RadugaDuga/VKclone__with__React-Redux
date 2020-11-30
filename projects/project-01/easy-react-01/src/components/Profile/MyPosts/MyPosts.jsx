@@ -4,8 +4,10 @@ import Post from "./Post/Post";
 
 
 
-const MyPosts = (props) => {
-	let posts = props.postsData.map(m => (
+const MyPosts = ( props ) => {
+
+
+	let posts = props.postsData.map( m => (
 		<Post
 			id={m.id}
 			name={m.name}
@@ -32,6 +34,7 @@ const MyPosts = (props) => {
 		props.updateNewPostText(text);
 	};
 
+	
 	return (
 		<div className={s.my_posts_wrapper}>
 			<div className={s.textarea_wrapper}>

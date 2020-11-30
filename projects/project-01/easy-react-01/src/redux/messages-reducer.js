@@ -55,7 +55,7 @@ const ADD_MESSAGE = "ADD_MESSAGE";
         }
     ],
 
-    newMessageText: "234234"
+    newMessageText: ""
 }
 
 

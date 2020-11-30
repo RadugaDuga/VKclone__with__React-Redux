@@ -58,14 +58,13 @@ export const profileReducer = (state = initialState, action) => {
 				newPostText:""
 			}
 
-		case UPDATE_NEW_POST_TEXT: {
+		case UPDATE_NEW_POST_TEXT: 
 			return {
 				 ...state,
 				 newPostText: action.text
 				};
 		
-		}
-
+		
 		case DELETE_POST: {
 			let stateCopy = {
 				...state,
@@ -80,9 +79,9 @@ export const profileReducer = (state = initialState, action) => {
 	}
 };
 
-export const addPost_ActionCreator = () => ({ type: ADD_POST });
-export const deletePost_ActionCreator = () => ({ type: DELETE_POST });
-export const updateNewPostText_ActionCreator = (text) => ({
+export const addPost_AC = () => ({ type: ADD_POST });
+export const deletePost_AC = () => ({ type: DELETE_POST });
+export const updateNewPostText_AC = (text) => ({
 	type: UPDATE_NEW_POST_TEXT,
 	text: text
 });

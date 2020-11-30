@@ -1,14 +1,14 @@
 
 .dialogs_messages_wrapper{
     width:795px;
-    height:max-content;
+    height:97%;
     display:grid;
     grid-template-columns: 230px 550px;
-    grid-template-rows: 1fr 70px;
+    grid-template-rows: 50% 50%;
     grid-gap:15px;
     grid-template-areas: 
     'd m'
-    'd t';
+    'd m';
 }
 
 
@@ -16,13 +16,14 @@
 
 
 .dialog_wrapper{
-    padding:15px 0;
+    overflow:hidden;
+    box-sizing: border-box;
     position: relative;
     grid-area: d;
     background-color: white;
     height: max-content;
     border-radius: 10px;
-    box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+    box-shadow: 0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
 }
 
 
@@ -31,16 +32,18 @@
 
 .sticky_wrapper{
     position: sticky;
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
     top:58px;
-    height: max-content;
+    height:100%;
 }
 .messages_wrapper{
-    height: 70vh;
-    grid-area: m;
+    flex:10;
     padding:15px;
     background-color:white;
     border-radius: 10px;
-    box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+    box-shadow:0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
     font-size:13px;
     color:black;
     overflow:scroll;
@@ -57,9 +60,9 @@
 
 
 .textarea_container{
-    grid-area: t;
+    flex:1;
     display: flex;
-    box-shadow: 0px 0px 50px rgba(76, 133, 177, 0.083),0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+    box-shadow:0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
     width:100%;
     background: white;
     border-radius: 10px;

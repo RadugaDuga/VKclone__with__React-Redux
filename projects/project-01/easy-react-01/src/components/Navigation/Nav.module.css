@@ -1,35 +1,28 @@
 .nav {
+	width: 157px;
 	grid-area: n;
 	margin-left: -9px;
-	position: sticky!important;
-	top:58px!important;
+	position: sticky;
+	top:58px;
 	height:max-content;
+	border-radius: 10px;
 }
 
 .nav a {
+	border-radius: 10px;
 	display: flex;
 	position: relative;
 	align-items: center;
-	height: 28px;
-	width: 158px;
-	text-decoration: none;
-	color:#3073b1;
+	text-decoration:none;
+	color:#2b69a3;
 	font-size: 12.5px;
 	padding-left: 9px;
-	font-weight: 400;
-	box-sizing: border-box;
-	border-radius: 5px;
-	text-shadow: 0.05px 0.05px 0px #3073B1;
-	letter-spacing: 0.3px;
+
 }
 
 a img {
 	height: 25px;
+	width: 25px;
 	margin-bottom: 3px;
 }
 
-
-
-.active_link {
-	background-color: white;
-}

@@ -14,16 +14,16 @@ import { NavLink } from 'react-router-dom';
 const Nav =(props)=> {
     return(
         <nav className={s.nav}>
-          <NavLink to='/profile' activeClassName={s.active_link}><img src={moya_stranica}  alt='^__^'/>Моя страница  </NavLink>
-          <NavLink to='/feed'    activeClassName={s.active_link}><img src={novosti}        alt='^__^'/>Новости       </NavLink>
-          <NavLink to='/dialogs' activeClassName={s.active_link}><img src={messenger}      alt='^__^'/>Мессенджер    </NavLink>
-          <NavLink to='/users'   activeClassName={s.active_link}><img src={druzya}         alt='^__^'/>Друзья        </NavLink>
-          <NavLink to='/groups'  activeClassName={s.active_link}><img src={soobshestva}    alt='^__^'/>Сообщества    </NavLink>
-          <NavLink to='/photos'  activeClassName={s.active_link}><img src={fotografii}     alt='^__^'/>Фотографии    </NavLink>
-          <NavLink to='/music'   activeClassName={s.active_link}><img src={muzyka}         alt='^__^'/>Музыка        </NavLink>
-          <NavLink to='/videos'  activeClassName={s.active_link}><img src={video}          alt='^__^'/>Видео         </NavLink>
-          <NavLink to='/clips'   activeClassName={s.active_link}><img src={klypi}          alt='^__^'/>Клипы         </NavLink>
-      </nav>
+          <NavLink to='/profile' activeClassName={s.active}><img src={moya_stranica}  alt='^__^'/>Моя страница  </NavLink>
+          <NavLink to='/feed'    activeClassName={s.active}><img src={novosti}        alt='^__^'/>Новости       </NavLink>
+          <NavLink to='/dialogs' activeClassName={s.active}><img src={messenger}      alt='^__^'/>Мессенджер    </NavLink>
+          <NavLink to='/users'   activeClassName={s.active}><img src={druzya}         alt='^__^'/>Пользователи        </NavLink>
+          <NavLink to='/groups'  activeClassName={s.active}><img src={soobshestva}    alt='^__^'/>Сообщества    </NavLink>
+          <NavLink to='/photos'  activeClassName={s.active}><img src={fotografii}     alt='^__^'/>Фотографии    </NavLink>
+          <NavLink to='/music'   activeClassName={s.active}><img src={muzyka}         alt='^__^'/>Музыка        </NavLink>
+          <NavLink to='/videos'  activeClassName={s.active}><img src={video}          alt='^__^'/>Видео         </NavLink>
+          <NavLink to='/clips'   activeClassName={s.active}><img src={klypi}          alt='^__^'/>Клипы         </NavLink>
+        </nav>
     );
 }
 

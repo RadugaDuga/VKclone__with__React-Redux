@@ -1,3 +1,123 @@
-.p{
-    color:red;
+
+.content{
+    display:grid;
+    grid-template-columns: 550px 230px;
+    grid-gap: 15px;
+    grid-template-areas: 
+    "u s";
 }
+
+.users_wrapper{
+    grid-area: u;
+    padding:0 20px;
+    background-color: white;
+    width: 550px;
+    height: max-content;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+    box-sizing: border-box;
+}
+
+.sidebar{
+    grid-area: s;
+    width: 230px;
+    height:300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.user_wrapper:first-child{
+    border:none;
+}
+.user_wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 510px;
+    height: 104px;
+    border-top: 1px solid #E7E8EC;
+    box-sizing: border-box;
+    padding:12px 0;
+}
+
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.information{
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+    height:60px;
+    justify-content: space-evenly;
+}
+.information a{
+    color: #2A5895;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+}
+.information a:hover{
+    text-decoration: underline;
+}
+.information p{
+    position: relative;
+    font-size: 13px;
+    color:#656565;
+    white-space: nowrap;
+    width:250px;
+    overflow: hidden;
+}
+.information p::after{
+    display: block;
+    position: absolute;
+    content: "";
+    background:linear-gradient(to left, white, transparent);
+    height:100%;
+    width:50px;
+    top:0;
+    right:0;
+}
+
+
+.follow {
+    right:0;
+    margin-left: auto;
+    padding:5px 15px;
+    background: #649AF1;
+    color:white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+.unfollow {
+    right:0;
+    margin-left: auto;
+    padding:5px 15px;
+    background: #E5EBF1;
+    color:#55677D;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
