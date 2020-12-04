@@ -1,7 +1,7 @@
 
 .avatar_wrapper{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     padding:15px;
     border-radius: 10px;
     background-color: white;
@@ -10,7 +10,9 @@
     top:0;
 }
 .image{
-    height:100%!important;
+    max-height: 250px ;
+    object-fit: cover;
+    object-position: center;
     border-radius: 5px;
 }
 

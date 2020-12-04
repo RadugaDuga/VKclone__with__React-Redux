@@ -1,17 +1,20 @@
 
 import React from "react";
 import s from "./UserInfo.module.css";
-
+import Preloader from "../../common/Preloader/Preloader";
 
 const UserInfo = (props) => {
+
+	if (!props.profile) {
+		return <Preloader/>
+	}
 	return (
 		<div className={s.container}>
 			<div className={s.info_wrapper}>
 				<div className={s.user_name}>
-					<p>Георгий Букиа <span>&#128123;</span><span className={s.status}>online</span></p>
+					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
 					<p>
-						Обнуление - это когда на упаковке с тухлой рыбой переписывают срок
-						годности.
+						{props.profile.aboutMe}
 					</p>
 				</div>
 				<div className={s.about_user}>
@@ -33,3 +36,6 @@ const UserInfo = (props) => {
 };
 
 export default UserInfo;
+
+
+// Георгий Букиа <span>&#128123;</span> 

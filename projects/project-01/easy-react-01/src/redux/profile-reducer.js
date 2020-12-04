@@ -1,7 +1,7 @@
 const ADD_POST = "ADD_POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 const DELETE_POST = "DELETE_POST";
-
+const SET_USER_PROFILE = "SET_USER_PROFILE";
 let initialState = {
 	postsData: [
 		{
@@ -30,7 +30,8 @@ let initialState = {
 			date: "4 сен 2020",
 		}
 	],
-	newPostText: ""
+	newPostText: "", 
+	profile: null
 };
 
 export const profileReducer = (state = initialState, action) => {
@@ -74,6 +75,10 @@ export const profileReducer = (state = initialState, action) => {
 		return stateCopy;
 		}
 
+		case SET_USER_PROFILE:{
+			return{...state, profile:action.profile}
+		}
+
 		default:
 		return state;
 	}
@@ -85,5 +90,6 @@ export const updateNewPostText_AC = (text) => ({
 	type: UPDATE_NEW_POST_TEXT,
 	text: text
 });
+export const setUserProfile = (profile)=> ({type:SET_USER_PROFILE, profile})
 
 export default profileReducer;
