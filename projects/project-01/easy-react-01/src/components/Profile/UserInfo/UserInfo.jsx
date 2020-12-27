@@ -25,7 +25,7 @@ const UserInfo = (props) => {
 				<button className={s.more_button}>Показать подробную информацию..</button>
 			</div>
 			<div className={s.user_stats}>
-				<p>54<span>друга</span></p>
+				<p>54<span>друзей</span></p>
 				<p>38<span>подписчиков</span></p>
 				<p>4<span>фотографии</span></p>
 				<p>2<span>отметки</span></p>

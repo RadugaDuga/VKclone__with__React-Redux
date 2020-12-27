@@ -25,11 +25,7 @@ let Users =(props)=> {
 
 							<div>
 								<NavLink to={'/profile/'+ u.id}>
-									<img
-										className={s.avatar}
-										src={ u.photos.small ? u.photos.small : "https://okeygeek.ru/wp-content/uploads/2017/09/1435667734_jh-6i8w73xg.jpg"}
-										alt=""
-									/>
+									<img className={s.avatar} src={ u.photos.small ? u.photos.small : "https://okeygeek.ru/wp-content/uploads/2017/09/1435667734_jh-6i8w73xg.jpg"}alt=""/>
 								</NavLink>	
 							</div>
 

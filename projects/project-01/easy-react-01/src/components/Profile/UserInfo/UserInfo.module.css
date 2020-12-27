@@ -1,5 +1,5 @@
 .container {
-	border-radius: 10px;
+	border-radius: 4px;
 	box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px#E7E8EC;
 	background-color: white;
 	box-shadow: 0 1px 0 0 #acc9e15f, 0 0 0 1px#E7E8EC;
@@ -53,7 +53,7 @@
 	display: inline-block;
 	width: 345px !important;
 	font-size: 13px;
-	color: #3a74d3;
+	color: #2A5885;
 	cursor: pointer;
 }
 .about_user a:hover {
@@ -62,7 +62,7 @@
 .more_button {
 	margin-top: 10px;
 	width: 510px;
-	border-radius: 5px;
+	border-radius: 2px;
 	font-size: 13px;
 	height: 34px;
 	border: none;
@@ -82,12 +82,12 @@
 	text-align: center;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: center;
 }
 .user_stats p {
-	color: #3b72cc;
+	color: #2A5885;
 	font-size: 19px;
-	font-weight: 500;
+	font-weight: 400;
 	margin: 0;
 	padding: 15px;
 }
