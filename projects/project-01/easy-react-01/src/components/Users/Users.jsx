@@ -3,7 +3,9 @@ import s from "./Users.module.css";
 import { NavLink } from 'react-router-dom';
 
 
+
 let Users =(props)=> {
+	
 
     let pagesCount = Math.ceil(props.usersTotalCount / props.pageSize);
 		let pages = [];
@@ -12,6 +14,8 @@ let Users =(props)=> {
 		}
 
     return(
+		<div>
+			
         <div className={s.content}>
 				<div>
 					{pages.map( p => {
@@ -44,7 +48,7 @@ let Users =(props)=> {
 
 				<div className={s.sidebar}></div>
 			</div>
-		
+		</div>	
     )
 }
 

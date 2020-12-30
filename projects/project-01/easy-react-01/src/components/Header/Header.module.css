@@ -1,6 +1,7 @@
 .header {
   grid-area: h;
-  display: flex;
+  display: grid;
+  grid-template-columns:161px 245px 48px 48px;
   align-items: center;
   position: sticky;
   top:0;
@@ -10,5 +11,40 @@
 
 .header img {
   margin-left: -3px;
-  margin-bottom: -1px;
+  margin-bottom: 1px;
+}
+
+.search{
+  width:230px!important;
+  height:32px;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  border:none;
+  background: url(../../images/searchBack.svg) no-repeat 10px;
+  background-color: #EDEEF0;
+  outline: none;
+  border-radius: 8px;
+  padding-left: 34px;
+}
+
+
+.notify_btn{
+  height: 48px;
+  background:url(../../images/bell.svg) no-repeat center;
+  transition: .2s;
+}
+.notify_btn:hover{
+  background-color: #F5F6F8;
+  cursor: pointer;
+}
+
+.music_btn{
+  height: 48px;
+  background:url(../../images/musicBtn.svg) no-repeat center;
+  transition: .2s;
+}
+.music_btn:hover{
+  background-color: #F5F6F8;
+  cursor: pointer;
 }

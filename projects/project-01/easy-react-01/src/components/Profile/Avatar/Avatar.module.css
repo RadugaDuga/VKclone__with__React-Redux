@@ -31,18 +31,17 @@
     outline: none;
     cursor: pointer;
     color: #748199;;
-    background:#EAEEF7;
-    border-radius:2px;
+    background:#E5EBF1;
+    border-radius:4px;
 
 }
 .button:first-child{
     line-height: 30px;
     text-align:center;
     align-self: flex-start;
-    width:max-content;
+    width:157px;
     font-size: 13px;
     height:30px;
-    flex:1;
     padding:0 15px;
     border: none;
     outline: none;
@@ -55,7 +54,7 @@
     text-align: center;
     width:36px;
     height: 30px;
-    margin-left: 10px;
+    border-radius: 4px;
 }
 
 .button:active{

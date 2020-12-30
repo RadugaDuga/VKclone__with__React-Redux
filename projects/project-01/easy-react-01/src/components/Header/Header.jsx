@@ -6,6 +6,9 @@ const Header =()=> {
     return(
         <header className={s.header}>
             <img src={logo} alt=""/>
+            <input className={s.search} placeholder="Поиск"  />
+            <button className={s.notify_btn}></button>
+            <button className={s.music_btn}></button>
         </header >
     );
 }
