@@ -14,15 +14,15 @@ import { NavLink } from 'react-router-dom';
 const Nav =(props)=> {
     return(
         <nav className={s.nav}>
-          <NavLink to='/profile' activeClassName={s.active}><img src={profile}   alt='^__^'/>Моя страница  </NavLink>
-          <NavLink to='/feed'    activeClassName={s.active}><img src={news}      alt='^__^'/>Новости       </NavLink>
-          <NavLink to='/dialogs' activeClassName={s.active}><img src={messenger} alt='^__^'/>Мессенджер    </NavLink>
-          <NavLink to='/users'   activeClassName={s.active}><img src={friends}   alt='^__^'/>Друзья  </NavLink>
-          <NavLink to='/groups'  activeClassName={s.active}><img src={groups}    alt='^__^'/>Сообщества    </NavLink>
-          <NavLink to='/photos'  activeClassName={s.active}><img src={photos}    alt='^__^'/>Фотографии    </NavLink>
-          <NavLink to='/music'   activeClassName={s.active}><img src={music}     alt='^__^'/>Музыка        </NavLink>
-          <NavLink to='/videos'  activeClassName={s.active}><img src={videos}     alt='^__^'/>Видео         </NavLink>
-          <NavLink to='/clips'   activeClassName={s.active}><img src={clyps}     alt='^__^'/>Клипы         </NavLink>
+          <NavLink to='/profile' activeClassName={s.active}><img className={s.icon} src={profile}   alt='^__^'/>Моя страница </NavLink>
+          <NavLink to='/feed'    activeClassName={s.active}><img className={s.icon} src={news}      alt='^__^'/>Новости       </NavLink>
+          <NavLink to='/dialogs' activeClassName={s.active}><img className={s.icon} src={messenger} alt='^__^'/>Мессенджер    </NavLink>
+          <NavLink to='/users'   activeClassName={s.active}><img className={s.icon} src={friends}   alt='^__^'/>Друзья  </NavLink>
+          <NavLink to='/groups'  activeClassName={s.active}><img className={s.icon} src={groups}    alt='^__^'/>Сообщества    </NavLink>
+          <NavLink to='/photos'  activeClassName={s.active}><img className={s.icon} src={photos}    alt='^__^'/>Фотографии    </NavLink>
+          <NavLink to='/music'   activeClassName={s.active}><img className={s.icon} src={music}     alt='^__^'/>Музыка        </NavLink>
+          <NavLink to='/videos'  activeClassName={s.active}><img className={s.icon} src={videos}     alt='^__^'/>Видео         </NavLink>
+          <NavLink to='/clips'   activeClassName={s.active}><img className={s.icon} src={clyps}     alt='^__^'/>Клипы         </NavLink>
         </nav>
     );
 }

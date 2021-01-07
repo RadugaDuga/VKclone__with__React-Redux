@@ -19,14 +19,13 @@
 	font-size: 12.5px;
 	padding-left: 9px;
 	margin-left:-1px;
-
 }
 
-a img {
+.icon {
 	height: 20px;
 	margin-right: 10px;
 }
 
-a:focus{
+a:hover{
 	background-color: #DCE1E6;
 }

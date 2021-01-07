@@ -94,10 +94,10 @@
     cursor: pointer;
 }
 .like_button:hover{
-    background:url(../../../../images/Stats_Buttons_Image/likeHovered.svg) no-repeat;
+    background-image:url(../../../../images/Stats_Buttons_Image/likeHovered.svg);
 }
 .like_button:active{
-    background: url(../../../../images/Stats_Buttons_Image/liked.svg) no-repeat;
+    background-image:url(../../../../images/Stats_Buttons_Image/liked.svg) ;
 }
 
 

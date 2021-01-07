@@ -22,7 +22,7 @@
     grid-area: d;
     background-color: white;
     height: max-content;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
 }
 
@@ -42,7 +42,7 @@
     flex:10;
     padding:15px;
     background-color:white;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow:0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
     font-size:13px;
     color:black;
@@ -65,7 +65,7 @@
     box-shadow:0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
     width:100%;
     background: white;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 .textarea_container textarea{
@@ -84,7 +84,7 @@
     width:50px;
     padding:0 10px;
     box-sizing: border-box;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 4px 4px 0px;
     box-shadow: inset 0px -2px 0px 0px rgba(227, 239, 255, 0.749),
      0px -2px 0px 0px #52A2F3;
     cursor: pointer;
