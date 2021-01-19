@@ -3,15 +3,13 @@
 html {
   background:#EDEEF0;
   height: 100.1vh;
-
 }
 
 *{
   font-family: "Roboto"!important;
- 
   -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 .app_wrapper_content{
   grid-area: c;
@@ -22,20 +20,18 @@ html {
 .app_wrapper {
   color: #42688f;
   width: 960px;
+  height: 100%;
   border: none;
   margin: 0 auto;
   display: grid;
   grid-template-rows: 48px 1fr;
   grid-template-columns: 157px 2fr;
   grid-template-areas:
-
   'h h'
   'n c';
-
+  padding:0 15px;
   row-gap: 15px;
   column-gap: 6px;
-
-
 }
 
 .header_line {
