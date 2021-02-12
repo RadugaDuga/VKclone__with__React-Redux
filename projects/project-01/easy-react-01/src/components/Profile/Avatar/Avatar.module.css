@@ -2,7 +2,7 @@
 .avatar_wrapper{
     display: flex;
     flex-flow: column;
-    padding:15px;
+    padding:15px 15px 6px 15px;
     border-radius: 4px;
     background-color: white;
     box-shadow: 0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
@@ -19,7 +19,7 @@
 
 
 
-/* Это контейнер с кнопками */
+
 
 .buttons_container{
     display: flex;
@@ -27,37 +27,52 @@
     margin-top: 11px;
 }
 .button{
-    border: none;
-    outline: none;
     cursor: pointer;
-    color: #748199;;
+    color: #55677D;
     background:#E5EBF1;
     border-radius:4px;
-
-}
-.button:first-child{
     line-height: 30px;
     text-align:center;
-    align-self: flex-start;
-    width:157px;
+    width:100%;
+    letter-spacing: -0.3px;
     font-size: 13px;
     height:30px;
+    margin-top: 12px;
+    margin-bottom: 12px;
     padding:0 15px;
-    border: none;
-    outline: none;
     cursor: pointer;
 }
-.button:last-child {
-    font-size: 13px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-align: center;
-    width:36px;
-    height: 30px;
-    border-radius: 4px;
+.button:hover{
+   color: #6A798D;
 }
-
 .button:active{
    line-height: 1.2;
+   background:#DAE2EA;
+   color: #55677D;
 }
 
+
+
+.secondary_button{
+    width:230px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding:0 19px;
+    margin-left: -15px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+    color:#717A85;
+}
+.icon{
+    opacity: .75;
+    margin-right: 13px;
+} 
+
+.secondary_button:hover .icon{
+    opacity: 1;
+}
+.secondary_button:hover {
+    background:#F5F6F8;
+}

@@ -3,7 +3,7 @@ import MyPosts_Container from "./MyPosts/MyPosts_Container";
 import s from "./Profile.module.css";
 import UserInfo from "./UserInfo/UserInfo";
 import Avatar from "./Avatar/Avatar";
-
+import UserPhotos from "./UserPhotos/UserPhotos"
 
 
 const Profile = (props) => {
@@ -14,6 +14,7 @@ const Profile = (props) => {
 			</div>
 			<div className={s.right_line}>
 				<UserInfo profile={props.profile} />
+				<UserPhotos/>
 				<MyPosts_Container store={props.store} />
 			</div>
 		</div>

@@ -1,7 +1,7 @@
 .header {
   grid-area: h;
   display: grid;
-  grid-template-columns:161px 245px 48px 48px;
+  grid-template-columns:161px 245px 48px 48px 1fr;
   align-items: center;
   position: sticky;
   top:0;
@@ -47,4 +47,37 @@
 .music_btn:hover{
   background-color: #F5F6F8;
   cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loginBlock {
+  justify-self: right;
+}
+.loginBlock .link {
+  color:black;
+  font-size: 13px;
+  text-decoration: none;
+  background:none;
+}
+.loginBlock .link:hover {
+  font-weight: bold;
 }
