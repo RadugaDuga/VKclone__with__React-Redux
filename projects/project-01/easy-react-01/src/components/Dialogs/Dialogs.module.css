@@ -3,8 +3,8 @@
     position: fixed;
     overflow-y: hidden;
     display: grid;
-    grid-template-columns: 17fr 30fr;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 15fr 30fr;
+    grid-template-rows: 60px 1fr 60px;
     grid-template-areas: 
     "search info info"
     "dialogs messages messages"
@@ -32,7 +32,6 @@
     box-sizing: border-box;
     border:none;
     background: url(../../images/searchBack.svg) no-repeat 10px;
-    background-color: #EDEEF0;
     outline: none;
     border-radius: 8px;
     padding-left: 34px;
