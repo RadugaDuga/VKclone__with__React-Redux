@@ -2,7 +2,7 @@
 
 html {
   background:#EDEEF0;
-  height: 100.1vh;
+  height: 100.3vh;
 }
 
 *{
@@ -13,25 +13,23 @@ html {
 }
 .app_wrapper_content{
   grid-area: c;
-  height:100%;
+  height:max-content;
 }
 
 
 .app_wrapper {
   color: #42688f;
-  width: 960px;
-  height: 100%;
+  width: 959px;
   border: none;
   margin: 0 auto;
   display: grid;
   grid-template-rows: 48px 1fr;
-  grid-template-columns: 157px 2fr;
+  grid-template-columns: 164px 2fr;
   grid-template-areas:
   'h h'
   'n c';
   padding:0 15px;
   row-gap: 15px;
-  column-gap: 6px;
 }
 
 .header_line {
@@ -41,7 +39,7 @@ html {
   height: 48px;
   width: 100%;
   background:white;
-  box-shadow: 0 1px 0 0 #acc9e15f,0 0 0 1px#E7E8EC;
+  border-bottom: 1px solid #E7E8EC;
 }
 /*# sourceMappingURL=App.css.map */
 

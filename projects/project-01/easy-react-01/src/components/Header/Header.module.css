@@ -71,6 +71,8 @@
 
 .loginBlock {
   justify-self: right;
+  display: inline-flex;
+  flex-direction: column;
 }
 .loginBlock .link {
   color:black;
@@ -78,6 +80,17 @@
   text-decoration: none;
   background:none;
 }
-.loginBlock .link:hover {
-  font-weight: bold;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

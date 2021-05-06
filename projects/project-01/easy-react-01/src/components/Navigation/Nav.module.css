@@ -1,5 +1,5 @@
 .sticky{
-	position: sticky;
+	position: fixed;
 	top:63px;
 	height:max-content;
 }
@@ -29,7 +29,7 @@
 	margin-right: 10px;
 }
 
-a:hover{
+.nav_item:hover{
 	background-color: #DCE1E6;
 }
 
@@ -39,16 +39,18 @@ a:hover{
 
 
 
-.ads_wrapper {
-	width:100%;
-	height: 200px;
-}
+
 
 .ad_container{
-
+	overflow:hidden;
+	padding:10px 30px 10px 0px;
+	box-sizing: border-box;
 }
 
 .ad_image{
-	width:100px!important;
-	height:100px!important;
+	width:100%;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 10px;
+	background-image: url('../../images/Nav_Images/cyberpunk.jpg');
 }

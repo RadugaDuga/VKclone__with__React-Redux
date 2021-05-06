@@ -81,6 +81,9 @@
     object-fit: cover;
     border-radius: 50%;
 }
+.avatar:hover{
+    
+}
 .information{
     display: flex;
     flex-direction: column;
@@ -102,7 +105,7 @@
 }
 .information p{
     font-size: 13px;
-    padding-top: 10px;
+    margin-bottom: 6px;
     color:#656565;
     white-space: nowrap;
     width:250px;
@@ -110,7 +113,6 @@
 }
 .information .message{
     font-size: 13px;
-    padding-top: 10px;
     color: #2A5895;
     white-space: nowrap;
     width:250px;

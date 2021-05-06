@@ -1,39 +1,30 @@
 
 .dialog {
-    border-top: 1px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #cfd8e2 0 63%, transparent 63% 100%);
     margin-bottom: -1px;
 }
-.dialog:first-child{
-    border-top:none;
-}
-.dialog:hover {
-    border-image-source: linear-gradient(to left, #cfd8e2, #cfd8e2);
-    border-bottom: 1px solid;
-    background-color: #eef3f8;
-}
+
+
 .dialog a{
-    padding:10px 20px;
+    padding:7px 14px;
     display: flex;
     text-decoration: none;
     box-sizing: border-box;
 }
 
-
-
-
-
 .dialog img{
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     transition: .3s;
     margin:0;
 }
 .about {
-    padding: 0px 0px 0px 15px;
+    margin: 5px 0px 0px 15px;
     color:black;
     font-weight: 500;
     font-size: 13px;
+}
+
+.active {
+    background-color: #EBEBEB;
 }

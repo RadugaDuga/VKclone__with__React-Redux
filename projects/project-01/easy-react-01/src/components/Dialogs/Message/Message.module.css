@@ -1,22 +1,11 @@
 .message{
     position: relative;
-    background:#E8EEF6;
-    padding:10px;
-    border-radius: 10px;
-    border:1px solid #dde6f1;
+    background:#ECEDF0;
+    padding:8px 11px;
+    border-radius: 200px;
     width:max-content;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
+    font-weight: 500;
 }
 
-.message::before{
-    display: block;
-    position: absolute;
-    content:'';
-    width:10px;
-    height:10px;
-    background:#e5eefa;
-    left:-5px;
-    bottom:-2px;
-    clip-path: polygon(49% 0, 100% 0, 100% 35%, 100% 70%, 79% 86%, 44% 93%, 0 94%, 19% 74%, 35% 55%, 46% 28%);
 
-}
