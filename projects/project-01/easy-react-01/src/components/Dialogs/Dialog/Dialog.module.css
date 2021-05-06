@@ -5,10 +5,10 @@
 
 
 .dialog a{
+    height: 45px;
     padding:7px 14px;
     display: flex;
     text-decoration: none;
-    box-sizing: border-box;
 }
 
 .dialog img{
