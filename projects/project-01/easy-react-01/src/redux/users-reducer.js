@@ -13,7 +13,7 @@ let initialState = {
 	pageSize: 8,
 	usersTotalCount: 0,
 	currentPageNum: 1,
-	followingProgress: [2,3,]
+	followingProgress: []
 };
 
 export const usersReducer = (state = initialState, action) => {

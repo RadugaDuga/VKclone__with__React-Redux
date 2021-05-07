@@ -5,11 +5,10 @@
   align-items: center;
   position: sticky;
   top:0;
-  height:48px;
   z-index: 5;
 }
 
-.header img {
+.header .logo {
   margin-left: -3px;
   margin-bottom: 1px;
 }
@@ -66,19 +65,28 @@
 
 
 
-
-
-
-.loginBlock {
-  justify-self: right;
+.loginBlock{
   display: inline-flex;
-  flex-direction: column;
+  justify-self: flex-end;
 }
-.loginBlock .link {
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color:black;
   font-size: 13px;
-  text-decoration: none;
-  background:none;
+}
+.info .name{
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.info .image{
+  height:32px;
+  border-radius: 50%;
+}
+.info .moreBtn{
+  width:26px;
 }
 
 
