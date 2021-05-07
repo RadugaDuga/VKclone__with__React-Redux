@@ -46,9 +46,9 @@ let Users = (props) => {
 
 							{
 								u.followed  
-								
-								? ( <button disabled={props.followingProgress} onClick={() => {
-									props.toggleFollowingProgress(true);
+									//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
+								? ( <button disabled={props.followingProgress.some(id => id == u.id)} onClick={() => {
+									props.toggleFollowingProgress(true, u.id);
 									axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
 												{
 													withCredentials:true,
@@ -64,16 +64,16 @@ let Users = (props) => {
 											} else {
 												console.log(`Отписка от ${u.id} не удалась`);
 											}
-											props.toggleFollowingProgress(false);
+											props.toggleFollowingProgress(false, u.id);
 										});
 
 										}
 									}
 									
 									className={s.unfollow}> Удалить из друзей </button>) 
-
-								: ( <button disabled={props.followingProgress} onClick={() => {
-									props.toggleFollowingProgress(true);
+									//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
+								: ( <button disabled={props.followingProgress.some(id => id == u.id)} onClick={() => {
+									props.toggleFollowingProgress(true, u.id);
 									axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{ },
 											{ 
 												withCredentials:true,
@@ -89,7 +89,7 @@ let Users = (props) => {
 											}else {
 												console.log(`Подписка на ${u.id} не удалась`);
 											}
-											props.toggleFollowingProgress(false);
+											props.toggleFollowingProgress(false, u.id);
 										});
 
 										}

@@ -10,7 +10,7 @@ const instanse = axios.create({
 })
 
 
-// usersAPI — обьект с методами для работы с юзерами
+// usersAPI — обьект с методами для работы с пользователями
 export const usersAPI = {
 
     getUsersData(currentPageNum = 1, pageSize = 8) {
