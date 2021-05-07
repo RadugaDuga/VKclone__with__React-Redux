@@ -7,6 +7,7 @@ import UserPhotos from "./UserPhotos/UserPhotos"
 
 
 const Profile = (props) => {
+
 	return (
 		<div className={s.profile_wrapper}>
 			<div className={s.left_line}>

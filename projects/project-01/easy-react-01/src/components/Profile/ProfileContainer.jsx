@@ -22,6 +22,9 @@ class Profile_Container extends React.Component{
 			 });
     }
     render(){
+
+        document.title = "Моя страница"
+
         return(
             <Profile {...this.props} profile={this.props.profile} />
         )

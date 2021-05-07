@@ -7,12 +7,15 @@ import axios from "axios";
 
 
 let Users = (props) => {
+
 	let pagesCount = Math.ceil(props.usersTotalCount / props.pageSize);
 	let pages = [];
 	for (let i = 1; i <= pagesCount; i++) {
 		pages.push(i);
 	}
-	
+
+
+
 	return (
 		
 		<div className={s.content}>
@@ -25,13 +28,7 @@ let Users = (props) => {
 						<div key={u.id} className={s.user_wrapper}>
 							<div>
 								<NavLink to={"/profile/" + u.id}>
-									<img className={s.avatar} src={
-										u.photos.small
-											? u.photos.small
-											: "https://vk.com/images/camera_200.png?ava=1"
-										}
-										alt=""
-									/>
+									<img className={s.avatar} src={ u.photos.small ? u.photos.small : "https://vk.com/images/camera_200.png?ava=1" } alt=""/>
 								</NavLink>
 							</div>
 
@@ -49,7 +46,9 @@ let Users = (props) => {
 
 							{
 								u.followed  
-								? ( <button onClick={() => {
+								
+								? ( <button disabled={props.followingProgress} onClick={() => {
+									props.toggleFollowingProgress(true);
 									axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
 												{
 													withCredentials:true,
@@ -65,6 +64,7 @@ let Users = (props) => {
 											} else {
 												console.log(`Отписка от ${u.id} не удалась`);
 											}
+											props.toggleFollowingProgress(false);
 										});
 
 										}
@@ -72,9 +72,9 @@ let Users = (props) => {
 									
 									className={s.unfollow}> Удалить из друзей </button>) 
 
-								: ( <button onClick={() => {
-									axios
-										.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{ },
+								: ( <button disabled={props.followingProgress} onClick={() => {
+									props.toggleFollowingProgress(true);
+									axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{ },
 											{ 
 												withCredentials:true,
 												headers: {
@@ -89,6 +89,7 @@ let Users = (props) => {
 											}else {
 												console.log(`Подписка на ${u.id} не удалась`);
 											}
+											props.toggleFollowingProgress(false);
 										});
 
 										}

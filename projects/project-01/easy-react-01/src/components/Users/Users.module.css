@@ -81,9 +81,7 @@
     object-fit: cover;
     border-radius: 50%;
 }
-.avatar:hover{
-    
-}
+
 .information{
     display: flex;
     flex-direction: column;
@@ -135,6 +133,10 @@
     font-size: 12.5px;
     align-self: flex-start;
     margin-top: 10px;    
+}
+.follow:disabled{
+    opacity: 0.5;
+    cursor:progress
 }
 .unfollow {
     width:135px;

@@ -1,12 +1,9 @@
 
-.dialog {
-
-}
-
 
 .dialog a{
+    display: inline-flex;
     height: 45px;
-    padding:7px 14px;
+    padding:10px 15px;
     display: flex;
     text-decoration: none;
 }

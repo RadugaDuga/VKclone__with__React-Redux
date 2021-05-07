@@ -6,6 +6,7 @@ import s from "./Dialog.module.css"
 
 
 const DialogItem = (props) => {
+	{document.title = `Мессенджер`}
 	return (
 		<div className={s.dialog}>
 			<NavLink to={"/dialogs/" + props.id} activeClassName={s.active}>
