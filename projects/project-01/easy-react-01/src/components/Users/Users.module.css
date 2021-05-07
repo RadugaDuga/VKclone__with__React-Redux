@@ -138,6 +138,8 @@
     opacity: 0.5;
     cursor:progress
 }
+
+
 .unfollow {
     width:135px;
     right:0;
@@ -151,4 +153,7 @@
     align-self: flex-start;
     margin-top: 10px;
 }
-
+.unfollow:disabled{
+    opacity: 0.5;
+    cursor:progress
+}
