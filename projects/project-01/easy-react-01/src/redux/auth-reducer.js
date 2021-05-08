@@ -33,7 +33,7 @@ export const setAuthUserData = (id, login, email) => ({
 	data:{id, login, email}
 });
 
-export const getMe = () => {
+export const Auth = () => {
 
 	return (dispatch) => {
 		usersAPI.getMe()
