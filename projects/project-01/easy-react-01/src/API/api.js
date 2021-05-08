@@ -5,7 +5,7 @@ const instanse = axios.create({
     baseURL:"https://social-network.samuraijs.com/api/1.0/",
     withCredentials:true,
     headers:{
-        "API-KEY": "7fc96318-cc16-423f-b993-464136a7cea1"
+        "API-KEY": "6224479f-d003-4fda-bd6a-66fd9c9741ce"
     }
 })
 
@@ -14,11 +14,17 @@ const instanse = axios.create({
 export const usersAPI = {
 
     getUsersData(currentPageNum = 1, pageSize = 8) {
-        return instanse.get(`users?page=${currentPageNum}&count=${pageSize}`,
-        {
-            withCredentials:true
-        })
+        return instanse.get(`users?page=${currentPageNum}&count=${pageSize}`)
         .then( response => response.data )
+    },
+
+    follow(userID){
+        return axios.post(`follow/${userID}`)
+    },
+
+    unfollow(userID){
+        return instanse.delete(`follow/${userID}`)
     }
 
 }
+

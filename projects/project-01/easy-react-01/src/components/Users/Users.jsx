@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Users.module.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { usersAPI } from './../../API/api';
 
 
 
@@ -47,54 +48,11 @@ let Users = (props) => {
 							{
 								u.followed  
 									//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
-								? ( <button disabled={props.followingProgress.some(id => id == u.id)} onClick={() => {
-									props.toggleFollowingProgress(true, u.id);
-									axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-												{
-													withCredentials:true,
-													headers: {
-														"API-KEY": "7fc96318-cc16-423f-b993-464136a7cea1"
-													}
-												}
-											  )
-										.then( response => { 
-											if (response.data.resultCode == 0){
-												props.unfollow(u.id);
-												console.log(`Вы отписались от ${u.id}`);
-											} else {
-												console.log(`Отписка от ${u.id} не удалась`);
-											}
-											props.toggleFollowingProgress(false, u.id);
-										});
-
-										}
-									}
-									
+								? ( <button disabled={props.followingProgress.some(id => id == u.id)} onClick={() => {props.unfollow(u.id)}}	
 									className={s.unfollow}> Удалить из друзей </button>) 
-									//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
-								: ( <button disabled={props.followingProgress.some(id => id == u.id)} onClick={() => {
-									props.toggleFollowingProgress(true, u.id);
-									axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{ },
-											{ 
-												withCredentials:true,
-												headers: {
-													"API-KEY": "7fc96318-cc16-423f-b993-464136a7cea1"
-												}
-											}
-										)
-										.then( response => { 
-											if (response.data.resultCode == 0){ 
-												props.follow(u.id);
-												console.log(`Теперь вы друзья с ${u.id}`);
-											}else {
-												console.log(`Подписка на ${u.id} не удалась`);
-											}
-											props.toggleFollowingProgress(false, u.id);
-										});
 
-										}
-									}
-									
+									//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
+								: ( <button disabled={props.followingProgress.some(id => id == u.id)} onClick={() => {props.follow(u.id)}}
 									className={s.follow}> Добавить в друзья </button>) 
 							}
 						</div>
