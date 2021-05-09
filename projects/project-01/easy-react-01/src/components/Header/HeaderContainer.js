@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./Header";
 import { connect } from "react-redux";
-import { Auth } from "../../redux/auth-reducer";
+import { authMe } from "../../redux/auth-reducer";
 
 
 class HeaderContainer extends React.Component {
 	
 	componentDidMount() {
-		this.props.Auth()
+		this.props.authMe()
 	}
 
 	render() {
@@ -22,4 +22,4 @@ const mapStateToProps = (state) => ({
 	id: state.auth.id,
 	photo: state.auth.photo
 });
-export default connect(mapStateToProps, { Auth })(HeaderContainer);
+export default connect(mapStateToProps, { authMe })(HeaderContainer);

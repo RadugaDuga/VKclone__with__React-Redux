@@ -15,7 +15,8 @@ let initialState = {
 	pageSize: 8,
 	usersTotalCount: 0,
 	currentPageNum: 1,
-	followingProgress: []
+	followingProgress: [],
+	friends: [ 2, 3]
 };
 
 export const usersReducer = (state = initialState, action) => {
@@ -73,7 +74,7 @@ export const usersReducer = (state = initialState, action) => {
 				...state,
 				 followingProgress : action.progress 
 					?[...state.followingProgress, action.userID]
-					:[state.followingProgress.filter(id => id!=action.uderID)]}
+					:[state.followingProgress.filter(id => id!=action.userID)]}
 		}
 
 		default:
@@ -91,7 +92,6 @@ export const toggleFollowingProgress = (progress, userID)=> ({type:TOGGLE_FOLLOW
 
 
 
-// usersAPI — обьект с методами для работы с пользователями
 export const getUsers = (currentPageNum, pageSize) => {
 	return (dispatch) => {
 		usersAPI.getUsersData(currentPageNum, pageSize).then( data => {
@@ -111,7 +111,9 @@ export const follow = (userID) => {
 		.then( response => { 
 			if (response.data.resultCode == 0){
 				dispatch(followSuccess(userID));
-			} 
+			} else {
+				alert('пиздец')
+			}
 			dispatch(toggleFollowingProgress(false, userID));
 		});
 	}	

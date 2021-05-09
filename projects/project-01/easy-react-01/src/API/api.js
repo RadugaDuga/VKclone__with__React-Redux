@@ -1,16 +1,16 @@
 import  axios  from "axios";
 
-
+// Инстанс для предотвращения дублирования кода
 const instanse = axios.create({
     baseURL:"https://social-network.samuraijs.com/api/1.0/",
     withCredentials:true,
     headers:{
-        "API-KEY": "6224479f-d003-4fda-bd6a-66fd9c9741ce"
+        "API-KEY": "9ddd596c-0697-4c43-9848-5d3b04dad8f5"
     }
 })
 
 
-// usersAPI — обьект с методами для работы с пользователями
+// обьект с методами для работы с пользователями
 export const usersAPI = {
 
     getUsersData(currentPageNum = 1, pageSize = 8) {
@@ -19,15 +19,30 @@ export const usersAPI = {
     },
 
     follow(userID){
-        return axios.post(`follow/${userID}`)
+        return instanse.post(`follow/${userID}`)
     },
 
     unfollow(userID){
         return instanse.delete(`follow/${userID}`)
     },
 
+
+}
+
+
+// обьект с методами для работы с авторизацией
+export const authAPI = {
+
     getMe(){
         return instanse.get(`auth/me`)
     }
+
 }
 
+
+// обьект с методами для работы с профилем
+export const profileAPI = {
+    getProfile(userId){
+        return instanse.get('profile/' + userId)
+    }
+}
