@@ -7,6 +7,9 @@ import Dialogs_Container from "./components/Dialogs/Dialogs_Container";
 import Groups_Container from "./components/Groups/Groups_Container";
 import Users_Container from "./components/Users/Users_Container";
 import Profile_Container from './components/Profile/ProfileContainer';
+import Login from './components/Login/Login';
+
+
 
 const App = (props) => {
 	return (
@@ -20,6 +23,7 @@ const App = (props) => {
 					<Route path="/dialogs" render={() => <Dialogs_Container />} />
 					<Route path="/users"   render={() => <Users_Container />} />
 					<Route path="/groups"  render={() => <Groups_Container />} />
+					<Route path="/login" render={() => <Login/>} />
 				</div>
 			</div>
 		</div>
