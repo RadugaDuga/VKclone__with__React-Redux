@@ -4,6 +4,8 @@ import iconClock from "../../../images/Profile_Images/iconClock.svg";
 import iconMoney from "../../../images/Profile_Images/iconMoney.svg";
 
 
+const defaultAvatar = "https://sun9-43.userapi.com/s/v1/if1/RhlzkXE7CF8eMuejwF6MRzgCP5lb9Kx0sy_nwN2ZepMzT8DJWIXC2YfT6alcuvJ2QfpnujEv.jpg?size=200x0&quality=96&crop=391,0,1365,1365&ava=1"
+
 const Avatar = (props) => {
 	if (!props.profile){
 		return null;
@@ -13,7 +15,10 @@ const Avatar = (props) => {
 			<div className={s.avatar_wrapper}>
 				<img
 					className={s.image}
-					src={props.profile.photos.small?props.profile.photos.small:"https://sun9-43.userapi.com/s/v1/if1/RhlzkXE7CF8eMuejwF6MRzgCP5lb9Kx0sy_nwN2ZepMzT8DJWIXC2YfT6alcuvJ2QfpnujEv.jpg?size=200x0&quality=96&crop=391,0,1365,1365&ava=1"}
+					src={props.profile.photos.small
+							? props.profile.photos.small
+							: defaultAvatar
+						}
 					alt="^__^"
 				/>
 			

@@ -111,9 +111,7 @@ export const follow = (userID) => {
 		.then( response => { 
 			if (response.data.resultCode == 0){
 				dispatch(followSuccess(userID));
-			} else {
-				alert('пиздец')
-			}
+			} 
 			dispatch(toggleFollowingProgress(false, userID));
 		});
 	}	

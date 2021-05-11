@@ -1,20 +1,20 @@
 
 import React from "react";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import s from "./UserInfo.module.css";
-import Preloader from "../../common/Preloader/Preloader";
 
 const UserInfo = (props) => {
 
 	if (!props.profile) {
-		return <Preloader/>
+		return null
 	}
 	return (
 		<div className={s.container}>
 			<div className={s.info_wrapper}>
 				<div className={s.user_name}>
 					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
-					<p>
-						{props.profile.aboutMe}
+					<p className={s.status_wrapper}>
+						<ProfileStatus status={'ssssss'}/>
 					</p>
 				</div>
 				<div className={s.about_user}>

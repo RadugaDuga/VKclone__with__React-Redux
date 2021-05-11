@@ -19,6 +19,9 @@
 	font-weight: 400;
 	color:rgb(100, 82, 82);
 }
+.status_wrapper{
+	position: relative;
+}
 
 .info_wrapper .user_name p:first-child {
 	margin: 0;

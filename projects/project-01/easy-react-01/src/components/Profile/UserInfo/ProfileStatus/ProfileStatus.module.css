@@ -1,0 +1,28 @@
+.status{
+    color:black;
+}
+.input_status_wrapper{
+    position: absolute;
+    background-color:#FAFBFC;
+    display: flex;
+    padding:15px;
+    top:-23px;
+    left:-26px;
+    right:-26px;
+    border: 1px solid #D3D9DE;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px #d1d2d5;
+
+}
+.inputStatus{
+    width:100%;
+    margin:0 auto;
+    outline:none;
+    font-size: 13px;
+    outline-width: 10px;
+    border: 1px solid #D3D9DE;
+    border-radius: 4px;
+    background-color: white;
+    padding:5px 24px 6px 9px;
+    box-sizing: border-box;
+}
