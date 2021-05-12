@@ -42,7 +42,18 @@ export const authAPI = {
 
 // обьект с методами для работы с профилем
 export const profileAPI = {
+
     getProfile(userId){
         return instanse.get('profile/' + userId)
+    },
+
+    getStatus(userId){
+        return instanse.get(`profile/status/` + userId)
+    },
+
+    updateStatus(status){
+        return instanse.put(`profile/status/`, {status:status})
     }
+
+
 }

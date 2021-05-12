@@ -14,7 +14,10 @@ const UserInfo = (props) => {
 				<div className={s.user_name}>
 					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
 					<p className={s.status_wrapper}>
-						<ProfileStatus status={'ssssss'}/>
+						<ProfileStatus 
+							updateStatus={props.updateStatus} 
+							status={props.status}
+						/>
 					</p>
 				</div>
 				<div className={s.about_user}>

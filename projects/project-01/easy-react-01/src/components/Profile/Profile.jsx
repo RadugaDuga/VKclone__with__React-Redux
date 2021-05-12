@@ -6,6 +6,7 @@ import Avatar from "./Avatar/Avatar";
 import UserPhotos from "./UserPhotos/UserPhotos"
 
 
+
 const Profile = (props) => {
 
 	return (
@@ -14,7 +15,11 @@ const Profile = (props) => {
 				<Avatar profile={props.profile} />
 			</div>
 			<div className={s.right_line}>
-				<UserInfo profile={props.profile} />
+				<UserInfo 
+					profile={props.profile} 
+					updateStatus={props.updateStatus} 
+					status={props.status} 
+				/>
 				<UserPhotos/>
 				<MyPosts_Container/>
 			</div>

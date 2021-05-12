@@ -1,5 +1,6 @@
 .status{
     color:black;
+    width:100%;
 }
 .input_status_wrapper{
     position: absolute;
@@ -14,6 +15,19 @@
     box-shadow: 0 1px 3px #d1d2d5;
 
 }
+
+.no_status{
+    width:100%;
+    margin:-4px -6px;
+    padding:4px 6px;
+    color:#939393;
+    font-size: 13px;
+}
+.no_status:hover{
+    cursor: pointer;
+    background-color:#F5F6F8 ;
+}
+
 .inputStatus{
     width:100%;
     margin:0 auto;
