@@ -1,5 +1,5 @@
 .sticky{
-	position: fixed;
+	position: sticky;
 	top:63px;
 	height:max-content;
 }

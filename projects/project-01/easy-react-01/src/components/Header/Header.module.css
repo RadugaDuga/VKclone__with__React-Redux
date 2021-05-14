@@ -13,6 +13,12 @@
   margin-bottom: 1px;
 }
 
+.link{
+  color:black;
+  font-size:13px;
+  text-decoration: none;
+}
+
 .search{
   width:230px!important;
   height:32px;
@@ -48,7 +54,9 @@
   cursor: pointer;
 }
 
-
+.moreBtn{
+  cursor: pointer;
+}
 
 
 

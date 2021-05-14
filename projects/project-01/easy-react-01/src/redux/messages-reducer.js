@@ -213,17 +213,15 @@ export const messagesReducer = (state = initialState, action)=>{
     switch(action.type){
         
         case ADD_MESSAGE:
-            
-            stateCopy = {
+            let message = action.message
+            return {
                 ...state,
                 Messages:[
                     ...state.Messages,
-                    {id: 2, messageText:state.newMessageText}
+                    {id: 2, messageText:message}
                 ],
                 newMessageText:""
             }
-            
-            return stateCopy;
 
         case UPDATE_NEW_MESSAGE_TEXT:
             stateCopy = {
@@ -242,7 +240,7 @@ export const updateNewMessageText = (text) => ({
 	type: UPDATE_NEW_MESSAGE_TEXT,
 	text: text,
 });
-export const addMessage = ()=>({ type: ADD_MESSAGE });
+export const addMessage = (message)=>({ type: ADD_MESSAGE, message });
 
 
 

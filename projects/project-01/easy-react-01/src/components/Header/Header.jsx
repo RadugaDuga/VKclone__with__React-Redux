@@ -20,7 +20,7 @@ const Header = (props) => {
 									
 									<p className={s.name}>{props.login}</p> 
 									<img src="https://sun9-74.userapi.com/s/v1/if1/60mZRm3hBhGZoWmJvm4EbO4UfskTF8YOuVsepIveU3pt5qHLGqKWqyPlcrsmIKdcgMKVIfbK.jpg?size=50x0&quality=96&crop=391,0,1365,1365&ava=1" className={s.image} alt="" />
-									<button className={s.moreBtn}></button>
+									<button onClick={props.logout} className={s.moreBtn}>Log Out</button>
 								</div>
 								
 							) 

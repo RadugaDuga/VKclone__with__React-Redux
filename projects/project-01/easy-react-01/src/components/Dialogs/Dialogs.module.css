@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
 }
-.search_wrapper .search{
+.search{
   grid-area: search;
   height:32px;
   width:100%;
@@ -44,11 +44,11 @@
   box-sizing: border-box;
   padding:0px 14px;
 }
-.info .image{
+.image{
   height:28px;
   border-radius: 50%;
 }
-.info .name {
+.name {
   margin-top:-10px;
   font-size: 13px;
   color:black;
@@ -81,15 +81,24 @@
   display: none;
 }
 
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+
 
 .textarea_wrapper{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  grid-area: text;
+  padding:0px 15px;
+  display: grid;
+  grid-template-columns: 23px auto 23px;
+  grid-gap: 15px;
   align-items: center;
 }
-.textarea_wrapper .text {
-  grid-area: text;
+
+.text {
   flex:1;
   resize: none;
   border:1px solid #E3E4E6;
@@ -98,31 +107,29 @@
   border-radius: 30px;
   height:34px;
   padding:8px 10px;
+  margin-right: 15px;
 }
-.textarea_wrapper .addFiles_btn {
-  margin-bottom: 6px;
+.addMessage_btn{
+  width:24px;
+  height:23px;
+  background-image: url(../../images/Messages_Images/add-message-button.svg);
+  background-size: contain;
+  cursor: pointer;
+}
+
+
+.addSmile_btn{
+  width:23px;
+  height:23px;
+  background-image: url(../../images/Messages_Images/smile-button.svg);
+  background-size: contain;
+  cursor: pointer;
+}
+.addFiles_btn {
   cursor: pointer;
   width:23px;
   height: 23px;
   background-image: url(../../images/Messages_Images/plus-button.svg);
   background-size: cover;
-  margin:8px;
-}
-.textarea_wrapper .addMessage_btn{
-  margin:8px;
-  width:23px;
-  height:23px;
-  margin-bottom: 6px;
-  background-image: url(../../images/Messages_Images/add-message-button.svg);
-  background-size: contain;
-  cursor: pointer;
-}
-.textarea_wrapper .addSmile_btn{
-  margin:8px;
-  width:23px;
-  height:23px;
-  margin-bottom: 6px;
-  background-image: url(../../images/Messages_Images/smile-button.svg);
-  background-size: contain;
-  cursor: pointer;
+
 }
