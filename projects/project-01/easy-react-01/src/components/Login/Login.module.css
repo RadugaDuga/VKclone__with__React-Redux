@@ -9,6 +9,7 @@
 }
 
 .joinBox{
+    position:relative;
     width:max-content;
     text-align: center;
     background-color: white;
@@ -34,7 +35,7 @@
     flex-direction: column;
 }
 
-.field_login{
+.field{
     width:270px;
     box-sizing: border-box;
     outline: none;

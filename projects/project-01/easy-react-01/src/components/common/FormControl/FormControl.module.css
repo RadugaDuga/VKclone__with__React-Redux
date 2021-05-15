@@ -14,11 +14,22 @@
     display: none;
 }
 
+.form_summary_error{
+    text-align: center;
+    color:white;
+    background-color: rgb(225, 108, 108);
+    font-size: 12.5px;
+    padding:10px 15px;
+    animation: animka .5s ease-in-out;
+}
+
 .span{
     display: flex;
     align-items: center;
     position: absolute;
-    top:-36px;
+    right:0;
+    top:1px;
+    transform: translate(105%);
     width: max-content;
     box-sizing: border-box;
     padding:10px 15px;
@@ -27,18 +38,16 @@
     color:white;
     border-radius: 2px;
     background-color: rgb(225, 108, 108);
-    box-shadow: 0px 0px 30px rgba(114, 11, 11, 0.354);
+    box-shadow: 0px 0px 10px rgba(114, 11, 11, 0.354);
     animation: animka  0.2s ease-in;
 }
 
 @keyframes animka {
     0%{
-        top:-25px;
-        opacity: 0.1;
+        opacity: 0;
     }
 
     100%{
-        top:-36px;
         opacity: 1;
     }
 }
