@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { follow, unfollow, setCurrentPageNum, toggleFollowingProgress, getUsers, followSuccess, unfollowSuccess} from "../../redux/users-reducer";
+import { follow, unfollow, setCurrentPageNum, requestUsers, followSuccess, unfollowSuccess} from "../../redux/users-reducer";
 import React from "react";
 import Users from "./Users";
-import { withAuthRedirect } from './../HOC/withAuthRedirect';
 import { compose } from "redux";
+import { getCurrentPageNum, getPageSize, getUsers, getUsersTotalCount, getFollowingProgress } from './../../redux/users-selectors';
 
 
 
@@ -13,12 +13,12 @@ class UsersContainer extends React.Component {
 
 	// getUsers - это Thunk 
 	componentDidMount = () => {	
-		this.props.getUsers(this.props.currentPageNum, this.props.pageSize)
+		this.props.requestUsers(this.props.currentPageNum, this.props.pageSize)
 	}
 
 	onPageChanged = ( currentPageNum ) => {
 		this.props.setCurrentPageNum(currentPageNum)
-		this.props.getUsers(currentPageNum, this.props.pageSize)
+		this.props.requestUsers(currentPageNum, this.props.pageSize)
 	};
 
 	render() {
@@ -30,17 +30,16 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
 	return{
-		users: state.usersPage.users,
-		pageSize: state.usersPage.pageSize,
-		usersTotalCount: state.usersPage.usersTotalCount,
-		currentPageNum: state.usersPage.currentPageNum,
-		isFetching:state.usersPage.isFetching,
-		followingProgress: state.usersPage.followingProgress
+		user:getUsers(state),
+		pageSize: getPageSize(state),
+		usersTotalCount: getUsersTotalCount(state),
+		currentPageNum: getCurrentPageNum(state),
+		followingProgress: getFollowingProgress(state)
 	}
 };
 
 export default compose(
-	connect(mapStateToProps, {follow,unfollow,followSuccess,unfollowSuccess,setCurrentPageNum,getUsers}),
+	connect(mapStateToProps, {follow,unfollow,followSuccess,unfollowSuccess,setCurrentPageNum,requestUsers}),
 )(UsersContainer)
 
 

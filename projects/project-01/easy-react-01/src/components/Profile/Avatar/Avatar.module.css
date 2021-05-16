@@ -21,11 +21,7 @@
 
 
 
-.buttons_container{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 11px;
-}
+
 .button{
     cursor: pointer;
     color: #55677D;
@@ -54,20 +50,22 @@
 
 
 .secondary_button{
-    width:230px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding:0 19px;
-    margin-left: -15px;
-    height: 36px;
     line-height: 36px;
+    padding:0;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    height: 36px;
     font-size: 13px;
     color:#717A85;
 }
 .icon{
-    opacity: .75;
-    margin-right: 13px;
+    opacity: .95;
+    width:24px;
+    padding:2.1px 2.5px;
+    height:24px;
+    box-sizing: border-box;
+    margin-right: 11px;
 } 
 
 .secondary_button:hover .icon{
