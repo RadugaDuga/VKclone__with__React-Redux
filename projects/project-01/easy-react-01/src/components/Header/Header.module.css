@@ -54,9 +54,7 @@
   cursor: pointer;
 }
 
-.moreBtn{
-  cursor: pointer;
-}
+
 
 
 
@@ -80,24 +78,51 @@
 .info {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 48px;
   color:black;
   font-size: 13px;
+  padding-left: 10px;
+  cursor: pointer;
 }
-.info .name{
+.info:hover{
+  background-color: #F5F6F8;
+
+}
+ .name{
+  user-select: none;
   margin-right: 10px;
   font-size: 14px;
   font-weight: 500;
+  align-self: center;
 }
-.info .image{
+ .image{
   height:32px;
+  align-self: center;
   border-radius: 50%;
 }
-.info .moreBtn{
-  width:26px;
+
+.logout {
+  display: block;
+  position: absolute;
+  padding:10px 17px;
+  background-color: rgb(255, 255, 255);
+  bottom:0;
+  right:0;
+  transform: translateY(100%);
+  border-radius: 4px;
+  border: 1px solid #e7e8ec;
+  box-shadow: 0 1px 0 0 #acc9e15f;
+  user-select: none;
 }
 
-
+.more_button{
+  box-sizing: border-box;
+  width: 26px;
+  background: url(../../images/logoutButton.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35%;
+}
 
 
 

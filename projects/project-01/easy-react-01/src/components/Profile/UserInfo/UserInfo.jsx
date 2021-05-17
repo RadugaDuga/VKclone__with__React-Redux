@@ -1,6 +1,6 @@
 
 import React from "react";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import s from "./UserInfo.module.css";
 
 const UserInfo = (props) => {
@@ -14,7 +14,7 @@ const UserInfo = (props) => {
 				<div className={s.user_name}>
 					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
 					<p className={s.status_wrapper}>
-						<ProfileStatus 
+						<ProfileStatusWithHooks
 							updateStatus={props.updateStatus} 
 							status={props.status}
 						/>
