@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./ProfileStatus.module.css";
 
 const ProfileStatusWithHooks = (props) => {
@@ -16,6 +16,12 @@ const ProfileStatusWithHooks = (props) => {
 	const onStatusChange = (e) => {
 		setStatus(e.currentTarget.value);
 	};
+
+	useEffect(()=>{
+		setStatus(props.status)
+	}, [props.status])
+
+
 	return (
 		<section>
 			{!editMode && (
@@ -25,18 +31,15 @@ const ProfileStatusWithHooks = (props) => {
 			)}
 
 			{editMode && (
-			
-
-					<div className={s.input_status_wrapper}>
-						<input
-							value={status}
-							onChange={onStatusChange}
-							onBlur={toggleEditMode}
-							className={s.inputStatus}
-							autoFocus={true}
-						></input>
-					</div>
-			
+				<div className={s.input_status_wrapper}>
+					<input
+						value={status}
+						onChange={onStatusChange}
+						onBlur={toggleEditMode}
+						className={s.inputStatus}
+						autoFocus={true}
+					></input>
+				</div>
 			)}
 		</section>
 	);

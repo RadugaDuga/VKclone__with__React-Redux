@@ -20,7 +20,7 @@ const MessageForm = (props) => {
 				component={Textarea}
 				name={"message"}
 			/>
-
+			
 			<button className={s.addMessage_btn}></button>
 		</form>
 	);
@@ -30,10 +30,6 @@ const maxLengthBuild = maxLengthCreator(100);
 
 
 const Dialogs = (props) => {
-	// let onUpdateMessageText = (e) => {
-	// 	let text = e.target.value;
-	// 	props.updateNewMessageText(text);
-	// };
 
 	const addNewMessage = (data) => {
 		props.addMessage(data.message);

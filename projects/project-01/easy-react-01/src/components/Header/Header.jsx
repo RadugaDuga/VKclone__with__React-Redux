@@ -25,7 +25,7 @@ const Header = (props) => {
 							{logoutBar && <button onBlur={toggleLogoutBar} onClick={props.logout} className={s.logout}>Выйти</button>}
 						</div> ) 
 
-					: ( <NavLink className={s.link} to={"/login"}> Вход </NavLink> )
+					: ( <NavLink className={s.login} to={"/login"}> Вход </NavLink> )
 				}
 
 			</div>
