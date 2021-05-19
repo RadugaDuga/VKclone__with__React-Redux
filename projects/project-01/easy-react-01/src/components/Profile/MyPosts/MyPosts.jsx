@@ -1,11 +1,14 @@
-import React from "react";
+import React ,{memo} from "react";
 import s from "./MyPosts.module.css";
 import { Field, reduxForm } from "redux-form";
 import {maxLengthCreator,required,} from "./../../../redux/Utilites/Validators/Validator";
 import { Textarea } from './../../common/FormControl/FormControl';
 
-const maxLengthBuild = maxLengthCreator(30);
 
+
+
+
+const maxLengthBuild = maxLengthCreator(30);
 const PostForm = (props) => {
 	
 	return (
@@ -21,11 +24,13 @@ const PostForm = (props) => {
 		</form>
 	);
 };
-
 const ReduxPostForm = reduxForm({ form: "post" })(PostForm);
 
-const MyPosts = (props) => {
 
+
+
+
+const MyPosts = React.memo ((props) => {
 
 	const addPost = (formData) => {
 		let randomId = Math.random(0,9999999999999999)
@@ -70,6 +75,6 @@ const MyPosts = (props) => {
 			{posts}
 		</div>
 	);
-};
+})
 
 export default MyPosts;
