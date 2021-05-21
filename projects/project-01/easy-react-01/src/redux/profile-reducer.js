@@ -1,10 +1,10 @@
 import { profileAPI } from "../API/api";
 
-const ADD_POST = "ADD_POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
-const DELETE_POST = "DELETE_POST";
-const SET_USER_PROFILE = "SET_USER_PROFILE";
-const SET_STATUS = "SET_STATUS";
+const ADD_POST = "profile/ADD_POST";
+const UPDATE_NEW_POST_TEXT = "profile/UPDATE_NEW_POST_TEXT";
+const DELETE_POST = "profile/DELETE_POST";
+const SET_USER_PROFILE = "profile/SET_USER_PROFILE";
+const SET_STATUS = "profile/SET_STATUS";
 
 
 
@@ -72,6 +72,8 @@ let initialState = {
 	status: "",
 };
 
+
+
 export const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_POST:
@@ -85,10 +87,10 @@ export const profileReducer = (state = initialState, action) => {
 						image:
 							"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 						text: action.postText,
-						likes_count: 7,
-						comments_count: 67,
-						repost_count: 2,
-						views_count: 631,
+						likes_count: Math.floor(Math.random() * 20),
+						comments_count: Math.floor(Math.random() * 10) ,
+						repost_count: Math.floor(Math.random() * 98) + 2,
+						views_count: Math.floor(Math.random() * 98) + 2,
 						date: "18 ноя 2020",
 					},
 					...state.postsData
@@ -123,7 +125,7 @@ export const profileReducer = (state = initialState, action) => {
 };
 
 // Экщн креэйторы
-export const addPost = (postText, randomId) => ({ type: ADD_POST, postText, randomId });
+export const addPost = (postText) => ({ type: ADD_POST, postText });
 export const deletePost = (postId) => ({ type: DELETE_POST, postId });
 export const updateNewPostText = (text) => ({
 	type: UPDATE_NEW_POST_TEXT,

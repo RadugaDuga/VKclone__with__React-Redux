@@ -12,7 +12,6 @@ import "axios-progress-bar/dist/nprogress.css";
 import { loadProgressBar } from "axios-progress-bar";
 loadProgressBar();
 
-
 ReactDOM.render(
 	<BrowserRouter>
 		<React.StrictMode>
@@ -23,6 +22,5 @@ ReactDOM.render(
 	</BrowserRouter>,
 	document.getElementById("root")
 );
-
 
 serviceWorker.unregister();

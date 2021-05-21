@@ -1,6 +1,6 @@
 
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
-const ADD_MESSAGE = "ADD_MESSAGE";
+const ADD_MESSAGE = "messages/ADD_MESSAGE";
  
  let initialState = {
     Messages: [

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import s from "./ProfileStatus.module.css";
 
 const ProfileStatusWithHooks = (props) => {
+
 	let [editMode, setEditMode] = useState(false);
+
 	const toggleEditMode = () => {
 		if (editMode) {
 			setEditMode(false);
@@ -13,6 +15,7 @@ const ProfileStatusWithHooks = (props) => {
 	};
 
 	let [status, setStatus] = useState(props.status);
+	
 	const onStatusChange = (e) => {
 		setStatus(e.currentTarget.value);
 	};

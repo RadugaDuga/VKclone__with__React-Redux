@@ -33,6 +33,8 @@ const Avatar = (props) => {
 					<p className={s.button_name}>Денежные переводы</p>
 				</button>
 			</div>
+
+			
 		</div>
 	);
 };

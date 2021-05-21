@@ -42,7 +42,7 @@
 /* Блок с информацией о городе, рождении и т.п */
 
 .about_user {
-	padding-top: 10px;
+	padding-top: 8px;
 }
 .about_user p {
 	display: inline-block;
@@ -63,17 +63,19 @@
 	text-decoration: underline;
 }
 .more_button {
+	padding-left: 165px;
+	padding-top: 2px;
+	text-align: left;
 	margin-top: 10px;
 	width: 510px;
 	border-radius: 2px;
 	font-size: 13px;
-	height: 34px;
+	height: 31px;
 	border: none;
 	outline: none;
 	background: white;
-	color: #3a5688;
+	color: #2A5885;
 	cursor: pointer;
-	letter-spacing: 0.3px;
 }
 .more_button:hover {
 	background: #f0f2f5;
@@ -92,7 +94,7 @@
 	font-size: 19px;
 	font-weight: 400;
 	margin: 0;
-	padding: 15px;
+	padding:16px 15px;
 }
 .user_stats p span {
 	display: block;

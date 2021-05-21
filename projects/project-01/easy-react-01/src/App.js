@@ -9,21 +9,18 @@ import Users_Container from "./components/Users/Users_Container";
 import Profile_Container from "./components/Profile/ProfileContainer";
 import Login from "./components/Login/Login";
 import { initializeApp } from "./redux/app-reducer";
-import { connect } from 'react-redux';
-
+import { connect } from "react-redux";
 
 class App extends React.Component {
-
 	componentDidMount() {
 		this.props.initializeApp();
 	}
 
 	render() {
-		if (!this.props.initialized){
-			return <div>Aaaoaoaoaoaoa</div>
+		if (!this.props.initialized) {
+			return <div>Aaaoaoaoaoaoa</div>;
 		}
-		
-		
+
 		return (
 			<div>
 				<div className={s.header_line}></div>
@@ -42,14 +39,12 @@ class App extends React.Component {
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }
-const mapStateToProps = (state)=>({
-	initialized:state.app.initialized
-})
+const mapStateToProps = (state) => ({
+	initialized: state.app.initialized,
+});
 //Если роуты вдруг не работают после конекта - оберни этот конект визроутером
 
-
-export default connect(mapStateToProps, {initializeApp})(App);
-
+export default connect(mapStateToProps, { initializeApp })(App);

@@ -1,13 +1,10 @@
+import { authMe } from "./auth-reducer";
 
-import { authMe } from './auth-reducer';
-
-const INITIALIZED_SUCCESS = "INITIALIZED_SUCCESS";
+const INITIALIZED_SUCCESS = "app/INITIALIZED_SUCCESS";
 
 let initialState = {
 	initialized: false,
 };
-
-
 
 export const appReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -26,15 +23,12 @@ export const initializedSuccess = () => ({
 	type: INITIALIZED_SUCCESS,
 });
 
-export const initializeApp = () => {
-	return (dispatch) => {
-		let promise = dispatch(authMe())
+export const initializeApp = () => (dispatch) => {
+	let promise = dispatch(authMe());
 
-		Promise.all([promise]).then ( zatem =>{
-			dispatch(initializedSuccess())
-		})
-	};
+	Promise.all([promise]).then((zatem) => {
+		dispatch(initializedSuccess());
+	});
 };
-
 
 export default appReducer;
