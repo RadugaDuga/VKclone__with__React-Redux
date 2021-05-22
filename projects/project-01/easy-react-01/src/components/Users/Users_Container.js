@@ -22,7 +22,7 @@ class UsersContainer extends React.Component {
 	};
 
 	render() {
-		{document.title = `Друзья ${this.props.usersTotalCount}`}
+		{document.title = `Друзья`}
 		return <Users {...this.props} onPageChanged ={this.onPageChanged}/>
 	}
 

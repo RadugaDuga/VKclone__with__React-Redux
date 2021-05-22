@@ -41,20 +41,16 @@ export const login = (email, password, rememberMe) => async (dispatch) => {
 	if (response.data.resultCode === 0) {
 		dispatch(authMe());
 	} else {
-		let action = stopSubmit("login", {
-			_error: "Вы ввели неверный логин или пароль",
-		});
+		let action = stopSubmit("login", {_error: "Вы ввели неверный логин или пароль",});
 		dispatch(action);
 	}
 };
 
 export const logout = () => async (dispatch) => {
-
 	let response = await authAPI.logout();
 	if (response.data.resultCode === 0) {
 		dispatch(setAuthUserData(null, null, null, false));
 	}
-
 };
 
 export default authReducer;

@@ -7,7 +7,7 @@ import { maxLengthCreator, required } from './../../redux/Utilites/Validators/Va
 import { connect } from 'react-redux';
 import { login } from "../../redux/auth-reducer";
 import { Redirect } from "react-router";
-import warningIcon from "../../images/warningIcon.gif"
+import { compose } from "redux";
 
 const maxLoginLength = maxLengthCreator(20)
 const maxPasswordLength = maxLengthCreator(16)
@@ -85,4 +85,7 @@ const mapStateToProps =(state)=>({
 	isAuth:state.auth.isAuth
 })
 
-export default connect(mapStateToProps, {login})(Login);
+export default compose(
+	connect(mapStateToProps, {login})
+)(Login)
+

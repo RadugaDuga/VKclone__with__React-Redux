@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import s from "./Friends.module.css";
 
 const Friends = () => {
-	const friends = useSelector((state) => state.friends.friendsData);
+	const friends = useSelector(state => state.friends.friendsData);
 
-	let friendsElements = friends.map((f) => (
+	let friendsElements = friends.map( f => (
 		<div className={s.friend_item}>
 			<div>
 				<img src={f.photo} className={s.image} alt="" />

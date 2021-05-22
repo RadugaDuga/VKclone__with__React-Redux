@@ -3,6 +3,7 @@
 html {
   background:#EDEEF0;
   height: 100.3vh;
+  scroll-behavior: smooth;
 }
 
 *{

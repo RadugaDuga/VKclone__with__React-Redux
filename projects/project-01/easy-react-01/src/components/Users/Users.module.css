@@ -8,6 +8,7 @@
 }
 
 .users_wrapper{
+    margin:15px 0;
     grid-area: u;
     padding:0 20px;
     background-color: white;
@@ -29,7 +30,9 @@
 
 
 .activePage{
-    font-weight: bold;
+    background-color: #2787F5!important;
+    color: white;
+    border-radius: 50%;
 }
 
 
@@ -157,3 +160,58 @@
     opacity: 0.5;
     cursor:progress
 }
+
+
+
+
+
+
+
+
+
+/* ? Пагинация _________________________________*/
+
+
+.paginator{
+    display: flex;
+    width:100%;
+    padding:10px 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 1px 0 0 #acc9e15f;
+}
+
+.pageBtn{
+    cursor: pointer;
+    width:30px;
+    height:30px;
+    padding:5px;
+    background: white;
+}
+
+.nextBtn {
+    margin-left:5px;
+    font-weight: bold;
+    width:23px;
+    height:23px;
+    cursor: pointer;
+    background: url(../../images/paginatorArrow.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.prevBtn {
+    margin-right:5px;
+    font-weight: bold;
+    width:23px;
+    height:23px;
+    cursor: pointer;
+    background: url(../../images/paginatorArrow.png);
+    transform: rotate(-180deg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+

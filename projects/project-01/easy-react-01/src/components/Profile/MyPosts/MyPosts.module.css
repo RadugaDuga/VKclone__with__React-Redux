@@ -128,11 +128,11 @@
     padding:5px 0px 5px 5px;
     font-size:20px;
     color:rgb(170, 170, 170);
-    cursor: pointer;
     align-self: flex-start;
 }
 .delete:hover {
     color:gray;
+    cursor: pointer!important;
 }
 
 .name{
