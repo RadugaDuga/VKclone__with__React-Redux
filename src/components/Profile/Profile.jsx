@@ -19,6 +19,8 @@ const Profile = (props) => {
 			<div className={s.right_line}>
 				<UserInfo 
 					profile={props.profile} 
+					
+					// эти два пропса нужны для компоненты ProfileStatusWithHooks и я заменил их на хуки в самой компоненте 
 					updateStatus={props.updateStatus} 
 					status={props.status} 
 				/>

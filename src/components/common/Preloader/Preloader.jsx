@@ -3,7 +3,7 @@ import s from './Preloader.module.css'
 
 let Preloader = (props) => {
     return <div className={s.background}>
-        
+        ddddd
     </div>
 }
 

@@ -8,7 +8,7 @@ import { updateStatus } from './../../../../redux/profile-reducer';
 const ProfileStatusWithHooks = (props) => {
 	
 	let dispatch = useDispatch()
-	const status = useSelector((state) => state.profilePage.status);
+	const status = useSelector( state => state.profilePage.status);
 
 	const toggleEditMode = () => {
 		if (editMode) {
