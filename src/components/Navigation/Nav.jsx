@@ -16,7 +16,7 @@ const Nav = (props) => {
 	return (
 		<div className={s.sticky}>
 			<nav className={s.nav}>
-        <NavLink to='/profile/12781' className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={profile}   alt='^__^'/>  Моя страница </NavLink>
+        <NavLink to='/profile' className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={profile}   alt='^__^'/>  Моя страница </NavLink>
         <NavLink to='/feed'    className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={news}      alt='^__^'/>  Новости       </NavLink>
         <NavLink to='/dialogs' className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={messenger} alt='^__^'/>  Мессенджер    </NavLink>
         <NavLink to='/users'   className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={friends}   alt='^__^'/>  Друзья  </NavLink>

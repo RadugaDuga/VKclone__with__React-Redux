@@ -14,10 +14,7 @@ const UserInfo = (props) => {
 				<div className={s.user_name}>
 					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
 					<p className={s.status_wrapper}>
-						<ProfileStatusWithHooks
-							updateStatus={props.updateStatus} 
-							status={props.status}
-						/>
+						<ProfileStatusWithHooks/>
 					</p>
 				</div>
 				<div className={s.about_user}>

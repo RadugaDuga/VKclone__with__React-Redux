@@ -13,7 +13,7 @@ const Profile = (props) => {
 	return (
 		<div className={s.profile_wrapper}>
 			<div className={s.left_line}>
-				<Avatar profile={props.profile} />
+				<Avatar isOwner={props.isOwner} profile={props.profile} />
 				<Friends/>
 			</div>
 			<div className={s.right_line}>

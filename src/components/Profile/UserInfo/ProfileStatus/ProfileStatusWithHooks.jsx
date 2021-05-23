@@ -1,34 +1,41 @@
 import React, { useEffect, useState } from "react";
 import s from "./ProfileStatus.module.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { updateStatus } from './../../../../redux/profile-reducer';
+
+
 
 const ProfileStatusWithHooks = (props) => {
-	let [editMode, setEditMode] = useState(false);
+	
+	let dispatch = useDispatch()
+	const status = useSelector((state) => state.profilePage.status);
 
 	const toggleEditMode = () => {
 		if (editMode) {
 			setEditMode(false);
-			props.updateStatus(status);
+			dispatch(updateStatus(NewStatus));
 		} else {
 			setEditMode(true);
 		}
 	};
 
-	let [status, setStatus] = useState(props.status);
+	let [editMode, setEditMode] = useState(false);
+	let [NewStatus, setNewStatus] = useState(status);
 
 	const onStatusChange = (e) => {
-		setStatus(e.currentTarget.value);
+		setNewStatus(e.currentTarget.value);
 	};
 
 	useEffect(() => {
-		setStatus(props.status);
-	}, [props.status]);
+		setNewStatus(status);
+	}, [status]);
 
 	return (
 		<section>
 			{editMode ? (
 				<div className={s.input_status_wrapper}>
 					<input
-						value={status}
+						value={NewStatus}
 						onChange={onStatusChange}
 						onBlur={toggleEditMode}
 						className={s.inputStatus}
@@ -37,7 +44,7 @@ const ProfileStatusWithHooks = (props) => {
 				</div>
 			) : (
 				<div onClick={toggleEditMode} className={s.status}>
-					{props.status || <div className={s.no_status}>yстановить статус</div>}
+					{status || <div className={s.no_status}>yстановить статус</div>}
 				</div>
 			)}
 		</section>

@@ -12,6 +12,7 @@ const Avatar = (props) => {
 	}
 	return (
 		<div>
+			{props.isOwner ? <div>aaae</div>:null}
 			<div className={s.avatar_wrapper}>
 				<img
 					className={s.image}

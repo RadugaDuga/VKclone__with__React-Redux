@@ -6,10 +6,7 @@ const DELETE_POST = "profile/DELETE_POST";
 const SET_USER_PROFILE = "profile/SET_USER_PROFILE";
 const SET_STATUS = "profile/SET_STATUS";
 
-
-
 let initialState = {
-	
 	postsData: [
 		{
 			postId: 1,
@@ -27,7 +24,8 @@ let initialState = {
 		{
 			postId: 2,
 			name: "Георгий Букиа",
-			image:"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
+			image:
+				"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 			text: "До изобретения аэроплана братьями Райт, те, кто желал летать, должны были проглотить 200 фунтов гелия.",
 			likes_count: "92",
 			repost_count: "43",
@@ -38,7 +36,8 @@ let initialState = {
 		{
 			postId: 3,
 			name: "Георгий Букиа",
-			image:"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
+			image:
+				"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 			text: "Парадокс кота Шрёдингера описывает ситуацию, в которой кот в ящике должен, во всех отношениях, рассматриваться как одновременно живой и мёртвый. Шрёдингер придумал этот парадокс, как оправдание для убийства котов.",
 			likes_count: "92",
 			repost_count: "43",
@@ -49,7 +48,8 @@ let initialState = {
 		{
 			postId: 4,
 			name: "Георгий Букиа",
-			image:"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
+			image:
+				"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 			text: "В викторианской Англии, незнатный человек не имел права смотреть прямо на королеву, так как считалось, что бедняки могут украсть мысли. Сегодня наука доказала, что лишь менее 4% бедняков на это способны.",
 			likes_count: "92",
 			repost_count: "43",
@@ -60,7 +60,8 @@ let initialState = {
 		{
 			postId: 5,
 			name: "Георгий Букиа",
-			image:"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
+			image:
+				"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 			text: "Сны - это способ подсознания напомнить человеку, что ему нужно прийти в школу голышом и лишиться зубов.",
 			likes_count: "92",
 			repost_count: "43",
@@ -72,28 +73,25 @@ let initialState = {
 	status: "",
 };
 
-
-
 export const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_POST:
 			return {
 				...state,
 				postsData: [
-					
 					{
-						postId: Math.random(2,99999999999999999),
+						postId: Math.random(2, 99999999999999999),
 						name: "Георгий Букиа",
 						image:
 							"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 						text: action.postText,
 						likes_count: Math.floor(Math.random() * 20),
-						comments_count: Math.floor(Math.random() * 10) ,
+						comments_count: Math.floor(Math.random() * 10),
 						repost_count: Math.floor(Math.random() * 98) + 2,
 						views_count: Math.floor(Math.random() * 98) + 2,
 						date: "18 ноя 2020",
 					},
-					...state.postsData
+					...state.postsData,
 				],
 				newPostText: "",
 			};
@@ -107,7 +105,7 @@ export const profileReducer = (state = initialState, action) => {
 		case DELETE_POST: {
 			return {
 				...state,
-				postsData: state.postsData.filter(p => p.postId !== action.postId)
+				postsData: state.postsData.filter((p) => p.postId !== action.postId),
 			};
 		}
 
@@ -124,6 +122,13 @@ export const profileReducer = (state = initialState, action) => {
 	}
 };
 
+
+
+
+
+
+
+
 // Экщн креэйторы
 export const addPost = (postText) => ({ type: ADD_POST, postText });
 export const deletePost = (postId) => ({ type: DELETE_POST, postId });
@@ -131,37 +136,46 @@ export const updateNewPostText = (text) => ({
 	type: UPDATE_NEW_POST_TEXT,
 	text: text,
 });
+
 export const setUserProfile = (profile) => ({
 	type: SET_USER_PROFILE,
 	profile,
 });
+
 export const setStatus = (status) => ({ type: SET_STATUS, status });
 
+
+
+
+
+
+
+
 //Санки
-export const getUserProfile = (userId) => {
-	return (dispatch) => {
-		profileAPI.getProfile(userId).then((response) => {
-			dispatch(setUserProfile(response.data));
-		});
-	};
+export const getUserProfile = (userId) => async (dispatch) => {
+	let response = await profileAPI.getProfile(userId);
+	dispatch(setUserProfile(response.data));
 };
 
-export const getStatus = (userId) => {
-	return (dispatch) => {
-		profileAPI.getStatus(userId).then((response) => {
-			dispatch(setStatus(response.data));
-		});
-	};
+export const getStatus = (userId) => async (dispatch) => {
+	let response = await profileAPI.getStatus(userId);
+	dispatch(setStatus(response.data));
 };
 
-export const updateStatus = (status) => {
-	return (dispatch) => {
-		profileAPI.updateStatus(status).then((response) => {
-			if (response.data.resultCode === 0) {
-				dispatch(setStatus(status));
-			}
-		});
-	};
+export const updateStatus = (status) => async (dispatch) => {
+	let response = await profileAPI.updateStatus(status);
+	if (response.data.resultCode === 0) {
+		dispatch(setStatus(status));
+	}
 };
+
+
+
+
+
+
+
+
+
 
 export default profileReducer;
