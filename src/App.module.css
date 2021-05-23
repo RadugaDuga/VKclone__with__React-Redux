@@ -12,6 +12,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+button, textarea{
+  outline:none;
+  border:none;
+  background-color: transparent;
+}
+
 .app_wrapper_content{
   grid-area: c;
   height:max-content;
