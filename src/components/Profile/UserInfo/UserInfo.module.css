@@ -52,14 +52,15 @@
 	font-size: 13px;
 	color: #828eac;
 }
-.about_user a {
+.about_user .btn {
 	display: inline-block;
+	text-align: left;
 	width: 345px !important;
 	font-size: 13px;
 	color: #2A5885;
 	cursor: pointer;
 }
-.about_user a:hover {
+.about_user .btn:hover {
 	text-decoration: underline;
 }
 .more_button {

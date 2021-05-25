@@ -4,16 +4,14 @@ import iconClock from "../../../images/Profile_Images/iconClock.svg";
 import iconMoney from "../../../images/Profile_Images/iconMoney.svg";
 import { useDispatch } from "react-redux";
 import { savePhoto } from "../../../redux/profile-reducer";
-import Preloader from "./../../common/Preloader/Preloader";
+import arrow from "../../../images/Common/arrow.png"
 
-const defaultAvatar =
-	"https://sun9-43.userapi.com/s/v1/if1/RhlzkXE7CF8eMuejwF6MRzgCP5lb9Kx0sy_nwN2ZepMzT8DJWIXC2YfT6alcuvJ2QfpnujEv.jpg?size=200x0&quality=96&crop=391,0,1365,1365&ava=1";
 
 const Avatar = (props) => {
 	let dispatch = useDispatch();
 
 	if (!props.profile) {
-		return <Preloader />;
+		return null;
 	}
 	// Хуки вызывают проблему при перерисовке после обновления фотографии
 
@@ -24,15 +22,30 @@ const Avatar = (props) => {
 	};
 	return (
 		<div>
-			{props.isOwner ? (
-				<input type="file" onChange={onMainPhotoSelected} />
-			) : null}
 			<div className={s.avatar_wrapper}>
-				<img
-					className={s.image}
-					src={props.profile?props.profile.photos.large : defaultAvatar}
-					alt="^__^"
-				/>
+				<div className={s.imageWrapper}>
+					<img
+						className={s.image}
+						src={props.profile ? props.profile.photos.large : null}
+						alt="^__^"
+					/>
+					{props.isOwner ? (
+						<div className={s.hoverTab}>
+							<input
+								className={s.input}
+								id="file"
+								type="file"
+								onChange={onMainPhotoSelected}
+							/>
+							<div>
+								<label className={s.label} htmlFor="file">
+								<img className={s.iconForBtn} src={arrow} alt="" />
+									Обновить фотографию
+								</label>
+							</div>
+						</div>
+					) : null}
+				</div>
 
 				<button className={s.button}>Редактировать</button>
 

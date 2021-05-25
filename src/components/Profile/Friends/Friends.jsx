@@ -6,7 +6,7 @@ const Friends = () => {
 	const friends = useSelector(state => state.friends.friendsData);
 
 	let friendsElements = friends.map( f => (
-		<div className={s.friend_item}>
+		<div key={f.id} className={s.friend_item}>
 			<div>
 				<img src={f.photo} className={s.image} alt="" />
 			</div>

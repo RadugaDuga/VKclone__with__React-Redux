@@ -18,9 +18,9 @@ const UserInfo = (props) => {
 					</p>
 				</div>
 				<div className={s.about_user}>
-					<p> День рождения:      </p><a><span>26 августа </span></a> 
-					<p> Город:              </p><a><span>Новосибирск</span></a> 
-					<p> Семейное положение: </p><a><span>влюблен    </span></a> 
+					<p> День рождения:      </p><button className={s.btn}><span>26 августа </span></button> 
+					<p> Город:              </p><button className={s.btn}><span>Новосибирск</span></button> 
+					<p> Семейное положение: </p><button className={s.btn}><span>влюблен    </span></button> 
 				</div>
 				<button className={s.more_button}>Показать подробную информацию..</button>
 			</div>
