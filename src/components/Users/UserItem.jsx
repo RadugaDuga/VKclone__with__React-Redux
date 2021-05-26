@@ -2,9 +2,9 @@ import React from "react";
 import s from "./Users.module.css";
 import { NavLink } from "react-router-dom";
 
-const UserItem = ({ user,key, ...props }) => {
+const UserItem = ({ user, ...props }) => {
 	return (
-		<div key={key} className={s.user_wrapper}>
+		<div key={props.key} className={s.user_wrapper}>
 			<div>
 				<img
 					className={s.avatar}

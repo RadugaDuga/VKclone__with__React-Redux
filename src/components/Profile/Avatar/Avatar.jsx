@@ -50,12 +50,12 @@ const Avatar = (props) => {
 				<button className={s.button}>Редактировать</button>
 
 				<button className={s.secondary_button}>
-					<img className={s.icon} src={iconClock} />
+					<img alt="^__^" className={s.icon} src={iconClock} />
 					Воспоминания
 				</button>
 
 				<button className={s.secondary_button}>
-					<img className={s.icon} src={iconMoney} />
+					<img alt="^__^" className={s.icon} src={iconMoney} />
 					<p className={s.button_name}>Денежные переводы</p>
 				</button>
 			</div>

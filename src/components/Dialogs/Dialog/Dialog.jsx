@@ -6,17 +6,17 @@ import s from "./Dialog.module.css"
 
 
 const DialogItem = (props) => {
-	{document.title = `Мессенджер`}
+	document.title = `Мессенджер`
 	return (
-		<div className={s.dialog}>
-			<NavLink to={"/dialogs/" + props.id} activeClassName={s.active}>
-				
-				<div className={s.container}>
-					<img src={props.image} alt="404"></img>
-				</div>
+		<div key={props.key} className={s.dialog}>
 			
-				<div className={s.about}>{props.name}</div>
-			</NavLink>
+				
+				<p className={s.container}>
+					<img src={props.image} alt="404"></img>
+				</p>
+			
+				<p className={s.about}>{props.name}</p>
+			
 		</div>
 	);
 };

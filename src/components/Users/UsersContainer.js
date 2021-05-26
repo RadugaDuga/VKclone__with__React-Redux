@@ -21,7 +21,7 @@ class UsersContainer extends React.Component {
 	};
 
 	render() {
-		{document.title = `Друзья`}
+		document.title = `Друзья`
 		return <Users {...this.props} onPageChanged ={this.onPageChanged}/>
 	}
 

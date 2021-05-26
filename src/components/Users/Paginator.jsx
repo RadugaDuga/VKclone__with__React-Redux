@@ -27,7 +27,8 @@ const Paginator = (props) => {
 				.filter( f => f >= leftEdgePageNum && f <= rightEdgePageNum)
 				.map( p => {
 					return (
-						<button
+						<button 
+							key={p}
 							onClick={() => {
 								props.onPageChanged(p);
 							}}

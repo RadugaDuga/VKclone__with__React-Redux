@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { updateNewMessageText, addMessage } from "../../redux/messages-reducer";
 import Dialogs from "./Dialogs";
-import { withAuthRedirect } from './../HOC/withAuthRedirect';
+import { withAuthRedirect } from '../HOC/withAuthRedirect';
 import { compose } from "redux";
 
 
@@ -35,7 +35,7 @@ export default compose(
 
 //Кампоус заменяет это инкапсуляцией в себя деталей
 
-{
+
 	// let AuthRedirectComponent = withAuthRedirect(Dialogs)
 
 	// const Dialogs_Container = connect( mapStateToProps, 
@@ -46,4 +46,3 @@ export default compose(
 	// )(AuthRedirectComponent);
 
 	// export default Dialogs_Container;
-}

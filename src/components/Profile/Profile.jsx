@@ -1,5 +1,5 @@
 import React from "react";
-import MyPosts_Container from "./MyPosts/MyPosts_Container";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import s from "./Profile.module.css";
 import UserInfo from "./UserInfo/UserInfo";
 import Avatar from "./Avatar/Avatar";
@@ -25,7 +25,7 @@ const Profile = (props) => {
 					status={props.status} 
 				/>
 				<UserPhotos/>
-				<MyPosts_Container/>
+				<MyPostsContainer/>
 			</div>
 		</div>
 	);

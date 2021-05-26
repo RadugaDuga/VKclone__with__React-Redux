@@ -1,5 +1,4 @@
 import  axios  from "axios";
-import { savePhoto } from "../redux/profile-reducer";
 
 // Инстанс для предотвращения дублирования кода
 const instanse = axios.create({

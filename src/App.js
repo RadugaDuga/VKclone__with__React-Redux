@@ -1,18 +1,25 @@
 import React from "react";
 import s from "./App.module.css";
+
 import HeaderContainer from "./components/Header/HeaderContainer.js";
-import Nav from "./components/Navigation/Nav";
-import { Route } from "react-router-dom";
 import GroupsContainer from "./components/Groups/GroupsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Login from "./components/Login/Login";
+import Nav from "./components/Navigation/Nav";
+
+import { Route } from "react-router-dom";
 import { initializeApp } from "./redux/app-reducer";
 import { connect } from "react-redux";
 import { withSuspence } from "./components/HOC/withSuspense";
-const Dialogs_Container = React.lazy(() =>
-	import("./components/Dialogs/Dialogs_Container")
+
+
+
+const DialogsContainer = React.lazy(() =>
+	import("./components/Dialogs/DialogsContainer")
 );
+
+
 
 class App extends React.Component {
 	componentDidMount() {
@@ -36,8 +43,8 @@ class App extends React.Component {
 							fill="url(#paint0_linear)"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M32.0341 36.8751H23.41C20.9459 36.8751 20.4531 38.0551 20.4531 39.3334C20.4531 41.5951 23.41 52.9033 34.0546 67.85C41.2002 78.0275 51.2535 83.5833 60.3704 83.5833C65.8406 83.5833 66.5305 82.3542 66.5305 80.24V72.5208C66.5305 70.0625 67.0233 69.5708 68.7974 69.5708C70.0787 69.5708 72.2471 70.21 77.3722 75.1267C83.2366 80.9775 84.173 83.5833 87.4748 83.5833H96.0989C98.5629 83.5833 99.7949 82.3542 99.0557 79.945C98.3165 77.4867 95.5075 74.045 91.8114 69.8658C89.8402 67.4567 86.7848 64.9492 85.8978 63.6708C84.6165 61.9992 84.9122 61.2617 85.8978 59.8358C85.8978 59.8358 96.3945 45.0859 97.4787 40.0217C98.0208 38.2026 97.4787 36.8751 94.8668 36.8751H86.2427C85.436 36.827 84.6357 37.0404 83.9606 37.4834C83.2854 37.9264 82.7724 38.5754 82.4974 39.3334C82.4974 39.3334 78.0622 49.9533 71.9021 56.8858C69.8816 58.9017 68.9453 59.5408 67.8611 59.5408C67.3683 59.5408 66.5305 58.9017 66.5305 57.0825V40.0217C66.5305 37.8584 65.8899 36.8751 64.0665 36.8751H50.5143C49.1344 36.8751 48.2966 37.8584 48.2966 38.8417C48.2966 40.9067 51.4507 41.3984 51.7463 47.2001V59.885C51.7463 62.6875 51.2535 63.1792 50.1694 63.1792C47.2125 63.1792 40.1161 52.4608 35.8779 40.2184C35.0895 37.8584 34.2517 36.8751 32.0341 36.8751Z"
 							fill="white"
 						/>
@@ -87,8 +94,8 @@ class App extends React.Component {
 								y2="118"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stop-color="#2787F5" />
-								<stop offset="1" stop-color="#00C2FF" />
+								<stop stopColor="#2787F5" />
+								<stop offset="1" stopColor="#00C2FF" />
 							</linearGradient>
 						</defs>
 					</svg>
@@ -107,7 +114,7 @@ class App extends React.Component {
 							path="/profile/:userId?"
 							render={() => <ProfileContainer />}
 						/>
-						<Route path="/dialogs" render={withSuspence(Dialogs_Container)} />
+						<Route path="/dialogs" render={withSuspence(DialogsContainer)} />
 						<Route path="/users" render={() => <UsersContainer />} />
 						<Route path="/groups" render={() => <GroupsContainer />} />
 						<Route path="/login" render={() => <Login />} />

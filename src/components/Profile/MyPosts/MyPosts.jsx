@@ -38,10 +38,10 @@ const MyPosts = React.memo((props) => {
 		<div key={p.id} className={s.post}>
 			<div className={s.about}>
 				<img className={s.avatar} src={p.image} alt="" />
-				<a className={s.name} href="#">
+				<button className={s.name} >
 					{p.name} <br />
 					<span className={s.date}>{p.date}</span>
-				</a>
+				</button>
 				<button
 					onClick={() => {
 						props.deletePost(p.postId);
@@ -76,12 +76,12 @@ const MyPosts = React.memo((props) => {
 		<div className={s.my_posts_wrapper}>
 			{editMode ? (
 				<div tabIndex="100" onMouseLeave={()=>{setEditMode(false)}} className={s.textarea_wrapper__edit}>
-					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image}></img>
+					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image} alt="^__^"></img>
 					<ReduxPostForm offEditMode={offEditMode} onSubmit={addPost} />
 				</div>
 			) : (
 				<div  onClick={()=>{setEditMode(true)}} className={s.textarea_wrapper}>
-					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image}></img>
+					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image} alt="^__^"></img>
 					Что у вас нового?
 				</div>
 			)}

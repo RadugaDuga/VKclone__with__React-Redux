@@ -4,10 +4,7 @@ import DialogItem from "./Dialog/Dialog";
 import MessageItem from "./Message/Message";
 import { Field, reduxForm } from "redux-form";
 import { Textarea } from "./../common/FormControl/FormControl";
-import {
-	maxLengthCreator,
-	required,
-} from "./../../redux/Utilites/Validators/Validator";
+import { maxLengthCreator,required} from "./../../redux/Utilites/Validators/Validator";
 
 
 const MessageForm = (props) => {
@@ -36,10 +33,10 @@ const Dialogs = (props) => {
 	};
 
 	let MessageElement = props.Messages.map((m) => (
-		<MessageItem messageText={m.messageText} />
+		<MessageItem key={m.id} messageText={m.messageText} />
 	));
 	let DialogElement = props.Dialogs.map((d) => (
-		<DialogItem name={d.name} id={d.id} image={d.image} />
+		<DialogItem key={id} name={d.name}  image={d.image} />
 	));
 
 	return (
