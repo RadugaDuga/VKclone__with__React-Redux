@@ -2,8 +2,7 @@ import { connect } from "react-redux";
 import { follow, unfollow, setCurrentPageNum, requestUsers, followSuccess, unfollowSuccess} from "../../redux/users-reducer";
 import React from "react";
 import Users from "./Users";
-import { compose } from "redux";
-import { getCurrentPageNum, getPageSize, getUsers, getUsersTotalCount, getFollowingProgress } from './../../redux/users-selectors';
+import { getCurrentPageNum, getPageSize, getUsers, getUsersTotalCount, getFollowingProgress } from '../../redux/users-selectors';
 
 
 
@@ -38,9 +37,8 @@ let mapStateToProps = (state) => {
 	}
 };
 
-export default compose(
-	connect(mapStateToProps, {follow,unfollow,followSuccess,unfollowSuccess,setCurrentPageNum,requestUsers}),
-)(UsersContainer)
+
+export default connect(mapStateToProps, {follow,unfollow,followSuccess,unfollowSuccess,setCurrentPageNum,requestUsers})(UsersContainer)
 
 
 

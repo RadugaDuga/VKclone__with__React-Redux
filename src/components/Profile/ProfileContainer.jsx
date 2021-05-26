@@ -19,7 +19,7 @@ let mapStateToProps = (state) => {
 	};
 };
 
-class Profile_Container extends React.Component {
+class ProfileContainer extends React.Component {
 
 	//Рефреш нужен для получения пользователя и его данных и он вынесен в функцию т.к повторяется
 	refreshProfile() {
@@ -60,4 +60,4 @@ export default compose(
 	connect(mapStateToProps, { getUserProfile, getStatus, updateStatus }),
 	withRouter,
 	withAuthRedirect
-)(Profile_Container);
+)(ProfileContainer);

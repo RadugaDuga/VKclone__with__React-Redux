@@ -2,27 +2,25 @@ import React from "react";
 import s from "./Users.module.css";
 import { NavLink } from "react-router-dom";
 
-const UserItem = ({ user, ...props }) => {
+const UserItem = ({ user,key, ...props }) => {
 	return (
-		<div key={ props.key } className={s.user_wrapper}>
+		<div key={key} className={s.user_wrapper}>
 			<div>
-				<NavLink to={"/profile/" + user.id}>
-					<img
-						className={s.avatar}
-						src={
-							user.photos.small
-								? user.photos.small
-								: "https://vk.com/images/camera_200.png?ava=1"
-						}
-						alt=""
-					/>
-				</NavLink>
+				<img
+					className={s.avatar}
+					src={
+						user.photos.small
+							? user.photos.small
+							: "https://vk.com/images/camera_200.png?ava=1"
+					}
+					alt=""
+				/>
 			</div>
 
 			<div className={s.information}>
-				<p>
-					<a href="#"> {user.name} </a>
-				</p>
+				<NavLink to={"/profile/" + user.id}>
+					<p>{user.name} </p>
+				</NavLink>
 				<p>{user.status ? user.status : null}</p>
 				<p className={s.message}> Написать сообщение </p>
 			</div>
@@ -30,7 +28,7 @@ const UserItem = ({ user, ...props }) => {
 			{user.followed ? (
 				//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
 				<button
-					disabled={props.followingProgress.some( id => id == user.id)}
+					disabled={props.followingProgress.some((id) => id === user.id)}
 					onClick={() => {
 						props.unfollow(user.id);
 					}}
@@ -41,7 +39,7 @@ const UserItem = ({ user, ...props }) => {
 			) : (
 				//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
 				<button
-					disabled={props.followingProgress.some((id) => id == user.id)}
+					disabled={props.followingProgress.some((id) => id === user.id)}
 					onClick={() => {
 						props.follow(user.id);
 					}}
@@ -51,7 +49,7 @@ const UserItem = ({ user, ...props }) => {
 				</button>
 			)}
 		</div>
-	)
+	);
 };
 
 export default UserItem;

@@ -1,25 +1,22 @@
-import React ,{memo} from "react";
+import React, { useState} from "react";
 import s from "./MyPosts.module.css";
 import { Field, reduxForm } from "redux-form";
-import {maxLengthCreator,required,} from "./../../../redux/Utilites/Validators/Validator";
-import { Textarea } from './../../common/FormControl/FormControl';
+import { Textarea } from "./../../common/FormControl/FormControl";
 
 
 
 
-
-const maxLengthBuild = maxLengthCreator(30);
 const PostForm = (props) => {
-	
 	return (
 		<form onSubmit={props.handleSubmit} className={s.form}>
 			<Field
-				validate={[required, maxLengthBuild]}
 				component={Textarea}
 				name="postText"
 				className={s.textarea}
+				autoFocus={true}
+				placeholder={"Что у вас нового"}
 			/>
-			
+
 			<button className={s.button}>Опубликовать</button>
 		</form>
 	);
@@ -30,22 +27,29 @@ const ReduxPostForm = reduxForm({ form: "post" })(PostForm);
 
 
 
-const MyPosts = React.memo ((props) => {
+const MyPosts = React.memo((props) => {
+	const [editMode, setEditMode] = useState(false);
 
 	const addPost = (formData) => {
-		let randomId = Math.random(0,9999999999999999)
-		props.addPost(formData.postText, randomId);
+		props.addPost(formData.postText);
 	};
 
 	let posts = props.postsData.map( p => (
-		<div className={s.post}>
+		<div key={p.id} className={s.post}>
 			<div className={s.about}>
 				<img className={s.avatar} src={p.image} alt="" />
 				<a className={s.name} href="#">
 					{p.name} <br />
 					<span className={s.date}>{p.date}</span>
 				</a>
-				<button onClick={()=>{props.deletePost(p.postId)}} className={s.delete}>×</button>
+				<button
+					onClick={() => {
+						props.deletePost(p.postId);
+					}}
+					className={s.delete}
+				>
+					×
+				</button>
 			</div>
 
 			<p className={s.text}>{p.text}</p>
@@ -63,18 +67,27 @@ const MyPosts = React.memo ((props) => {
 		</div>
 	));
 
-
-
+	// Этот колбек передастся кнопке в РедаксФорме, чтобы при нажатии вне происходил блюр 
+	const offEditMode = ()=>{
+		setEditMode(false)
+	}
+	
 	return (
 		<div className={s.my_posts_wrapper}>
-			<div className={s.textarea_wrapper}>
-				<img src="https://sun9-38.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=96&crop=391,0,1365,1365&sign=d1f03e80391ec230e6cda87d90940965&ava=1"></img>
-				<ReduxPostForm onSubmit={addPost} />
-				
-			</div>
+			{editMode ? (
+				<div tabIndex="100" onMouseLeave={()=>{setEditMode(false)}} className={s.textarea_wrapper__edit}>
+					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image}></img>
+					<ReduxPostForm offEditMode={offEditMode} onSubmit={addPost} />
+				</div>
+			) : (
+				<div  onClick={()=>{setEditMode(true)}} className={s.textarea_wrapper}>
+					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image}></img>
+					Что у вас нового?
+				</div>
+			)}
 			{posts}
 		</div>
 	);
-})
+});
 
 export default MyPosts;

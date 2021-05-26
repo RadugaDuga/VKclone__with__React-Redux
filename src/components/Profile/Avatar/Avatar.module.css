@@ -39,7 +39,8 @@
 
 .secondary_button{
     line-height: 36px;
-    padding:0;
+    margin:0 -15px;
+    padding:0 15px;
     display: inline-flex;
     align-items: center;
     cursor: pointer;

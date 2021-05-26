@@ -31,14 +31,14 @@
     margin-right: 15px;
     border-radius: 50%;
 }
-.groups_wrapper a {
+.groups_wrapper .btn {
     margin:0;
     font-size: 13px;
     font-weight: 700;
     color:#3762B8;
     text-decoration: none;
 }
-.groups_wrapper a:hover{
+.groups_wrapper .btn:hover{
     text-decoration: underline;
 }
 .groups_wrapper p {

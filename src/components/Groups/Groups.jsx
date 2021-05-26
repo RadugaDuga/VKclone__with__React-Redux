@@ -7,7 +7,7 @@ const Groups = (props) => {
 			<div className={s.element}>
 				<img src={props.image} alt="" />
 				<div>
-					<a href="#"> {props.name} </a>
+					<button className={s.btn} href="#"> {props.name} </button>
 					<p> {props.type} </p>
 					<p>
 						{" "}

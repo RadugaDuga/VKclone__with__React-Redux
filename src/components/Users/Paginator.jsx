@@ -22,7 +22,7 @@ const Paginator = (props) => {
 					onClick={() => {setPortionNumber(portionNumber - 1);}}>
 					
 				</button>
-			) : console.log('aeeee')}
+			) :null}
 			{pages
 				.filter( f => f >= leftEdgePageNum && f <= rightEdgePageNum)
 				.map( p => {

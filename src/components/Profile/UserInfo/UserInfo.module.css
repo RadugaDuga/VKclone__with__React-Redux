@@ -1,3 +1,5 @@
+
+
 .container {
 	border-radius: 4px;
 	box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px#E7E8EC;
@@ -9,21 +11,27 @@
 	padding: 15px 20px;
 	border-bottom: 1px solid #e7e8ec;
 }
-.info_wrapper .user_name {
+
+
+
+/* ?===== Блок с именем и статусом онлайна ===== */
+
+.user_name {
 	padding-bottom: 19px;
 	border-bottom: 1px solid #E7E8EC;
 }
-.info_wrapper .user_name p .status {
+
+.user_name p .status {
 	float: right;
 	font-size: 12.5px;
 	font-weight: 400;
-	color:rgb(100, 82, 82);
+	color:#939393;
 }
 .status_wrapper{
 	position: relative;
 }
 
-.info_wrapper .user_name p:first-child {
+.user_name p:first-child {
 	margin: 0;
 	font-size: 19px;
 	color: black;
@@ -31,7 +39,8 @@
 	letter-spacing: 0.1px;
 	line-height: 23px;
 }
-.info_wrapper .user_name p:last-child {
+
+.user_name p:last-child {
 	margin: 0;
 	margin-top: 3px;
 	font-size: 13px;
@@ -39,7 +48,9 @@
 	font-weight: 400;
 }
 
-/* Блок с информацией о городе, рождении и т.п */
+
+
+/*?===== Блок с информацией о городе, рождении и т.п =====*/
 
 .about_user {
 	padding-top: 8px;
@@ -52,7 +63,8 @@
 	font-size: 13px;
 	color: #828eac;
 }
-.about_user .btn {
+.btn {
+	padding: 0;
 	display: inline-block;
 	text-align: left;
 	width: 345px !important;
@@ -60,7 +72,7 @@
 	color: #2A5885;
 	cursor: pointer;
 }
-.about_user .btn:hover {
+.btn:hover {
 	text-decoration: underline;
 }
 .more_button {
@@ -82,7 +94,9 @@
 	background: #f0f2f5;
 }
 
-/* Блок со статистикой  */
+
+
+/*?===== Блок со статистикой ===== */
 
 .user_stats {
 	text-align: center;
@@ -105,4 +119,4 @@
 	margin-top: 5px;
 }
 
-/* _____________________ */
+

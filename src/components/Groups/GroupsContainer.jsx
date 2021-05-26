@@ -12,6 +12,6 @@ let mapStateToProps = (state) => {
 	};
 };
 
-const Groups_Container = connect(mapStateToProps)(Groups);
+const GroupsContainer = connect(mapStateToProps)(Groups);
 
-export default Groups_Container;
+export default GroupsContainer;
