@@ -9,10 +9,7 @@ const Groups = (props) => {
 				<div>
 					<button className={s.btn} href="#"> {props.name} </button>
 					<p> {props.type} </p>
-					<p>
-						{" "}
-						{props.subsCount} <span> подписчиков</span>
-					</p>
+					<p> {props.subsCount} <span> подписчиков</span> </p>
 				</div>
 			</div>
 		);
@@ -20,7 +17,7 @@ const Groups = (props) => {
 
 	let groupElements = props.groupsData.map( g => (
 		<GroupItem
-			id={g.id}
+			key={g.id}
 			image={g.image}
 			name={g.name}
 			type={g.type}

@@ -8,7 +8,6 @@ import groups from "../../images/Nav_Images/groups.svg";
 import photos from "../../images/Nav_Images/photos.svg";
 import music from "../../images/Nav_Images/music.svg";
 import videos from "../../images/Nav_Images/videos.svg";
-import clyps from "../../images/Nav_Images/clyps.svg";
 import { NavLink } from "react-router-dom";
   
 const Nav = (props) => {

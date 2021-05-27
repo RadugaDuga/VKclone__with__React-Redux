@@ -1,4 +1,6 @@
-
+.container{
+    display: block;
+}
 
 .dialog a{
     display: inline-flex;

@@ -6,7 +6,7 @@ let initialState = {
 	id: null,
 	email: null,
 	login: null,
-	isAuth: false,
+	isAuth: null,
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -22,7 +22,7 @@ export const authReducer = (state = initialState, action) => {
 	}
 };
 
-export const setAuthUserData = (id, email, login, isAuth = false) => ({
+export const setAuthUserData = (id, email, login, isAuth) => ({
 	type: SET_AUTH_USER_DATA,
 	data: { id, email, login, isAuth },
 });
@@ -31,7 +31,7 @@ export const authMe = () => async (dispatch) => {
 	//Так как у нас есть промисы - после диспатча он вернет нам этот же then
 	let response = await authAPI.getMe();
 	if (response.data.resultCode === 0) {
-		let { id, login, email, isAuth } = response.data.data;
+		let { id, login, email } = response.data.data;             // isAuth убран отсюда 
 		dispatch(setAuthUserData(id, email, login, true));
 	}
 };

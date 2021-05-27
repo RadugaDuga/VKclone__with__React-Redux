@@ -87,7 +87,7 @@
 .image{
     display: block;
     width:200px;
-    object-fit: cover;
+    object-fit:cover;
     object-position: center;
     border-radius: 2px;
 }
