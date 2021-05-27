@@ -8,7 +8,7 @@
 }
 
 .info_wrapper {
-	padding: 15px 20px;
+	padding: 15px 20px 14px 20px;
 	border-bottom: 1px solid #e7e8ec;
 }
 
@@ -17,7 +17,7 @@
 /* ?===== Блок с именем и статусом онлайна ===== */
 
 .user_name {
-	padding-bottom: 19px;
+	padding-bottom: 17px;
 	border-bottom: 1px solid #E7E8EC;
 }
 
@@ -53,12 +53,12 @@
 /*?===== Блок с информацией о городе, рождении и т.п =====*/
 
 .about_user {
-	padding-top: 8px;
+	padding-top: 9px;
 }
 .about_user p {
 	display: inline-block;
 	width: 165px;
-	padding-top: 10px;
+	padding-top: 8px;
 	margin: 0;
 	font-size: 13px;
 	color: #828eac;
@@ -116,7 +116,7 @@
 	font-weight: 400;
 	font-size: 13px;
 	color: #828eac;
-	margin-top: 5px;
+
 }
 
 

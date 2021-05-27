@@ -13,9 +13,9 @@ const UserInfo = (props) => {
 			<div className={s.info_wrapper}>
 				<div className={s.user_name}>
 					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
-					<p className={s.status_wrapper}>
+					<div className={s.status_wrapper}>
 						<ProfileStatusWithHooks/>
-					</p>
+					</div>
 				</div>
 				<div className={s.about_user}>
 					<p> День рождения:      </p><button className={s.btn}><span>26 августа </span></button> 

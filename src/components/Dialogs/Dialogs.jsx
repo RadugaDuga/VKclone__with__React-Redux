@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Dialogs.module.css";
-import DialogItem from "./Dialog/Dialog";
+import DialogItem from "./Dialog/DialogItem";
 import MessageItem from "./Message/Message";
 import { Field, reduxForm } from "redux-form";
 import { Textarea } from "./../common/FormControl/FormControl";
@@ -32,11 +32,11 @@ const Dialogs = (props) => {
 		props.addMessage(data.message);
 	};
 
-	let MessageElement = props.Messages.map((m) => (
+	let MessageElement = props.Messages.map( m => (
 		<MessageItem key={m.id} messageText={m.messageText} />
 	));
-	let DialogElement = props.Dialogs.map((d) => (
-		<DialogItem key={id} name={d.name}  image={d.image} />
+	let DialogElement = props.Dialogs.map( d => (
+		<DialogItem key={d.id} id={d.id} name={d.name}  image={d.image} />
 	));
 
 	return (

@@ -22,7 +22,7 @@ export const authReducer = (state = initialState, action) => {
 	}
 };
 
-export const setAuthUserData = (id, email, login, isAuth) => ({
+export const setAuthUserData = (id, email, login, isAuth = false) => ({
 	type: SET_AUTH_USER_DATA,
 	data: { id, email, login, isAuth },
 });
@@ -52,5 +52,7 @@ export const logout = () => async (dispatch) => {
 		dispatch(setAuthUserData(null, null, null, false));
 	}
 };
+
+
 
 export default authReducer;

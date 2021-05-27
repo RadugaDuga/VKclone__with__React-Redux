@@ -31,7 +31,7 @@ const ProfileStatusWithHooks = (props) => {
 	}, [status]);
 
 	return (
-		<div>
+		<>
 			{editMode ? (
 				<div className={s.input_status_wrapper}>
 					<input
@@ -47,7 +47,7 @@ const ProfileStatusWithHooks = (props) => {
 					{status || <div className={s.no_status}>yстановить статус</div>}
 				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

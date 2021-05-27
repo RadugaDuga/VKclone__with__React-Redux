@@ -20,21 +20,18 @@ let mapStateToProps = (state) => {
 };
 
 class ProfileContainer extends React.Component {
-
 	//Рефреш нужен для получения пользователя и его данных и он вынесен в функцию т.к повторяется
 	refreshProfile() {
-		
 		let userId = this.props.match.params.userId;
 		if (!userId) {
 			userId = this.props.authorizedUserId;
-			
 		}
 		this.props.getUserProfile(userId);
 		this.props.getStatus(userId);
 	}
 
 	componentDidMount() {
-		this.refreshProfile()
+		this.refreshProfile();
 	}
 
 	componentDidUpdate(prevProps, prevState) {

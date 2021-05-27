@@ -23,7 +23,6 @@ const Nav = (props) => {
         <NavLink to='/photos'  className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={photos}    alt='^__^'/>  Фотографии    </NavLink>
         <NavLink to='/music'   className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={music}     alt='^__^'/>  Музыка        </NavLink>
         <NavLink to='/videos'  className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={videos}    alt='^__^'/>  Видео         </NavLink>
-        <NavLink to='/clips'   className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={clyps}     alt='^__^'/>  Клипы         </NavLink>
       </nav>
 			<div className={s.ads_wrapper}>
 				<div className={s.ad_container}>

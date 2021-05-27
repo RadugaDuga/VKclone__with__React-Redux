@@ -33,9 +33,9 @@ const MyPosts = React.memo((props) => {
 	const addPost = (formData) => {
 		props.addPost(formData.postText);
 	};
-
+	
 	let posts = props.postsData.map( p => (
-		<div key={p.id} className={s.post}>
+		<div key={p.postId} className={s.post}>
 			<div className={s.about}>
 				<img className={s.avatar} src={p.image} alt="" />
 				<button className={s.name} >
