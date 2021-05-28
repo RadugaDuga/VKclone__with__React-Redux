@@ -17,7 +17,7 @@ const Nav = (props) => {
         <NavLink to='/profile' className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={profile}   alt='^__^'/>  Моя страница </NavLink>
         <NavLink to='/feed'    className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={news}      alt='^__^'/>  Новости       </NavLink>
         <NavLink to='/dialogs' className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={messenger} alt='^__^'/>  Мессенджер    </NavLink>
-        <NavLink to='/users'   className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={friends}   alt='^__^'/>  Друзья  </NavLink>
+        <NavLink to='/users'   className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={friends}   alt='^__^'/>  Пользователи  </NavLink>
         <NavLink to='/groups'  className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={groups}    alt='^__^'/>  Сообщества    </NavLink>
         <NavLink to='/photos'  className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={photos}    alt='^__^'/>  Фотографии    </NavLink>
         <NavLink to='/music'   className={s.nav_item} activeClassName={s.active}><img className={s.icon} src={music}     alt='^__^'/>  Музыка        </NavLink>

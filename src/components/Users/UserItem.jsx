@@ -5,23 +5,19 @@ import { NavLink } from "react-router-dom";
 const UserItem = ({ user, ...props }) => {
 	return (
 		<div key={props.key} className={s.user_wrapper}>
-			<div>
-				<img
-					className={s.avatar}
-					src={
-						user.photos.small
-							? user.photos.small
-							: "https://vk.com/images/camera_200.png?ava=1"
-					}
-					alt=""
-				/>
-			</div>
+			<img
+				className={s.avatar}
+				src={
+					user.photos.small
+						? user.photos.small
+						: "https://vk.com/images/camera_200.png?ava=1"
+				}
+				alt=""
+			/>
 
 			<div className={s.information}>
-				<NavLink to={"/profile/" + user.id}>
-					<p>{user.name} </p>
-				</NavLink>
-				<p>{user.status ? user.status : null}</p>
+				<NavLink to={"/profile/" + user.id}>{user.name}</NavLink>
+				{user.status ? <p>user.status</p> : null}
 				<p className={s.message}> Написать сообщение </p>
 			</div>
 

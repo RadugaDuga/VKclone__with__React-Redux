@@ -8,7 +8,7 @@ let Users = (props) => {
 		<div className={s.content}>
 			<section>
 				<div className={s.users_counter}>
-					Люди <span className={s.count}>{props.usersTotalCount}</span>
+					Пользователи <span className={s.count}>{props.usersTotalCount}</span>
 				</div>
 
 				<div className={s.users_wrapper}>
@@ -28,8 +28,6 @@ let Users = (props) => {
 							user={u}
 						/>
 					))}
-
-					
 				</div>
 			</section>
 
