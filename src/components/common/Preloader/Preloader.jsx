@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Preloader.module.css"
+import s from "./Preloader.module.css";
 
 let Preloader = (props) => {
 	return (
@@ -10,9 +10,9 @@ let Preloader = (props) => {
 				viewBox="0 0 685 118"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
+                className={s.image}
 			>
 				<path
-					className={s.vk}
 					d="M0 56.5417C0 29.8933 0 16.5692 8.27914 8.26C16.6076 0 29.9626 0 56.6727 0H61.6007C88.3108 0 101.666 0 109.994 8.26C118.273 16.5692 118.273 29.8933 118.273 56.5417V61.4583C118.273 88.1067 118.273 101.431 109.994 109.74C101.666 118 88.3108 118 61.6007 118H56.6727C29.9626 118 16.6076 118 8.27914 109.74C0 101.431 0 88.1067 0 61.4583V56.5417Z"
 					fill="url(#paint0_linear)"
 				/>
@@ -73,7 +73,7 @@ let Preloader = (props) => {
 				</defs>
 			</svg>
 		</div>
-	)
-}
+	);
+};
 
 export default Preloader;
