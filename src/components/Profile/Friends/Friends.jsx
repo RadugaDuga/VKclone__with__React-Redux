@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import s from "./Friends.module.css";
 
+
+
 const Friends = () => {
 	const friends = useSelector(state => state.friends.friendsData);
 
@@ -21,5 +23,7 @@ const Friends = () => {
 		</div>
 	);
 };
+
+
 
 export default Friends;
