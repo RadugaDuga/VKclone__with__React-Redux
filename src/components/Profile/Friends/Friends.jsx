@@ -1,14 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import s from "./Friends.module.css";
-
-
+import {useDispatch} from "react-redux";
 
 const Friends = () => {
+	
 	const friends = useSelector(state => state.friends.friendsData);
+	const dispatch = useDispatch()
 
 	let friendsElements = friends.map( f => (
-		<div key={f.id} className={s.friend_item}>
+		<div onClick={ ()=> {dispatch({type:"DELETE_FRIEND", id:f.id })} } key={f.id} className={s.friend_item}>
 			<div>
 				<img src={f.photo} className={s.image} alt="" />
 			</div>

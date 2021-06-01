@@ -33,7 +33,6 @@ class App extends React.Component {
 		if (!this.props.initialized) {
 			return <Preloader/>
 		}
-
 		return (
 			<div>
 				<div className={s.header_line}></div>

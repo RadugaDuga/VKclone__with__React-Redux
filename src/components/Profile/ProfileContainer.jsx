@@ -41,7 +41,7 @@ class ProfileContainer extends React.Component {
 	}
 
 	render() {
-		document.title = "Моя страница";
+
 		return (
 			<Profile
 				isOwner={!this.props.match.params.userId}

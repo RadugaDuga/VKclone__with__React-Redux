@@ -5,7 +5,7 @@ import iconMoney from "../../../images/Profile_Images/iconMoney.svg";
 import { useDispatch } from "react-redux";
 import { savePhoto } from "../../../redux/profile-reducer";
 import arrow from "../../../images/Common/arrow.png"
-
+const defaultAvatar = "https://vk.com/images/camera_200.png"
 
 const Avatar = (props) => {
 	let dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Avatar = (props) => {
 				<div className={s.imageWrapper}>
 					<img
 						className={s.image}
-						src={props.profile ? props.profile.photos.large : null}
+						src={props.profile.photos.large ? props.profile.photos.large : defaultAvatar}
 						alt="^__^"
 					/>
 					{props.isOwner ? (

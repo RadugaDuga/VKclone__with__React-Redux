@@ -24,7 +24,7 @@ const UserItem = ({ user, ...props }) => {
 			{user.followed ? (
 				//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
 				<button
-					disabled={props.followingProgress.some((id) => id === user.id)}
+					disabled={props.followingProgress.some( id => id === user.id)}
 					onClick={() => {
 						props.unfollow(user.id);
 					}}
@@ -35,7 +35,7 @@ const UserItem = ({ user, ...props }) => {
 			) : (
 				//Если хоть чье нибудь айди есть в массиве - этому айди устанавливается button disabled
 				<button
-					disabled={props.followingProgress.some((id) => id === user.id)}
+					disabled={props.followingProgress.some( id => id === user.id)}
 					onClick={() => {
 						props.follow(user.id);
 					}}

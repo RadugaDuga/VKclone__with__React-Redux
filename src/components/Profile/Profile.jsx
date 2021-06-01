@@ -9,8 +9,13 @@ import Friends from "./Friends/Friends";
 
 
 const Profile = (props) => {
-
+	if(props.profile){
+		document.title = props.profile.fullName === 'RadugaDuga' ? "Георгий Букиа": props.profile.fullName
+		console.log(props.profile.fullName);
+	}
+	console.log(props.profile);
 	return (
+		
 		<div className={s.profile_wrapper}>
 			<div className={s.left_line}>
 				<Avatar isOwner={props.isOwner} profile={props.profile} />
