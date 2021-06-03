@@ -42,7 +42,14 @@
   flex-direction: row;
   grid-area: info;
   box-sizing: border-box;
-  padding:0px 14px;
+  padding:0px 32px;
+  border-bottom: 1px solid #DCE1E6;
+}
+.backArrow{
+  width:10px;
+  margin-right: 15px;
+  height:18px;
+  cursor: pointer;
 }
 .image{
   height:28px;
@@ -70,8 +77,6 @@
 
 
 .messages{
-  padding:0px 10px;
-  box-sizing: border-box;
   grid-area: messages;
   overflow-y: scroll;
   font-size: 13px;
@@ -91,7 +96,7 @@
 
 .textarea_wrapper{
   grid-area: text;
-  padding:0px 15px;
+  padding:0px 32px;
   display: grid;
   grid-template-columns: 23px auto 23px;
   grid-gap: 15px;

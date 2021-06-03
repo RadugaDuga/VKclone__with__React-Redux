@@ -156,6 +156,7 @@
 
 .name{
     text-decoration: none;
+    text-align: left;
     font-size: 13px;
     font-weight: 600;
     padding:0 15px;

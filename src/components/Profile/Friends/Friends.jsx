@@ -17,6 +17,8 @@ const Friends = () => {
 		</div>
 	));
 
+	if (friends.length === 0 ) return null
+	
 	return (
 		<div className={s.container}>
 			<div className={s.header}> Друзья <span className={s.counter}>{friends.length}</span></div>

@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import s from "./MyPosts.module.css";
-import { Field, reduxForm } from "redux-form";
+import { reset ,Field, reduxForm } from "redux-form";
 import { Textarea } from "./../../common/FormControl/FormControl";
 
 
@@ -28,12 +28,14 @@ const ReduxPostForm = reduxForm({ form: "post" })(PostForm);
 
 
 const MyPosts = React.memo((props) => {
+
 	const [editMode, setEditMode] = useState(false);
 
-	const addPost = (formData) => {
+	const formSumbitted =(formData, dispatch)=> {
 		props.addPost(formData.postText);
-	};
-	
+		dispatch(reset("postText"));
+	}
+
 	let posts = props.postsData.map( p => (
 		<div key={p.postId} className={s.post}>
 			<div className={s.about}>
@@ -77,7 +79,7 @@ const MyPosts = React.memo((props) => {
 			{editMode ? (
 				<div tabIndex="100" onMouseLeave={()=>{setEditMode(false)}} className={s.textarea_wrapper__edit}>
 					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image} alt="^__^"></img>
-					<ReduxPostForm offEditMode={offEditMode} onSubmit={addPost} />
+					<ReduxPostForm offEditMode={offEditMode} onSubmit={formSumbitted} />
 				</div>
 			) : (
 				<div  onClick={()=>{setEditMode(true)}} className={s.textarea_wrapper}>
