@@ -17,7 +17,7 @@ const UserItem = ({ user, ...props }) => {
 
 			<div className={s.information}>
 				<NavLink to={"/profile/" + user.id}>{user.name}</NavLink>
-				{user.status ? <p>user.status</p> : null}
+				{user.status ? <p>{user.status}</p> : null}
 				<p className={s.message}> Написать сообщение </p>
 			</div>
 

@@ -14,7 +14,7 @@ const MessageForm = (props) => {
 			<Field
 				validate={[required, maxLengthBuild]}
 				className={s.text}
-				placeholder={"Ваше имя"}
+				placeholder={"Напишите сообщение"}
 				component={Textarea}
 				name={"message"}
 			/>
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
 
 
 	let MessageElement = props.Messages.map( m => (
-		<MessageItem key={m.id} name={m.name} date={m.date} image={m.image} messageText={m.messageText} />
+		<MessageItem key={m.id} name={m.name} is_moderator={m.is_moderator} date={m.date} image={m.image} messageText={m.messageText} />
 	));
 	let DialogElement = props.Dialogs.map( d => (
 		<DialogItem key={d.id} id={d.id} name={d.name}  image={d.image} />

@@ -1,6 +1,5 @@
 import stewardess from "../images/stewardess.png";
 
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
 const ADD_MESSAGE = "messages/ADD_MESSAGE";
 
 let initialState = {
@@ -12,12 +11,16 @@ let initialState = {
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText:
 				"Простите. Можно мне принести еще одно одеяло? Я немного замерз",
+			is_moderator: true,
+			date: "12:35",
 		},
 		{
 			id: 2,
 			name: "Стюардесса",
 			image: stewardess,
 			messageText: "Конечно. Вам нужно лишь одно или два одеяла?",
+			is_moderator: false,
+			date: "12:35",
 		},
 		{
 			id: 3,
@@ -25,6 +28,8 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "Думаю, одного будет достаточно",
+			is_moderator: true,
+			date: "12:36",
 		},
 		{
 			id: 4,
@@ -32,6 +37,8 @@ let initialState = {
 			image: stewardess,
 			messageText:
 				"ОК. Я сейчас вернусь с вашим одеялом. Хотите чего-нибудь еще?",
+			is_moderator: false,
+			date: "12:36",
 		},
 		{
 			id: 5,
@@ -39,6 +46,8 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "Да. Можно также что-нибудь попить?",
+			is_moderator: true,
+			date: "12:36",
 		},
 		{
 			id: 6,
@@ -46,6 +55,8 @@ let initialState = {
 			image: stewardess,
 			messageText:
 				"Разумеется. Следует избегать обезвоживания во время таких длительных перелетов. Что вы будете пить?",
+			is_moderator: false,
+			date: "12:36",
 		},
 		{
 			id: 7,
@@ -53,6 +64,8 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "Я бы хотел апельсинового сока. И безо льда, конечно же",
+			is_moderator: true,
+			date: "12:36",
 		},
 		{
 			id: 8,
@@ -60,6 +73,8 @@ let initialState = {
 			image: stewardess,
 			messageText:
 				"О да. Принесу через минутку. Кстати, вы можете расстегнуть ремни безопасности. Теперь уже безопасно. А почему вы поставили эту сумку под ваше сиденье? Наверное, вам очень неудобно. Нужно поставить ее на полку над вашим местом, в кабинку",
+			is_moderator: false,
+			date: "12:36",
 		},
 		{
 			id: 9,
@@ -68,6 +83,8 @@ let initialState = {
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText:
 				"Хорошо, спасибо. Я сделаю это. Не могли бы вы сказать, как долго лететь до Тайланда?",
+			is_moderator: true,
+			date: "12:37",
 		},
 		{
 			id: 10,
@@ -75,6 +92,8 @@ let initialState = {
 			image: stewardess,
 			messageText:
 				"Ну, вы же знаете, что это долгое путешествие. Нам еще лететь 6 часов до приземления",
+			is_moderator: false,
+			date: "12:37",
 		},
 		{
 			id: 11,
@@ -82,6 +101,8 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "А нас еще будут кормить перед посадкой?",
+			is_moderator: true,
+			date: "12:37",
 		},
 		{
 			id: 12,
@@ -89,6 +110,8 @@ let initialState = {
 			image: stewardess,
 			messageText:
 				"Конечно. Мы подадим еду через 3 часа. Но если вы голодны, я могу принести вам легкую закуску, если хотите",
+			is_moderator: false,
+			date: "12:37",
 		},
 		{
 			id: 13,
@@ -96,6 +119,8 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "Да, было бы здорово",
+			is_moderator: true,
+			date: "12:37",
 		},
 		{
 			id: 14,
@@ -103,6 +128,8 @@ let initialState = {
 			image: stewardess,
 			messageText:
 				"Без проблем. … Вот, возьмите, сэр. И вот карточка прибытия для иммиграционной службы. Пожалуйста, заполните эту форму черными чернилами до того, как мы приземлимся",
+			is_moderator: false,
+			date: "12:37",
 		},
 		{
 			id: 15,
@@ -110,12 +137,16 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "Благодарю. Но мне нужна черная ручка. Вы не одолжите?",
+			is_moderator: true,
+			date: "12:38",
 		},
 		{
 			id: 16,
 			name: "Стюардесса",
 			image: stewardess,
 			messageText: "Минутку. Наш бортпроводник будет скоро разносить ручки",
+			is_moderator: false,
+			date: "12:38",
 		},
 		{
 			id: 17,
@@ -123,12 +154,16 @@ let initialState = {
 			image:
 				"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
 			messageText: "Большое спасибо",
+			is_moderator: true,
+			date: "12:38",
 		},
 		{
 			id: 18,
 			name: "Стюардесса",
 			image: stewardess,
 			messageText: "Приятного полета",
+			is_moderator: false,
+			date: "12:38",
 		},
 	],
 
@@ -284,17 +319,18 @@ let initialState = {
 				"https://sun9-9.userapi.com/s/v1/ig2/PgYd1t6VovlZieTp5VdYtyTSKbTfzc6wf0oOna9WmwWdmLeINUL3at5g-IwiYDIXR1ANVF57WtlOhE-q5yyh7YIj.jpg?size=50x0&quality=96&crop=0,200,1104,1104&ava=1",
 		},
 	],
-
-	newMessageText: "",
 };
 
 
 // Получить текущее время
-let today = new Date();
-const dd = String(today.getDate()).padStart(2, "0");
-const mm = String(today.getMonth() + 1).padStart(2, "0");
-const yyyy = today.getFullYear();
-today = `${dd}.${mm}.${yyyy}`;
+
+let today = new Date()
+
+const hours = today.getHours();
+const minutes = today.getMinutes() < 10 ? "0" + today.getMinutes() : "" + today.getMinutes();
+today = `${hours}:${minutes}`;
+
+//=======================
 
 
 export const messagesReducer = (state = initialState, action) => {
@@ -308,9 +344,11 @@ export const messagesReducer = (state = initialState, action) => {
 						id: Math.random(0, 99999999999999999),
 						date: today,
 						name: "Георгий",
-						image:"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
-						messageText: action.message
-					}
+						is_moderator: true,
+						image:
+							"https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1",
+						messageText: action.message,
+					},
 				],
 			};
 

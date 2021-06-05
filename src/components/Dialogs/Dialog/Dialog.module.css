@@ -5,17 +5,15 @@
 .dialog a{
     display: inline-flex;
     height: 45px;
-    padding:10px 15px;
+    padding:15px 20px;
     display: flex;
     text-decoration: none;
 }
 
 .dialog img{
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    width: 50px;
     transition: .3s;
-    margin:0;
 }
 .about {
     margin: 5px 0px 0px 15px;

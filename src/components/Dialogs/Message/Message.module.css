@@ -10,30 +10,26 @@
 }
 
 .name_message_wrapper{
-    margin-left: 10px;
+    margin: 0px 11px;
 }
 
 .image{
     border-radius: 50%;
     height:36px;
 }
-
 .name{
-    width: 200px;
     font-weight: 600;
-    color:#2A5894;
+    color:#2A5885;
     margin-bottom: 3px;
 }
 .date{
     color:#939393;
     font-weight: 400;
-    margin-left: 10px;
+    margin-left: 6px;
 }
 .message{
-    position: relative;
-    width:100%;
-    word-wrap: break-word;
-    line-height: 20px;
+    display: block;
+    line-height: 19px;
 }
 
 
