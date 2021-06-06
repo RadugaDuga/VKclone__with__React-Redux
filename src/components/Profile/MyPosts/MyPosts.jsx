@@ -33,7 +33,7 @@ const MyPosts = React.memo((props) => {
 
 	const formSumbitted =(formData, dispatch)=> {
 		props.addPost(formData.postText);
-		dispatch(reset("postText"));
+		dispatch(reset("post"));
 	}
 
 	let posts = props.postsData.map( p => (

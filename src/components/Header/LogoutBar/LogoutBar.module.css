@@ -1,0 +1,65 @@
+.logoutBar{
+    position:absolute;
+    bottom:0;
+    transform: translateY(100%);
+    right:0;
+    min-width: 208px;
+    max-width:232px;
+    height: 168px;
+    box-sizing: border-box;
+    padding: 4px 0;
+    border-radius: 2px;
+    border: 1px solid #DCE1E6;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  .top_profile{
+    padding:8px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  } 
+  
+  .top_profile__info{
+    margin-left:9px;
+    width:80%;
+  }
+  
+  .separator{
+    margin:4px 13px;
+    background-color: #DCE1E6;
+    height:1px;
+  }
+  .info__name{
+    color:#2A5885;
+    margin-bottom: 4px;
+  }
+  
+  .info__offer{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:#626D7A;
+    font-size: 11px;
+  
+  }
+  
+  .top_profile__image{
+    width:34px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  
+  .setting{
+    font-size: 12.5px;
+    text-align:start;
+    width:100%;
+    line-height: 30px;
+    padding:0 15px;
+    cursor: pointer;
+  }
+  .setting:hover{
+    background-color: #F5F6F8;
+  }

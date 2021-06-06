@@ -73,15 +73,17 @@ let initialState = {
 	status: "",
 };
 
+
+
 let today = new Date();
 const dd = today.getDate() < 10 ? "0" + today.getDate() : today.getDate();
-// const mm = (today.getMonth() + 1) < 10 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1)
 const yyyy = today.getFullYear();
 const mm = today.toLocaleString('default', { month: 'short' })
 today = `${dd} ${mm} ${yyyy}`
 
 
-export const profileReducer = (state = initialState, action) => {
+
+const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_POST:
 			return {
@@ -90,8 +92,7 @@ export const profileReducer = (state = initialState, action) => {
 					{
 						postId: Math.random(2, 99999999999999999),
 						name: "Георгий Букиа",
-						image:
-							"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
+						image: state.profile.photos.large,
 						text: action.postText,
 						likes_count: Math.floor(Math.random() * 20),
 						comments_count: Math.floor(Math.random() * 10),
@@ -113,7 +114,7 @@ export const profileReducer = (state = initialState, action) => {
 		case DELETE_POST: {
 			return {
 				...state,
-				postsData: state.postsData.filter((p) => p.postId !== action.postId),
+				postsData: state.postsData.filter( p => p.postId !== action.postId),
 			};
 		}
 
@@ -186,5 +187,6 @@ export const updateStatus = (status) => async (dispatch) => {
 		dispatch(setStatus(status));
 	}
 };
+
 
 export default profileReducer;

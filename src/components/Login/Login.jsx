@@ -45,7 +45,7 @@ const LoginForm = (props) => {
 
 				<span className={s.checkbox}>
 					<Field name={"rememberMe"} type={"checkbox"} component={"input"} />
-					Запомнить меня
+					<p style={{marginLeft:6}}>Запомнить меня</p>
 				</span>
 			</div>
 		</form>
