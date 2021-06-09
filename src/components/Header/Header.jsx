@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import s from "./Header.module.css";
 import logo from "../../images/vk2.svg";
 import { NavLink } from "react-router-dom";
@@ -10,13 +10,6 @@ const Header = (props) => {
 		logoutBar ? setLogoutBar(false) : setLogoutBar(true);
 	};
 
-
-	const handleMouseClick = (e) => {
-		if (e.current.target !== blabla) {
-		  setLogoutBar(false)
-		}
-	  }
-	const blabla = useRef()
 
 	return (
 		<header className={s.header}>
@@ -35,7 +28,7 @@ const Header = (props) => {
 						/>
 						<div className={s.more_button}></div>
 						{logoutBar && (
-							<LogoutBar ref={blabla} login={props.login} logout={props.logout}/>
+							<LogoutBar login={props.login} logout={props.logout}/>
 						)}
 					</div>
 				) : (

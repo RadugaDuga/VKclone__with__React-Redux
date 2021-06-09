@@ -178,6 +178,7 @@ export const savePhoto = (photo) => async (dispatch) => {
 	let response = await profileAPI.savePhoto(photo);
 	if (response.data.resultCode === 0) {
 		dispatch(savePhotoSuccess(response.data.photos));
+		console.log('response.data.photos');
 	}
 };
 

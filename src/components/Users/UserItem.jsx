@@ -9,7 +9,7 @@ const UserItem = ({ user, ...props }) => {
 				className={s.avatar}
 				src={
 					user.photos.small
-						? user.photos.small
+						? user.photos.large
 						: "https://vk.com/images/camera_200.png?ava=1"
 				}
 				alt=""
