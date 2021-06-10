@@ -4,29 +4,29 @@ import iconClock from "../../../images/Profile_Images/iconClock.svg";
 import iconMoney from "../../../images/Profile_Images/iconMoney.svg";
 import { useDispatch } from "react-redux";
 import { savePhoto } from "../../../redux/profile-reducer";
-import arrow from "../../../images/Common/arrow.png"
-const defaultAvatar = "https://vk.com/images/camera_200.png"
+import arrow from "../../../images/Common/arrow.png";
+
+const defaultAvatar = "https://vk.com/images/camera_200.png";
 
 const Avatar = (props) => {
-	let dispatch = useDispatch();
 
-	if (!props.profile) {
-		return null;
-	}
-	// Хуки вызывают проблему при перерисовке после обновления фотографии
+	let dispatch = useDispatch();
 
 	const onMainPhotoSelected = (e) => {
 		if (e.target.files.length) {
 			dispatch(savePhoto(e.target.files[0]));
 		}
-	};
+	}
+
+
+
 	return (
 		<div>
 			<div className={s.avatar_wrapper}>
 				<div className={s.imageWrapper}>
 					<img
 						className={s.image}
-						src={props.profile.photos.large ? props.profile.photos.large : defaultAvatar}
+						src={props.profile.photos ? props.profile.photos.large : defaultAvatar}
 						alt="^__^"
 					/>
 					{props.isOwner ? (
@@ -61,6 +61,6 @@ const Avatar = (props) => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default Avatar;

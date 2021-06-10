@@ -153,9 +153,9 @@ export const setUserProfile = (profile) => ({
 });
 
 export const setStatus = (status) => ({ type: SET_STATUS, status });
-export const savePhotoSuccess = (status) => ({
+export const savePhotoSuccess = (photos) => ({
 	type: SAVE_PHOTO_SUCCESS,
-	status,
+	photos:photos
 });
 
 
@@ -177,8 +177,8 @@ export const getStatus = (userId) => async (dispatch) => {
 export const savePhoto = (photo) => async (dispatch) => {
 	let response = await profileAPI.savePhoto(photo);
 	if (response.data.resultCode === 0) {
-		dispatch(savePhotoSuccess(response.data.photos));
-		console.log('response.data.photos');
+		dispatch(savePhotoSuccess(response.data.data.photos));
+		console.log(response.data.data.photos);
 	}
 };
 

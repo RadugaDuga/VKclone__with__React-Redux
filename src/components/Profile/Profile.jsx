@@ -9,15 +9,17 @@ import Friends from "./Friends/Friends";
 
 
 const Profile = (props) => {
-	if(props.profile){
-		document.title = props.profile.fullName === 'RadugaDuga' ? "Георгий Букиа": props.profile.fullName
-	}
 
+	if(!props.profile){
+		return null
+	}
+	
+	document.title = props.profile.fullName
 	return (
 		
 		<div className={s.profile_wrapper}>
 			<div className={s.left_line}>
-				<Avatar isOwner={props.isOwner} profile={props.profile} />
+				<Avatar  savePhoto={props.savePhoto} isOwner={props.isOwner} profile={props.profile} />
 				<Friends/>
 			</div>
 			<div className={s.right_line}>
@@ -37,5 +39,4 @@ const Profile = (props) => {
 
 
 
-// 'https://i.ytimg.com/vi/lcdbxwErBRY/maxresdefault.jpg'
 export default Profile;
