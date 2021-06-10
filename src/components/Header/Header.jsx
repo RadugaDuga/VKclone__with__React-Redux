@@ -3,6 +3,7 @@ import s from "./Header.module.css";
 import logo from "../../images/vk2.svg";
 import { NavLink } from "react-router-dom";
 import LogoutBar from "./LogoutBar/LogoutBar";
+import { useSelector } from 'react-redux';
 
 const Header = (props) => {
 	let [logoutBar, setLogoutBar] = useState(false);
@@ -10,7 +11,7 @@ const Header = (props) => {
 		logoutBar ? setLogoutBar(false) : setLogoutBar(true);
 	};
 
-
+	const userPhoto = useSelector( state => state.profilePage.profile.photos.large)
 	return (
 		<header className={s.header}>
 			<img src={logo} className={s.logo} alt="" />
@@ -22,13 +23,13 @@ const Header = (props) => {
 					<div onClick={toggleLogoutBar} className={s.info}>
 						<p className={s.name}>{props.login.split("_")[0]}</p>
 						<img
-							src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1"
+							src={userPhoto}
 							className={s.image}
 							alt="^__^"
 						/>
 						<div className={s.more_button}></div>
 						{logoutBar && (
-							<LogoutBar login={props.login} logout={props.logout}/>
+							<LogoutBar userPhoto={userPhoto} login={props.login} logout={props.logout}/>
 						)}
 					</div>
 				) : (

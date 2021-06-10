@@ -69,7 +69,12 @@ let initialState = {
 			date: "21 сен 2020",
 		},
 	],
-	profile: undefined,
+	profile: {
+		photos: {
+			large:undefined,
+			small:undefined
+		}
+	},
 	status: "",
 };
 
