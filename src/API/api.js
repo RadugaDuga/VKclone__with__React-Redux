@@ -1,6 +1,6 @@
 import  axios  from "axios";
 
-// Инстанс для предотвращения дублирования кода
+// Инстанс 
 const instanse = axios.create({
     baseURL:"https://social-network.samuraijs.com/api/1.0/",
     withCredentials:true,
@@ -8,6 +8,8 @@ const instanse = axios.create({
         "API-KEY": "57002d0a-9032-4b4a-bba7-bc2cabbf5e08"
     }
 })
+
+
 
 
 // обьект с методами для работы с пользователями
@@ -30,6 +32,8 @@ export const usersAPI = {
 }
 
 
+
+
 // обьект с методами для работы с авторизацией
 export const authAPI = {
 
@@ -46,6 +50,8 @@ export const authAPI = {
     }
 
 }
+
+
 
 
 // обьект с методами для работы с профилем

@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import s from "./Header.module.css";
 import logo from "../../images/vk2.svg";
 import { NavLink } from "react-router-dom";
 import LogoutBar from "./LogoutBar/LogoutBar";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
+import  useClickOutside  from "../common/userHooks/useClickOutside";
+
 
 const Header = (props) => {
 	let [logoutBar, setLogoutBar] = useState(false);
-	const toggleLogoutBar = () => {
-		logoutBar ? setLogoutBar(false) : setLogoutBar(true);
-	};
 
-	const userPhoto = useSelector( state => state.profilePage.profile.photos.large)
+	const toggleLogoutBar =()=> {
+		logoutBar ? setLogoutBar(false) : setLogoutBar(true)
+	}
+
+	let barRef = useRef();
+	let logBarRef = useRef();
+
+	const userPhoto = useSelector(
+		(state) => state.profilePage.profile.photos.large
+	);
+
+	
+	useClickOutside(barRef, toggleLogoutBar)
+	
+
 	return (
 		<header className={s.header}>
 			<img src={logo} className={s.logo} alt="" />
@@ -20,16 +33,25 @@ const Header = (props) => {
 			<button className={s.music_btn}></button>
 			<div className={s.loginBlock}>
 				{props.isAuth ? (
-					<div onClick={toggleLogoutBar} className={s.info}>
-						<p className={s.name}>{props.login.split("_")[0]}</p>
-						<img
-							src={userPhoto}
-							className={s.image}
-							alt="^__^"
-						/>
-						<div className={s.more_button}></div>
+					<div>
+						<div
+							ref={logBarRef}
+							onClick={() => {
+								toggleLogoutBar()
+							}}
+							className={s.info}
+						>
+							<p className={s.name}>{props.login.split("_")[0]}</p>
+							<img src={userPhoto} className={s.image} alt="^__^" />
+							<div className={s.more_button}></div>
+						</div>
 						{logoutBar && (
-							<LogoutBar userPhoto={userPhoto} login={props.login} logout={props.logout}/>
+							<LogoutBar
+								aae={barRef}
+								userPhoto={userPhoto}
+								login={props.login}
+								logout={props.logout}
+							/>
 						)}
 					</div>
 				) : (
