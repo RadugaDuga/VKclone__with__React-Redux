@@ -10,10 +10,10 @@ import Friends from "./Friends/Friends";
 
 const Profile = (props) => {
 
-	if(!props.profile){
+	if(!props.profile.contacts){
 		return null
 	}
-	
+
 	document.title = props.profile.fullName
 	return (
 		

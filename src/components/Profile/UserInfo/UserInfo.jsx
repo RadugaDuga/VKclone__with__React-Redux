@@ -1,13 +1,19 @@
-
-import React from "react";
+import React , {useState} from "react";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import s from "./UserInfo.module.css";
 
 const UserInfo = (props) => {
 
-	if (!props.profile) {
-		return null
+	const [moreInfo, setMoreInfo] = useState(false)
+	const toggleMoreInfo = (e) => {
+
+		e.target.innerHTML === "Показать подробную информацию"
+			? e.target.innerHTML = "Скрыть подробную информацию" 
+			: e.target.innerHTML = "Показать подробную информацию" 
+		
+		moreInfo ? setMoreInfo(false): setMoreInfo(true)
 	}
+
 	return (
 		<div className={s.container}>
 			<div className={s.info_wrapper}>
@@ -17,12 +23,24 @@ const UserInfo = (props) => {
 						<ProfileStatusWithHooks/>
 					</div>
 				</div>
-				<div className={s.about_user}>
-					<p> День рождения:      </p><button className={s.btn}><span>26 августа </span></button> 
-					<p> Город:              </p><button className={s.btn}><span>Новосибирск</span></button> 
-					<p> Семейное положение: </p><button className={s.btn}><span>влюблен    </span></button> 
+
+				<div className={s.about_user_global_wrapper}>	
+					<div className={s.info_block}>
+						<p className={s.info_subtitle}>День рождения:</p> 
+						26 августа
+					</div>
+					<div className={s.info_block}>
+						<p className={s.info_subtitle}>Город:</p> 
+						Новосибирск 
+					</div>
+					<div className={s.info_block}>
+						<p className={s.info_subtitle}>Семейное положение:</p> 
+						влюблен 
+					</div>
+					<button onClick={(e)=>{toggleMoreInfo(e)}} className={s.more_button}>Показать подробную информацию</button>
 				</div>
-				<button className={s.more_button}>Показать подробную информацию..</button>
+
+				{ moreInfo ? <AboutUser profile={props.profile}/> : null}
 			</div>
 			<div className={s.user_stats}>
 				<p>54<span>друзей</span></p>
@@ -31,6 +49,40 @@ const UserInfo = (props) => {
 				<p>2<span>отметки</span></p>
 				<p>36<span>видеозаписей</span></p>
 			</div>
+		</div>
+	);
+};
+
+
+const AboutUser = (props) => {
+	
+	return (
+		<>
+			<div className={s.about_user_section}>
+				<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
+				{Object.keys(props.profile.contacts).map(key => {
+					return <Contact key={key} title={key} value={props.profile.contacts[key]}/>
+				})}
+			</div>
+
+			<div className={s.about_user_section}>
+				<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
+				{Object.keys(props.profile.contacts).map(key => {
+					return <Contact key={key} title={key} value={props.profile.contacts[key]}/>
+				})}
+			</div>
+		</>
+	)
+}
+	
+
+
+
+const Contact = ({ title, value }) => {
+	return (
+		<div className={s.info_block}>
+			<p className={s.info_subtitle}>{title}:</p>
+			{value}
 		</div>
 	);
 };
