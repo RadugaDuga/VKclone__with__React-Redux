@@ -1,6 +1,7 @@
 import React , {useState} from "react";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import s from "./UserInfo.module.css";
+import ProfileDataForm from './ProfileDataForm';
 
 const UserInfo = (props) => {
 
@@ -13,6 +14,10 @@ const UserInfo = (props) => {
 		
 		moreInfo ? setMoreInfo(false): setMoreInfo(true)
 	}
+
+	
+	
+
 
 	return (
 		<div className={s.container}>
@@ -40,7 +45,7 @@ const UserInfo = (props) => {
 					<button onClick={(e)=>{toggleMoreInfo(e)}} className={s.more_button}>Показать подробную информацию</button>
 				</div>
 
-				{ moreInfo ? <AboutUser profile={props.profile}/> : null}
+				{ moreInfo ? <AboutUser isOwner={props.isOwner} profile={props.profile}/> : null}
 			</div>
 			<div className={s.user_stats}>
 				<p>54<span>друзей</span></p>
@@ -54,23 +59,56 @@ const UserInfo = (props) => {
 };
 
 
-const AboutUser = (props) => {
-	
-	return (
-		<>
-			<div className={s.about_user_section}>
-				<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
-				{Object.keys(props.profile.contacts).map(key => {
-					return <Contact key={key} title={key} value={props.profile.contacts[key]}/>
-				})}
-			</div>
 
-			<div className={s.about_user_section}>
-				<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const AboutUser = (props) => {
+
+	let [editMode, setEditMode] = useState(false)
+	const toggleEditMode = () => {
+		editMode ? setEditMode(false): setEditMode(true)
+	}
+
+	if(editMode){
+		return <ProfileDataForm profile={props.profile}/>
+	}
+
+	return (
+
+		<>
+		<div className={s.about_user_section}>
+			<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
 				{Object.keys(props.profile.contacts).map(key => {
-					return <Contact key={key} title={key} value={props.profile.contacts[key]}/>
-				})}
-			</div>
+					return  <div key={key} className={s.info_block}>
+								<p className={s.info_subtitle}>{key}:</p>
+								{props.profile.contacts[key]}
+							</div>
+			})}
+		</div>
+		<div className={s.about_user_section}>
+			<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
+				{Object.keys(props.profile.contacts).map(key => {
+					return  <div key={key} className={s.info_block}>
+								<p className={s.info_subtitle}>{key}:</p>
+								{props.profile.contacts[key]}
+							</div>
+			})}
+		</div>
+		
+		{props.isOwner && <button style={({cursor:"pointer"})} onClick={toggleEditMode}> Редактировать </button> }
 		</>
 	)
 }
@@ -78,14 +116,18 @@ const AboutUser = (props) => {
 
 
 
-const Contact = ({ title, value }) => {
-	return (
-		<div className={s.info_block}>
-			<p className={s.info_subtitle}>{title}:</p>
-			{value}
-		</div>
-	);
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default UserInfo;
 

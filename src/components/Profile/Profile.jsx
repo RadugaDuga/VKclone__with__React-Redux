@@ -19,17 +19,11 @@ const Profile = (props) => {
 		
 		<div className={s.profile_wrapper}>
 			<div className={s.left_line}>
-				<Avatar  savePhoto={props.savePhoto} isOwner={props.isOwner} profile={props.profile} />
+				<Avatar isOwner={props.isOwner} profile={props.profile} />
 				<Friends/>
 			</div>
 			<div className={s.right_line}>
-				<UserInfo 
-					profile={props.profile} 
-					
-					// эти два пропса нужны для компоненты ProfileStatusWithHooks и я заменил их на хуки в самой компоненте 
-					updateStatus={props.updateStatus} 
-					status={props.status} 
-				/>
+				<UserInfo isOwner={props.isOwner} profile={props.profile} />
 				<UserPhotos/>
 				<MyPostsContainer/>
 			</div>

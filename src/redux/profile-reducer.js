@@ -71,8 +71,8 @@ let initialState = {
 	],
 	profile: {
 		photos: {
-			large:undefined,
-			small:undefined
+			large:null,
+			small:null
 		}
 	},
 	status: "",

@@ -35,10 +35,10 @@ const MyPosts = React.memo((props) => {
 		editMode ? setEditMode(false) : setEditMode(true)
 	}
 	const aae = useRef()
+
 	useClickOutside(aae, toggleEditMode)
 	const [editMode, setEditMode] = useState(false);
 
-	
 
 	const formSumbitted =(formData, dispatch)=> {
 		props.addPost(formData.postText);
@@ -78,17 +78,13 @@ const MyPosts = React.memo((props) => {
 		</div>
 	));
 
-	// Этот колбек передастся кнопке в РедаксФорме, чтобы при нажатии вне происходил блюр 
-	const offEditMode = ()=>{
-		setEditMode(false)
-	}
-	
+
 	return (
 		<div className={s.my_posts_wrapper}>
 			{editMode ? (
 				<div ref={aae} tabIndex="100" className={s.textarea_wrapper__edit}>
 					<img src="https://sun9-74.userapi.com/s/v1/if1/wnhPf1akAP1IYujDsFmUaeLG7pjkj80kDNOPNdkYWwDGPCOeuTs3pJZot4nlJlLalmLgEuYF.jpg?size=50x0&quality=96&crop=459,0,1006,1006&ava=1" className={s.mini_image} alt="^__^"></img>
-					<ReduxPostForm offEditMode={offEditMode} onSubmit={formSumbitted} />
+					<ReduxPostForm  onSubmit={formSumbitted} />
 				</div>
 			) : (
 				<div  onClick={toggleEditMode} className={s.textarea_wrapper}>
