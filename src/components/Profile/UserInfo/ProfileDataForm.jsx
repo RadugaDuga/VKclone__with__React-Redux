@@ -9,15 +9,59 @@ const ProfileDataForm = (props) => {
 			
 
             <div className={s.info_block}>
-                <p className={s.info_subtitle}>День рождения:</p> 
+                <p className={s.info_subtitle}>Обо мне:</p> 
                 <Field
                     component={"textarea"}
-                    name="birthDay"
-                    className={s.textarea}
+                    name="AboutMe"
                     autoFocus={true}
-                    placeholder={"Что у вас нового"}
+                    placeholder={"Расскажите о себе"}
+                    className={s.input_box}
+
 			    />
             </div>
+            <div className={s.info_block}>
+                <p className={s.info_subtitle}>Мое имя:</p> 
+                <Field
+                    component={"input"}
+                    name="fullName"
+                    placeholder={"Ваше имя"}
+                    className={s.input_box}
+
+			    />
+            </div>
+            <div className={s.info_block}>
+                <p className={s.info_subtitle}>Я ищу работу:</p> 
+                <Field
+                    component={"input"}
+                    name="lookingForAJob"
+                    type="checkbox"
+                    className={s.input_box}
+
+			    />
+            </div>
+            <div className={s.info_block}>
+                <p className={s.info_subtitle}>Описание моих скиллов:</p> 
+                <Field
+                    component={"textarea"}
+                    name="lookingForAJobDescription"
+                    placeholder={"Какую работу я ищу"}
+                    className={s.input_box}
+
+			    />
+            </div>
+            
+            {Object.keys(props.profile.contacts).map(key => {
+                return  <div key={key} className={s.info_block}>
+                            <p className={s.info_subtitle}>{key?key[0].toUpperCase() + key.slice(1) : null}:</p>
+                            <Field
+                                component={"input"}
+                                name={"contacts." + key}
+                                className={s.input_box}
+                                
+                            />
+                        </div>
+			})}
+
 
 			<button className={s.button}>Сохранить</button>
 		</form>

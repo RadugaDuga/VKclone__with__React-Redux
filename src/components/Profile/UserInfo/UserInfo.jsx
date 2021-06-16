@@ -2,10 +2,12 @@ import React , {useState} from "react";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import s from "./UserInfo.module.css";
 import ProfileDataForm from './ProfileDataForm';
+import { useDispatch } from 'react-redux';
+import { saveProfileData } from "../../../redux/profile-reducer";
 
 const UserInfo = (props) => {
 
-	const [moreInfo, setMoreInfo] = useState(false)
+	const [moreInfo, setMoreInfo] = useState(false)  // ???=======================================
 	const toggleMoreInfo = (e) => {
 
 		e.target.innerHTML === "Показать подробную информацию"
@@ -66,46 +68,37 @@ const UserInfo = (props) => {
 
 
 
-
-
-
-
-
-
-
-
-
 const AboutUser = (props) => {
 
-	let [editMode, setEditMode] = useState(false)
+	let [editMode, setEditMode] = useState(false)  // ???=======================================
 	const toggleEditMode = () => {
 		editMode ? setEditMode(false): setEditMode(true)
 	}
 
+	let dispatch = useDispatch();
+
+	const formSubmitted = (formData) =>{
+		console.log(formData);
+		dispatch(saveProfileData(formData))
+		toggleEditMode()
+	}
+
+
 	if(editMode){
-		return <ProfileDataForm profile={props.profile}/>
+		return <ProfileDataForm onSubmit={formSubmitted} toggleEditMode={toggleEditMode} profile={props.profile}/>
 	}
 
 	return (
 
 		<>
 		<div className={s.about_user_section}>
-			<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
+			<div className={s.title_line_wrapper}><h5 className={s.about_title}>Контактная информация</h5><div className={s.line}></div></div>
 				{Object.keys(props.profile.contacts).map(key => {
 					return  <div key={key} className={s.info_block}>
-								<p className={s.info_subtitle}>{key}:</p>
-								{props.profile.contacts[key]}
+								<p className={s.info_subtitle}>{key?key[0].toUpperCase() + key.slice(1) : null}:</p>
+								<a href={`${props.profile.contacts[key]}`} target="_blank" rel="noopener noreferrer" className={s.contactLinks}>{props.profile.contacts[key] && props.profile.contacts[key].slice(8)}</a>
 							</div>
-			})}
-		</div>
-		<div className={s.about_user_section}>
-			<div className={s.title_line_wrapper}><h5 className={s.about_title}>Основная информация</h5><div className={s.line}></div></div>
-				{Object.keys(props.profile.contacts).map(key => {
-					return  <div key={key} className={s.info_block}>
-								<p className={s.info_subtitle}>{key}:</p>
-								{props.profile.contacts[key]}
-							</div>
-			})}
+				})}
 		</div>
 		
 		{props.isOwner && <button style={({cursor:"pointer"})} onClick={toggleEditMode}> Редактировать </button> }
@@ -118,18 +111,5 @@ const AboutUser = (props) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 export default UserInfo;
 
-
-// Георгий Букиа <span>&#128123;</span> 

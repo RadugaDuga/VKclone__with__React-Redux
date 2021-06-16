@@ -16,13 +16,15 @@ const Header = (props) => {
 
 	let barRef = useRef();
 	let logBarRef = useRef();
+	const refsArray = [barRef, logBarRef]
+
 
 	const userPhoto = useSelector(
 		(state) => state.profilePage.profile.photos.large
 	);
 
 	
-	useClickOutside(barRef, toggleLogoutBar)
+	useClickOutside(toggleLogoutBar , refsArray)
 	
 
 	return (

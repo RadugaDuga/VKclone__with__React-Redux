@@ -36,10 +36,11 @@ const Avatar = (props) => {
 							/>
 							<div>
 								<label className={s.label} htmlFor="file">
-								<img className={s.iconForBtn} src={arrow} alt="" />
+									<img className={s.iconForBtn} src={arrow} alt="" />
 									Обновить фотографию
 								</label>
 							</div>
+							<div onClick={()=>{dispatch(savePhoto(null))}}>aaaaaaaaaaaae</div>
 						</div>
 					) : null}
 				</div>

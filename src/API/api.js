@@ -77,6 +77,12 @@ export const profileAPI = {
                 "Content-Type": "multipart/form-data"
             }
         })
+    },
+
+    saveProfileData(profileFormData){
+        return instanse.put(`/profile`, profileFormData)
     }
+
+   
 
 }
