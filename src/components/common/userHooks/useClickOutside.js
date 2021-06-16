@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-const useClickOutside = ( setAction , ref, ref2 = null) => {
+const useClickOutside = ( ref, action) => {
 	useEffect(() => {
 		let handler = (event) => {
-			if (ref.current && !ref.current.contains(event.target) && !ref2.current.contains(event.target)) {
-				setAction();
+			if (ref.current && !ref.current.contains(event.target)) {
+				action();
 			}
 		};
 

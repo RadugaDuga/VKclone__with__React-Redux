@@ -20,11 +20,11 @@ const Header = (props) => {
 
 
 	const userPhoto = useSelector(
-		(state) => state.profilePage.profile.photos.large
+		(state) => state.auth.authUserPhoto
 	);
 
 	
-	useClickOutside(toggleLogoutBar , refsArray)
+	useClickOutside(barRef , toggleLogoutBar)
 	
 
 	return (
