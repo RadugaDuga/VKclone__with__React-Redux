@@ -1,5 +1,6 @@
 import { stopSubmit } from "redux-form";
-import { authAPI, profileAPI } from "./../API/api";
+import { authAPI, profileAPI, securityAPI } from "./../API/api";
+
 
 
 
@@ -8,6 +9,7 @@ import { authAPI, profileAPI } from "./../API/api";
 
 const SET_AUTH_USER_DATA = "auth/SET_AUTH_USER_DATA";
 const SET_AUTH_USER_PHOTO = "auth/SET_AUTH_USER_PHOTO";
+const GET_CAPTCHA_URL_SUCCESS = "auth/GET_CAPTCHA_URL_SUCCESS";
 
 
 let initialState = {
@@ -15,7 +17,8 @@ let initialState = {
 	email: null,
 	login: null,
 	isAuth: null,
-	authUserPhoto: null
+	authUserPhoto: null,
+	captchaURL: null
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -29,6 +32,11 @@ export const authReducer = (state = initialState, action) => {
 			return {
 				...state,
 				authUserPhoto: action.photo
+			};
+		case GET_CAPTCHA_URL_SUCCESS:
+			return {
+				...state,
+				captchaURL: action.captcha
 			};
 
 		default:
@@ -50,6 +58,10 @@ export const setAuthUserPhoto = (photo) => ({
 	type: SET_AUTH_USER_PHOTO,
 	photo
 });
+export const getCaptchaURLSuccess = (captcha) => ({
+	type: GET_CAPTCHA_URL_SUCCESS,
+	captcha
+});
 
 
 export const authMe = () => async (dispatch,getState) => {
@@ -63,12 +75,21 @@ export const authMe = () => async (dispatch,getState) => {
 	}
 };
 
-export const login = (email, password, rememberMe) => async (dispatch) => {
-	let response = await authAPI.login(email, password, rememberMe);
+export const getCaptchaURL = () => async (dispatch) => {
+	let response = await securityAPI.getCaptchaURL()
+	const captcha = response.data.url ;
+	dispatch(getCaptchaURLSuccess(captcha))
+};
+
+export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
+	let response = await authAPI.login(email, password, rememberMe, captcha);
 	
 	if (response.data.resultCode === 0) {
 		dispatch(authMe());
 	} else {
+		if (response.data.resultCode === 10){
+			dispatch(getCaptchaURL())
+		}
 		let action = stopSubmit("login", {_error: "Вы ввели неверный логин или пароль",});
 		dispatch(action);
 	}

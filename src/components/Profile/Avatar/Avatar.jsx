@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { savePhoto } from "../../../redux/profile-reducer";
 import arrow from "../../../images/Common/arrow.png";
 
-
 const Avatar = (props) => {
 
 	let dispatch = useDispatch();
@@ -40,7 +39,7 @@ const Avatar = (props) => {
 									Обновить фотографию
 								</label>
 							</div>
-							<div onClick={()=>{dispatch(savePhoto(null))}}>aaaaaaaaaaaae</div>
+						
 						</div>
 					) : null}
 				</div>

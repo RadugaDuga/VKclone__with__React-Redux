@@ -1,5 +1,6 @@
 import { profileAPI } from "../API/api";
 import { stopSubmit } from 'redux-form';
+import { authMe } from "./auth-reducer";
 
 const ADD_POST = "profile/ADD_POST";
 const UPDATE_NEW_POST_TEXT = "profile/UPDATE_NEW_POST_TEXT";
@@ -194,8 +195,12 @@ export const savePhoto = (photo) => async (dispatch) => {
 	let response = await profileAPI.savePhoto(photo);
 	if (response.data.resultCode === 0) {
 		dispatch(savePhotoSuccess(response.data.data.photos));
+		dispatch(authMe())
 	}
 };
+
+
+
 
 export const saveProfileData = (formData) => async (dispatch, getState) => {
 	let response = await profileAPI.saveProfileData(formData);

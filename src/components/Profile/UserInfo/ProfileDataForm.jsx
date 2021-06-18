@@ -6,7 +6,7 @@ import { Field, reduxForm } from "redux-form";
 const ProfileDataForm = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit} className={s.form}>
-			{props.error && <div>{props.error}</div> }
+			{props.error && <div className={s.error}><b>Warning! </b>{props.error.replace("Invalid url format","неверный формат URL")}</div> }
             <div className={s.info_block}>
                 <p className={s.info_subtitle}>Мое имя:</p> 
                 <Field

@@ -51,6 +51,9 @@
 
 /*?===== Блок с информацией о городе, рождении и т.п =====*/
 
+
+
+
 .about_user_global_wrapper {
 	padding-top: 10px;
 }
@@ -62,7 +65,6 @@
 .about_user_section:hover .edit_button{
 	display: block;
 }
-
 .about_user_section ~ .about_user_section{
 	padding-top: 20px;
 }
