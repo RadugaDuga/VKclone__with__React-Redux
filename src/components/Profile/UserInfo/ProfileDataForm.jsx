@@ -6,19 +6,7 @@ import { Field, reduxForm } from "redux-form";
 const ProfileDataForm = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit} className={s.form}>
-			
-
-            <div className={s.info_block}>
-                <p className={s.info_subtitle}>Обо мне:</p> 
-                <Field
-                    component={"textarea"}
-                    name="AboutMe"
-                    autoFocus={true}
-                    placeholder={"Расскажите о себе"}
-                    className={s.input_box}
-
-			    />
-            </div>
+			{props.error && <div>{props.error}</div> }
             <div className={s.info_block}>
                 <p className={s.info_subtitle}>Мое имя:</p> 
                 <Field
@@ -26,9 +14,10 @@ const ProfileDataForm = (props) => {
                     name="fullName"
                     placeholder={"Ваше имя"}
                     className={s.input_box}
-
+                    autoFocus={true}
 			    />
             </div>
+
             <div className={s.info_block}>
                 <p className={s.info_subtitle}>Я ищу работу:</p> 
                 <Field
@@ -39,6 +28,7 @@ const ProfileDataForm = (props) => {
 
 			    />
             </div>
+
             <div className={s.info_block}>
                 <p className={s.info_subtitle}>Описание моих скиллов:</p> 
                 <Field
@@ -49,6 +39,20 @@ const ProfileDataForm = (props) => {
 
 			    />
             </div>
+
+            <div className={s.info_block}>
+                <p className={s.info_subtitle}>Обо мне:</p> 
+                <Field
+                    component={"textarea"}
+                    name="aboutMe"
+                    placeholder={"Расскажите о себе"}
+                    className={s.input_box}
+
+			    />
+            </div>
+            
+            
+            
             
             {Object.keys(props.profile.contacts).map(key => {
                 return  <div key={key} className={s.info_block}>

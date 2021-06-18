@@ -9,11 +9,9 @@ const UserInfo = (props) => {
 
 	const [moreInfo, setMoreInfo] = useState(false)  // ???=======================================
 	const toggleMoreInfo = (e) => {
-
 		e.target.innerHTML === "Показать подробную информацию"
 			? e.target.innerHTML = "Скрыть подробную информацию" 
 			: e.target.innerHTML = "Показать подробную информацию" 
-		
 		moreInfo ? setMoreInfo(false): setMoreInfo(true)
 	}
 
@@ -25,24 +23,25 @@ const UserInfo = (props) => {
 		<div className={s.container}>
 			<div className={s.info_wrapper}>
 				<div className={s.user_name}>
-					<p>  	{props.profile.fullName}     <span className={s.status}>online</span></p>
-					<div className={s.status_wrapper}>
-						<ProfileStatusWithHooks/>
-					</div>
+					<p> {props.profile.fullName} <span className={s.status}>online</span></p>
+					<div className={s.status_wrapper}> <ProfileStatusWithHooks/> </div>
 				</div>
+
+				
+			
 
 				<div className={s.about_user_global_wrapper}>	
 					<div className={s.info_block}>
-						<p className={s.info_subtitle}>День рождения:</p> 
-						26 августа
+						<div className={s.mini_title}>День рождения :</div>
+						<div className={s.information}>26 августа</div>
 					</div>
 					<div className={s.info_block}>
-						<p className={s.info_subtitle}>Город:</p> 
-						Новосибирск 
+						<div className={s.mini_title}>Город :</div>
+						<div className={s.information}>Новосибирск</div>
 					</div>
 					<div className={s.info_block}>
-						<p className={s.info_subtitle}>Семейное положение:</p> 
-						влюблен 
+						<div className={s.mini_title}>Семейное положение :</div>
+						<div className={s.information}>Влюблен</div>
 					</div>
 					<button onClick={(e)=>{toggleMoreInfo(e)}} className={s.more_button}>Показать подробную информацию</button>
 				</div>
@@ -78,30 +77,56 @@ const AboutUser = (props) => {
 	let dispatch = useDispatch();
 
 	const formSubmitted = (formData) =>{
-		console.log(formData);
-		dispatch(saveProfileData(formData))
-		toggleEditMode()
+		dispatch(saveProfileData(formData)).then(()=>{
+			toggleEditMode()
+		})
 	}
 
 
 	if(editMode){
-		return <ProfileDataForm onSubmit={formSubmitted} toggleEditMode={toggleEditMode} profile={props.profile}/>
+		return <ProfileDataForm initialValues={props.profile} onSubmit={formSubmitted} toggleEditMode={toggleEditMode} profile={props.profile}/>
 	}
 
-	return (
 
+
+	return (
 		<>
-		<div className={s.about_user_section}>
-			<div className={s.title_line_wrapper}><h5 className={s.about_title}>Контактная информация</h5><div className={s.line}></div></div>
-				{Object.keys(props.profile.contacts).map(key => {
-					return  <div key={key} className={s.info_block}>
-								<p className={s.info_subtitle}>{key?key[0].toUpperCase() + key.slice(1) : null}:</p>
-								<a href={`${props.profile.contacts[key]}`} target="_blank" rel="noopener noreferrer" className={s.contactLinks}>{props.profile.contacts[key] && props.profile.contacts[key].slice(8)}</a>
-							</div>
-				})}
-		</div>
-		
-		{props.isOwner && <button style={({cursor:"pointer"})} onClick={toggleEditMode}> Редактировать </button> }
+			<div className={s.about_user_section} >
+				
+				<div className={s.title_line_wrapper}><h5 className={s.about_title}>О себе</h5><div className={s.line}></div>{props.isOwner && <button className={s.edit_button} onClick={toggleEditMode}> Редактировать </button> }</div>
+				<div className={s.info_block}>
+					<div className={s.mini_title}>Имя и Фамилия :</div>
+					<div className={s.information}>{props.profile.fullName}</div>
+				</div>
+				<div className={s.info_block}>
+					<div className={s.mini_title}>Ищу ли я работу :</div>
+					<div className={s.information}>{props.profile.lookingForAJob? "Да" : "Нет"}</div>
+				</div>
+				<div className={s.info_block}>
+					<div className={s.mini_title}>О моих скиллах :</div>
+					<div className={s.information}>{props.profile.lookingForAJobDescription}</div>
+				</div>
+				<div className={s.info_block}>
+					<div className={s.mini_title}>Обо мне :</div>
+					<div className={s.information}>{props.profile.aboutMe}</div>
+				</div>
+			</div>
+
+
+
+
+			<div className={s.about_user_section}>
+				<div style={({position:"relative"})} className={s.title_line_wrapper}><h5 className={s.about_title}>Мои контакты</h5><div className={s.line}></div></div>
+					{Object.keys(props.profile.contacts).map(key => {
+						return  <div key={key} className={s.info_block}>
+									<p className={s.mini_title}>{key?key[0].toUpperCase() + key.slice(1) : null} :</p>
+									<a href={`${props.profile.contacts[key]}`} target="_blank" rel="noopener noreferrer" className={s.information}>{props.profile.contacts[key]}</a>
+								</div>
+					})}
+				
+			</div>
+			
+			
 		</>
 	)
 }

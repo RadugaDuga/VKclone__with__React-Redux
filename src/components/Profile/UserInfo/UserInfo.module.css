@@ -59,8 +59,12 @@
 .about_user_section{
 	padding-top:14px;
 }
+.about_user_section:hover .edit_button{
+	display: block;
+}
+
 .about_user_section ~ .about_user_section{
-	padding-top: 18px;
+	padding-top: 20px;
 }
 
 
@@ -86,19 +90,42 @@
 
 
 
+
+
 .info_block{
 	display: flex;
+	width:500px;
 	flex-direction: row;
 	color:#2A5885;
 	font-size: 13px;
 	padding-top: 5px;
 	line-height: 150%;
 }
-
-.info_subtitle{
+.mini_title{
+	word-wrap:break-word;
+	flex-basis:165px;
 	color:#818C99;
-	width:165px!important;
 }
+.information{
+	flex:1;
+	word-wrap:break-word;
+	text-decoration: none;
+	color:#2A5885;
+}
+.edit_button{
+	color:#818C99;
+	display: none;
+	padding:0px 10px;
+	font-size: 11.5px;
+	cursor: pointer;
+	transition: 1s;
+}
+.edit_button:hover{
+	text-decoration: underline;
+}
+
+
+
 
 .more_button {
 	padding-left: 165px;
@@ -119,13 +146,6 @@
 	background: #f0f2f5;
 }
 
-.contactLinks{
-	color:#2A5885;
-	text-decoration: none;
-}
-.contactLinks:hover{
-	text-decoration: underline;
-}
 
 /*?===== Блок со статистикой ===== */
 
@@ -149,5 +169,26 @@
 	color: #828eac;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -8,23 +8,22 @@ import  useClickOutside  from "../common/userHooks/useClickOutside";
 
 
 const Header = (props) => {
-	let [logoutBar, setLogoutBar] = useState(false);
 
+
+	let [logoutBar, setLogoutBar] = useState(false);
 	const toggleLogoutBar =()=> {
 		logoutBar ? setLogoutBar(false) : setLogoutBar(true)
 	}
 
 	let barRef = useRef();
-	let logBarRef = useRef();
-	const refsArray = [barRef, logBarRef]
+	useClickOutside(barRef , toggleLogoutBar)
+
 
 
 	const userPhoto = useSelector(
 		(state) => state.auth.authUserPhoto
 	);
 
-	
-	useClickOutside(barRef , toggleLogoutBar)
 	
 
 	return (
@@ -37,7 +36,7 @@ const Header = (props) => {
 				{props.isAuth ? (
 					<div>
 						<div
-							ref={logBarRef}
+							
 							onClick={() => {
 								toggleLogoutBar()
 							}}
