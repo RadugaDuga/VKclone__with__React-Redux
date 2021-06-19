@@ -196,7 +196,7 @@
 
 
 .stats span{
-    margin-left:5px;
+    margin-left:7px;
     font-size: 14px;
     font-weight: 500;
     color:#828EAC;
@@ -211,41 +211,47 @@
 
 .like_button{
     background:url(../../../images/Stats_Buttons_Image/unliked.svg);
-    width:21.9px;
-    background-size:100%;
-    height:20px;
-    background-repeat: no-repeat;
+    width:24px;
+    height:24px;
+    cursor: pointer;
+}
+.liked{
+    background-image:url(../../../images/Stats_Buttons_Image/liked.svg) ;
+    width:24px;
+    height:24px;
     cursor: pointer;
 }
 .like_button:hover{
     background-image:url(../../../images/Stats_Buttons_Image/likeHovered.svg);
 }
-.like_button:active{
-    background-image:url(../../../images/Stats_Buttons_Image/liked.svg) ;
-}
+
 
 
 
 .comment_button{
     background:url(../../../images/Stats_Buttons_Image/comment.svg);
-    width:22px;
-    background-size:contain;
-    height:20px;
-    background-repeat: no-repeat;
+    width:24px;
+    height:24px;
     margin-left: 20px;
-    margin-top:3px;
+    opacity: .7;
+    cursor: pointer;
 }
-
+.comment_button:hover{
+    background-image:url(../../../images/Stats_Buttons_Image/commentHovered.svg);
+}
 
 
 
 .repost_button{
     background:url(../../../images/Stats_Buttons_Image/repost.svg);
-    width:22px;
-    background-size:100%;
-    height:20px;
-    background-repeat: no-repeat;
+    width:24px;
+    height: 24px;
     margin-left: 20px;
+    opacity: .7;
+    cursor: pointer;
+}
+.repost_button:hover{
+    background-image:url(../../../images/Stats_Buttons_Image/commentHovered.svg);
 }
 
 

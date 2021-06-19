@@ -13,7 +13,7 @@ let mapStateToProps = (state) => {
 		isAuth:state.auth.isAuth
 	}
 };
-
+document.title = `Мессенджер`;
 
 export default compose(
 	connect( mapStateToProps, {addMessage}),

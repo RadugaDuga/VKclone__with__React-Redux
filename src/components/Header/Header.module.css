@@ -12,6 +12,13 @@
   margin-left: -3px;
   margin-bottom: 1px;
 }
+.logo_wrap{
+  display: flex;
+  align-items: center;
+}
+.logo_wrap:active{
+  transform: translateY(1px);
+}
 
 .login{
   color:black;

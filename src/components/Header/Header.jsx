@@ -16,7 +16,8 @@ const Header = (props) => {
 	}
 
 	let barRef = useRef();
-	useClickOutside(barRef , toggleLogoutBar)
+	let logBarRef = useRef()
+	useClickOutside(toggleLogoutBar,barRef, logBarRef )
 
 
 
@@ -28,7 +29,10 @@ const Header = (props) => {
 
 	return (
 		<header className={s.header}>
-			<img src={logo} className={s.logo} alt="" />
+			<NavLink className={s.logo_wrap}  to={"/profile"}>
+				<img src={logo} className={s.logo} alt="" />
+			</NavLink>
+			
 			<input className={s.search} placeholder="Поиск" />
 			<button className={s.notify_btn}></button>
 			<button className={s.music_btn}></button>
@@ -36,7 +40,7 @@ const Header = (props) => {
 				{props.isAuth ? (
 					<div>
 						<div
-							
+							ref = {logBarRef}
 							onClick={() => {
 								toggleLogoutBar()
 							}}
@@ -48,7 +52,7 @@ const Header = (props) => {
 						</div>
 						{logoutBar && (
 							<LogoutBar
-								aae={barRef}
+								reff={barRef}
 								userPhoto={userPhoto}
 								login={props.login}
 								logout={props.logout}

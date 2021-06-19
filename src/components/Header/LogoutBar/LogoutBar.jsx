@@ -3,7 +3,7 @@ import s from "./LogoutBar.module.css";
 
 const LogoutBar = (props) => {
 	return (
-		<div ref={props.aae} className={s.logoutBar}>
+		<div ref={props.reff} className={s.logoutBar}>
 			<div className={s.top_profile}>
 				<img src={props.userPhoto}
 					alt=""

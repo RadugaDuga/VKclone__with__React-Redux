@@ -9,18 +9,17 @@ import Login from "./components/Login/Login";
 import Nav from "./components/Navigation/Nav";
 import Preloader from "./components/common/Preloader/Preloader";
 
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { initializeApp } from "./redux/app-reducer";
 import { connect } from "react-redux";
 import { withSuspence } from "./components/HOC/withSuspense";
-
-
-
+import { Redirect } from 'react-router';
+import NF404 from "./components/404NotFound/NF404";
 
 
 const DialogsContainer = React.lazy(() =>
 	import("./components/Dialogs/DialogsContainer")
-);
+)
 
 
 
@@ -40,11 +39,15 @@ class App extends React.Component {
 					<HeaderContainer />
 					<Nav />
 					<div className={s.app_wrapper_content}>
-						<Route path="/profile/:userId?" render={() => <ProfileContainer />} />
-						<Route path="/dialogs" render={withSuspence(DialogsContainer)} />
-						<Route path="/users"   render={() => <UsersContainer />} />
-						<Route path="/groups"  render={() => <GroupsContainer />} />
-						<Route path="/login"   render={() => <Login />} />
+						<Switch>
+							<Route path="/profile/:userId?" render={() => <ProfileContainer />} />
+							<Route path="/dialogs" render={withSuspence(DialogsContainer)} />
+							<Route path="/users"   render={() => <UsersContainer />} />
+							<Route path="/groups"  render={() => <GroupsContainer />} />
+							<Route path="/login"   render={() => <Login />} />
+							<Route exact path="/" render={() => <Redirect to ={"/profile"} />} />
+							<Route path="*"   render={() => <NF404/>} />
+						</Switch>
 					</div>
 				</div>
 			</div>

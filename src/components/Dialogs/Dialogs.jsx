@@ -48,7 +48,8 @@ const Dialogs = (props) => {
 
 	const autoScroll = useRef()
 
-
+	const icon = document.getElementById("favicon")
+	icon.href = "https://vk.com/images/icons/favicons/fav_im.ico?6"
 
 
 

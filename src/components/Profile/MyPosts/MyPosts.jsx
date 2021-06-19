@@ -3,7 +3,8 @@ import s from "./MyPosts.module.css";
 import { reset ,Field, reduxForm } from "redux-form";
 import { Textarea } from "./../../common/FormControl/FormControl";
 import useClickOutside from './../../common/userHooks/useClickOutside';
-
+import { useDispatch } from 'react-redux';
+import { toggleLikePost } from './../../../redux/profile-reducer';
 
 
 
@@ -27,7 +28,6 @@ const ReduxPostForm = reduxForm({ form: "post" })(PostForm);
 
 
 
-
 const MyPosts = React.memo((props) => {
 
 
@@ -36,7 +36,7 @@ const MyPosts = React.memo((props) => {
 	}
 	const aae = useRef()
 
-	useClickOutside(aae, toggleEditMode)
+	useClickOutside( toggleEditMode, aae)
 	const [editMode, setEditMode] = useState(false);
 
 
@@ -45,7 +45,12 @@ const MyPosts = React.memo((props) => {
 		dispatch(reset("post"));
 	}
 
+	const dispatch = useDispatch()
+
 	let posts = props.postsData.map( p => (
+
+		
+
 		<div key={p.postId} className={s.post}>
 			<div className={s.about}>
 				<img className={s.avatar} src={p.image} alt="" />
@@ -66,7 +71,7 @@ const MyPosts = React.memo((props) => {
 			<p className={s.text}>{p.text}</p>
 
 			<div className={s.stats}>
-				<button className={s.like_button}></button>
+				<button onClick={()=>{dispatch(toggleLikePost(p.postId))}} className={ p.liked ? s.liked : s.like_button}></button>
 				<span>{p.likes_count}</span>
 				<button className={s.comment_button}></button>
 				<span>{p.comments_count}</span>
