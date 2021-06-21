@@ -16,6 +16,8 @@ const Avatar = (props) => {
 		}
 	}
 
+	
+
 	return (
 		<div>
 			<div className={s.avatar_wrapper}>
@@ -37,6 +39,18 @@ const Avatar = (props) => {
 								<label className={s.label} htmlFor="file">
 									<img className={s.iconForBtn} src={arrow} alt="" />
 									Обновить фотографию
+								</label>
+							</div>
+							<div>
+								<label className={s.label} >
+									<img className={s.iconForBtn} src={arrow} alt="" />
+									Изменить миниатюру
+								</label>
+							</div>
+							<div>
+								<label className={s.label} >
+									<img className={s.iconForBtn} src={arrow} alt="" />
+									Добавить еффекты
 								</label>
 							</div>
 						
