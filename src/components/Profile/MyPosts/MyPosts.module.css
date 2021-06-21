@@ -201,7 +201,10 @@
     font-weight: 500;
     color:#828EAC;
     letter-spacing:-0.5px;
+    animation: likeCounter .2s ease-in-out;
 }
+
+
 .stats button{
     border:none;
     outline: none;
@@ -213,6 +216,7 @@
     background:url(../../../images/Stats_Buttons_Image/unliked.svg);
     width:24px;
     height:24px;
+    opacity: .7;
     cursor: pointer;
 }
 .liked{
@@ -220,9 +224,12 @@
     width:24px;
     height:24px;
     cursor: pointer;
+    animation: liked .5s ease;
 }
+
+
 .like_button:hover{
-    background-image:url(../../../images/Stats_Buttons_Image/likeHovered.svg);
+    opacity: 1;
 }
 
 
@@ -232,7 +239,7 @@
     background:url(../../../images/Stats_Buttons_Image/comment.svg);
     width:24px;
     height:24px;
-    margin-left: 20px;
+    margin-left: 24px;
     opacity: .7;
     cursor: pointer;
 }
@@ -246,12 +253,12 @@
     background:url(../../../images/Stats_Buttons_Image/repost.svg);
     width:24px;
     height: 24px;
-    margin-left: 20px;
+    margin-left: 24px;
     opacity: .7;
     cursor: pointer;
 }
 .repost_button:hover{
-    background-image:url(../../../images/Stats_Buttons_Image/commentHovered.svg);
+    opacity: 1;
 }
 
 
@@ -273,4 +280,34 @@
     font-size: 13px;
     font-weight: 400;
     color:#7e90be;
+}
+
+
+
+
+
+
+
+
+@keyframes liked {
+    from{
+        transform: scale(1.15);
+        filter: saturate(10);
+    }
+    
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes likeCounter {
+    from{
+        transform: translateX(-100%);
+        opacity: 0.1;
+    }
+    
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }

@@ -14,7 +14,9 @@ const Profile = (props) => {
 		return null
 	}
 
-	document.title = props.profile.fullName
+	document.title = props.profile.fullName;
+	document.getElementById("favicon").href = "https://vk.com/images/icons/favicons/fav_logo.ico?6";
+
 	return (
 		
 		<div className={s.profile_wrapper}>

@@ -72,13 +72,16 @@ const MyPosts = React.memo((props) => {
 
 			<div className={s.stats}>
 				<button onClick={()=>{dispatch(toggleLikePost(p.postId))}} className={ p.liked ? s.liked : s.like_button}></button>
-				<span>{p.likes_count}</span>
+				{p.likes_count ? <span style={p.liked ? ({color:"#FF3358"}) : null}>{p.likes_count}</span>:null}
+
 				<button className={s.comment_button}></button>
-				<span>{p.comments_count}</span>
+				{p.comments_count ? <span>{p.comments_count}</span>:null}
+
 				<button className={s.repost_button}></button>
-				<span>{p.reposts_count}</span>
+				{p.reposts_count ? <span>{p.reposts_count}</span>:null}
+
 				<button className={s.views_button}></button>
-				<span>{p.views_count}</span>
+				{p.views_count ? <span>{p.views_count}</span>:null}
 			</div>
 		</div>
 	));

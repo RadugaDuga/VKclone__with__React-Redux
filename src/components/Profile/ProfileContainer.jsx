@@ -6,6 +6,9 @@ import { withRouter } from "react-router-dom";
 import { withAuthRedirect } from "../HOC/withAuthRedirect";
 import { compose } from "redux";
 
+
+
+
 let mapStateToProps = (state) => {
 	return {
 		profile: state.profilePage.profile,

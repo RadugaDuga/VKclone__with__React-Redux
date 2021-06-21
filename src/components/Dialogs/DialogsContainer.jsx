@@ -13,8 +13,12 @@ let mapStateToProps = (state) => {
 		isAuth:state.auth.isAuth
 	}
 };
-document.title = `Мессенджер`;
 
+
+document.title = `Мессенджер`;
+document.getElementById("favicon").href = "https://vk.com/images/icons/favicons/fav_im.ico?6"
+
+	
 export default compose(
 	connect( mapStateToProps, {addMessage}),
 	withAuthRedirect
