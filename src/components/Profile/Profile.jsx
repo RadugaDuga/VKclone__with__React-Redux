@@ -5,7 +5,7 @@ import UserInfo from "./UserInfo/UserInfo";
 import Avatar from "./Avatar/Avatar";
 import UserPhotos from "./UserPhotos/UserPhotos"
 import Friends from "./Friends/Friends";
-
+import src from "../../images/Favicons/mainFavicon.svg"
 
 
 const Profile = (props) => {
@@ -15,7 +15,7 @@ const Profile = (props) => {
 	}
 
 	document.title = props.profile.fullName;
-	document.getElementById("favicon").href = "https://vk.com/images/icons/favicons/fav_logo.ico?6";
+	document.getElementById("favicon").href = src;
 
 	return (
 		

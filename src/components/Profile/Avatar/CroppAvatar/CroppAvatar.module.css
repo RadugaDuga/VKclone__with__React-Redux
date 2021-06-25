@@ -1,0 +1,31 @@
+.cropped{
+  width:100px;
+  padding:15px;
+}
+
+.global_wrapper{
+  position: fixed;
+  display: flex;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.72);
+  align-items: center;
+  justify-content: center;
+}
+.content_box{
+  padding:40px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+.croppSrc{
+  width:250px;
+  height:250px;
+}
+
+.box{
+
+}

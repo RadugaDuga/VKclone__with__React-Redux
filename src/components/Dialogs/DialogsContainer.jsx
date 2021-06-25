@@ -15,8 +15,7 @@ let mapStateToProps = (state) => {
 };
 
 
-document.title = `Мессенджер`;
-document.getElementById("favicon").href = "https://vk.com/images/icons/favicons/fav_im.ico?6"
+
 
 	
 export default compose(

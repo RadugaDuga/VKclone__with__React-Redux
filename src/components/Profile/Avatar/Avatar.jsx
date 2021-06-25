@@ -1,25 +1,31 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import s from "./Avatar.module.css";
 import iconClock from "../../../images/Profile_Images/iconClock.svg";
 import iconMoney from "../../../images/Profile_Images/iconMoney.svg";
 import { useDispatch } from "react-redux";
 import { savePhoto } from "../../../redux/profile-reducer";
 import arrow from "../../../images/Common/arrow.png";
+import { CroppAvatar } from './CroppAvatar/CroppAvatar';
+import useClickOutside from './../../common/userHooks/useClickOutside';
+
+
+
 
 const Avatar = (props) => {
 
 	let dispatch = useDispatch();
-
+	const [croppMode, setCroppMode] = useState();
 	const onMainPhotoSelected = (e) => {
 		if (e.target.files.length) {
 			dispatch(savePhoto(e.target.files[0]));
 		}
 	}
-
-	
+	const content = useRef()
+	useClickOutside(()=>{setCroppMode(false)}, content)
 
 	return (
 		<div>
+			{croppMode ? <CroppAvatar reff={content} avatar={props.profile.photos.large}/>:null}
 			<div className={s.avatar_wrapper}>
 				<div className={s.imageWrapper}>
 					<img
@@ -42,10 +48,10 @@ const Avatar = (props) => {
 								</label>
 							</div>
 							<div>
-								<label className={s.label} >
+								<button onClick={()=>{setCroppMode(true)}} className={s.label} >
 									<img className={s.iconForBtn} src={arrow} alt="" />
 									Изменить миниатюру
-								</label>
+								</button>
 							</div>
 							<div>
 								<label className={s.label} >

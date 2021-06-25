@@ -28,22 +28,25 @@
 .icon {
 	height: 20px;
 	margin-right: 10px;
+	fill:#5181b8;
 }
 
 .nav_item:hover {
 	background-color: #E5E7EB;
 }
 
-.ad_container {
-	overflow: hidden;
-	padding: 10px 30px 10px 0px;
-	box-sizing: border-box;
-}
 
-.ad_image {
-	width: 100%;
-	height: 100px;
-	object-fit: cover;
-	border-radius: 10px;
-	background-image: url("../../images/Nav_Images/cyberpunk.jpg");
+.more_wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	border-top:1px solid #DCE1E6;
+	padding:16px 0px 4px 0px;
+	margin-top: 15px;
+	margin-right: 16px;
+}
+.more{
+	font-size: 11.3px;
+	color: #939393;
+	padding-right: 12px;
+
 }

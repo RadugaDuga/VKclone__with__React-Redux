@@ -8,7 +8,7 @@
     top:48px;
     right:0;
     bottom:0;
-    background:url("../../images/404/background.svg");
+    background: linear-gradient(360deg, rgb(220, 225, 232), rgb(255, 255, 255) );
     background-size: contain;
 }
 

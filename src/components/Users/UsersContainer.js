@@ -3,13 +3,13 @@ import { follow, unfollow, setCurrentPageNum, requestUsers} from "../../redux/us
 import React from "react";
 import Users from "./Users";
 import { getCurrentPageNum, getPageSize, getUsers, getUsersTotalCount, getFollowingProgress } from '../../redux/users-selectors';
-
+import src from "../../images/Favicons/friendsFavicon.svg"
 
 
 
 
 class UsersContainer extends React.Component {
-
+	
 	// getUsers - это Thunk 
 	componentDidMount = () => {	
 		this.props.requestUsers(this.props.currentPageNum, this.props.pageSize)
@@ -21,8 +21,11 @@ class UsersContainer extends React.Component {
 	};
 
 	render() {
-		document.title = `Друзья`
+
+		document.title = `Друзья`;
+		document.getElementById("favicon").href = src ;
 		return <Users {...this.props} onPageChanged ={this.onPageChanged}/>
+		
 	}
 
 }

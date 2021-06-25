@@ -45,7 +45,7 @@ class App extends React.Component {
 							<Route path="/users"   render={() => <UsersContainer />} />
 							<Route path="/groups"  render={() => <GroupsContainer />} />
 							<Route path="/login"   render={() => <Login />} />
-							<Route exact path="/" render={() => <Redirect to ={"/profile"} />} />
+							<Route exact path="/VKladovke" render={() => <Redirect to ={"/profile"} />} />
 							<Route path="*"   render={() => <NF404/>} />
 						</Switch>
 					</div>

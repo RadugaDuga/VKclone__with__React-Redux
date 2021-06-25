@@ -19,16 +19,17 @@ const Paginator = (props) => {
 			{portionNumber > 1 ? (
 				<button
 					className={s.prevBtn}
-					onClick={() => {setPortionNumber(portionNumber - 1);}}>
-					
-				</button>
-			) :null}
+					onClick={() => {
+						setPortionNumber(portionNumber - 1);
+					}}
+				></button>
+			) : null}
 			{pages
 				.filter( f => f >= leftEdgePageNum && f <= rightEdgePageNum)
 				.map( p => {
 					return (
-						<button 
-							key={p}
+						<button
+							key={ p }
 							onClick={() => {
 								props.onPageChanged(p);
 							}}
@@ -36,14 +37,15 @@ const Paginator = (props) => {
 						>
 							{p}
 						</button>
-					);
-				})}
-				{portionCount > portionNumber ? (
+					)
+			})}
+			{portionCount > portionNumber ? (
 				<button
 					className={s.nextBtn}
-					onClick={() => {setPortionNumber(portionNumber + 1);}}>
-					
-				</button>
+					onClick={() => {
+						setPortionNumber(portionNumber + 1);
+					}}
+				></button>
 			) : null}
 		</div>
 	);

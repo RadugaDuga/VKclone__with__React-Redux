@@ -6,7 +6,7 @@ import { reset ,Field, reduxForm } from "redux-form";
 import { Textarea } from "./../common/FormControl/FormControl";
 import { maxLengthCreator,required} from "./../../redux/Utilites/Validators/Validator";
 import backArrow from "../../images/Messages_Images/back-arrow.svg"
-
+import src from "../../images/Favicons/messagesFavicon.svg"
 
 const MessageForm = (props) => {
 	return (
@@ -48,8 +48,8 @@ const Dialogs = (props) => {
 
 	const autoScroll = useRef()
 
-	const icon = document.getElementById("favicon")
-	icon.href = "https://vk.com/images/icons/favicons/fav_im.ico?6"
+	document.getElementById("favicon").href = src
+	document.title = `Мессенджер`;
 
 
 

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import LogoutBar from "./LogoutBar/LogoutBar";
 import { useSelector } from "react-redux";
 import  useClickOutside  from "../common/userHooks/useClickOutside";
-
+import imagePreloader from "../../images/imagePreloader.svg"
 
 const Header = (props) => {
 
@@ -47,7 +47,7 @@ const Header = (props) => {
 							className={s.info}
 						>
 							<p className={s.name}>{props.login.split("_")[0]}</p>
-							<img src={userPhoto} className={s.image} alt="^__^" />
+							<img src={userPhoto || imagePreloader} className={s.image} alt="" />
 							<div className={s.more_button}></div>
 						</div>
 						{logoutBar && (
