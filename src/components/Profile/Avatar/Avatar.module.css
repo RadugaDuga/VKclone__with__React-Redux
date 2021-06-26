@@ -100,14 +100,15 @@
     left:0;
     right:0;
     padding:5px 10px ;
-    background-color: rgba(0, 0, 0, 0.341);
+    background-color: rgba(0, 0, 0, 0.56);
     color:white;
     transition: 200ms ease-in-out;
 }
 
 
 .label{
-    display: block;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     width:100%;
     font-size: 12.5px;
@@ -129,6 +130,7 @@
     display:none;
 }
 .iconForBtn{
-    opacity: 0.7;
-    margin-right: 7px;
+    opacity: 0.8;
+    margin-right: 10px;
+
 }

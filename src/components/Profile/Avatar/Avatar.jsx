@@ -5,6 +5,8 @@ import iconMoney from "../../../images/Profile_Images/iconMoney.svg";
 import { useDispatch } from "react-redux";
 import { savePhoto } from "../../../redux/profile-reducer";
 import arrow from "../../../images/Common/arrow.png";
+import spinner from "../../../images/Common/spinner.png";
+import smile from "../../../images/Common/smile.png";
 import { CroppAvatar } from './CroppAvatar/CroppAvatar';
 import useClickOutside from './../../common/userHooks/useClickOutside';
 
@@ -14,7 +16,7 @@ import useClickOutside from './../../common/userHooks/useClickOutside';
 const Avatar = (props) => {
 
 	let dispatch = useDispatch();
-	const [croppMode, setCroppMode] = useState();
+	const [croppMode, setCroppMode] = useState(false);
 	const onMainPhotoSelected = (e) => {
 		if (e.target.files.length) {
 			dispatch(savePhoto(e.target.files[0]));
@@ -23,9 +25,11 @@ const Avatar = (props) => {
 	const content = useRef()
 	useClickOutside(()=>{setCroppMode(false)}, content)
 
+
+
 	return (
 		<div>
-			{croppMode ? <CroppAvatar reff={content} avatar={props.profile.photos.large}/>:null}
+			{croppMode ? <CroppAvatar setCroppMode={setCroppMode} reff={content} avatar={props.profile.photos.large}/>:null}
 			<div className={s.avatar_wrapper}>
 				<div className={s.imageWrapper}>
 					<img
@@ -49,13 +53,13 @@ const Avatar = (props) => {
 							</div>
 							<div>
 								<button onClick={()=>{setCroppMode(true)}} className={s.label} >
-									<img className={s.iconForBtn} src={arrow} alt="" />
+									<img className={s.iconForBtn} style={{marginLeft:"-1.5px"}} src={spinner} alt="" />
 									Изменить миниатюру
 								</button>
 							</div>
 							<div>
 								<label className={s.label} >
-									<img className={s.iconForBtn} src={arrow} alt="" />
+									<img className={s.iconForBtn} style={{marginLeft:"-1.5px"}} src={smile} alt="" />
 									Добавить еффекты
 								</label>
 							</div>

@@ -9,7 +9,7 @@ import { compose } from "redux";
 
 
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
 	return {
 		profile: state.profilePage.profile,
 		status: state.profilePage.status,
@@ -22,7 +22,6 @@ class ProfileContainer extends React.Component {
 	//Рефреш нужен для получения пользователя и его данных и он вынесен в функцию т.к повторяется
 
 	refreshProfile() {
-		console.log(this.props);
 		let userId = this.props.match.params.userId;
 		if (!userId) {
 			userId = this.props.authorizedUserId;

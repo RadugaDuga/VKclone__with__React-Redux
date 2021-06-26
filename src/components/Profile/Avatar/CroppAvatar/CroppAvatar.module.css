@@ -1,31 +1,104 @@
-.cropped{
-  width:100px;
-  padding:15px;
+.backdrop {
+	position: fixed;
+	display: flex;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 12;
+	background-color: rgba(0, 0, 0, 0.72);
+	align-items: center;
+	justify-content: center;
 }
 
 .global_wrapper{
-  position: fixed;
-  display: flex;
-  top:0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 12;
-  background-color: rgba(0, 0, 0, 0.72);
-  align-items: center;
-  justify-content: center;
-}
-.content_box{
-  padding:40px;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-}
-.croppSrc{
-  width:250px;
-  height:250px;
+    width:638px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.box{
 
+.cropper_wrapper{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.cropper{
+    width:100%;
+    height:100%;
+}
+
+
+.content_box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding:20px 25px;
+    box-sizing: border-box;
+    align-items:center;
+
+}
+
+.cropp_tools_container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.button {
+	background-color: #5181b8;
+	padding: 7px 16px 8px;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+    width: max-content;
+    margin:0 auto;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+    margin-left: 20px;
+}
+
+
+.image_container{
+    height:100px;
+    width:100px;
+    margin-left: 20px;
+}
+.cropped {
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.cropped_mini {
+    margin-top: 20px;
+    width:50%;
+    height:50%;
+    border-radius: 50%;
+}
+
+
+
+.title{
+    background-color: #F0F2F5;
+    padding:19px 25px; 
+    font-size: 13.4px;
+    line-height: 16px;
+    width:100%;
+    color: black;
+    font-weight: 400;
+    border-bottom: 1px solid #E7E8EC;
+    box-sizing: border-box;
+}
+.message{
+    color: black;
+    font-size: 12.5px;
+    padding:12px 0px 15px;
+    line-height: 1.7;
 }
