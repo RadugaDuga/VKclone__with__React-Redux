@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import s from "./ProfileStatus.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { updateStatus } from './../../../../redux/profile-reducer';

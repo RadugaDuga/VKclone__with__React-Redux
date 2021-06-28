@@ -1,10 +1,11 @@
 import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
-import {updateStatus,getStatus,getUserProfile} from "./../../redux/profile-reducer";
+import {getStatus,getUserProfile} from "./../../redux/profile-reducer";
 import { withRouter } from "react-router-dom";
 import { withAuthRedirect } from "../HOC/withAuthRedirect";
 import { compose } from "redux";
+
 
 
 
@@ -18,7 +19,8 @@ const mapStateToProps = (state) => {
 	};
 };
 
-class ProfileContainer extends React.Component {
+
+class ProfileContainer extends React.PureComponent {
 	//Рефреш нужен для получения пользователя и его данных и он вынесен в функцию т.к повторяется
 
 	refreshProfile() {
@@ -39,7 +41,7 @@ class ProfileContainer extends React.Component {
 			this.refreshProfile();
 		}
 	}
-
+	
 	render() {
 
 		return (
@@ -47,14 +49,15 @@ class ProfileContainer extends React.Component {
 				isOwner={!this.props.match.params.userId}
 				profile={this.props.profile}
 				status={this.props.status}
-				updateStatus={this.props.updateStatus}
 			/>
+			
 		);
+		
 	}
 }
 
 export default compose(
-	connect(mapStateToProps, { getUserProfile, getStatus, updateStatus }),
+	connect(mapStateToProps, { getUserProfile, getStatus}),
 	withRouter,
 	withAuthRedirect
 )(ProfileContainer);

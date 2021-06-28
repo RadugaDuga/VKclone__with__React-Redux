@@ -19,12 +19,12 @@ let initialState = {
 			image:
 				"https://sun1-84.userapi.com/impf/c851532/v851532730/1c0cd3/gi0x6qB-0_c.jpg?size=50x0&quality=88&crop=391,0,1365,1365&sign=917050206a95d7f3ceff1412b6075e7b&ava=1",
 			text: `Мария Кюри изобрела теорию радиоактивности, лечение радиоактивности и смерть от радиоактивности.`,
-			likes_count: null,
+			likes_count: 1,
 			comments_count: 3,
 			reposts_count: 2,
 			views_count: 41,
 			date: "18 ноя 2020",
-			liked: false,
+			liked: true,
 		},
 
 		{

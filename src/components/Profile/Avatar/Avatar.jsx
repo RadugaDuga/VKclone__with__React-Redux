@@ -18,7 +18,7 @@ const Avatar = (props) => {
 	let dispatch = useDispatch();
 	const [croppMode, setCroppMode] = useState(false);
 	const onMainPhotoSelected = (e) => {
-		if (e.target.files.length) {
+		if (e.target.files.length > 0) {
 			dispatch(savePhoto(e.target.files[0]));
 		}
 	}
