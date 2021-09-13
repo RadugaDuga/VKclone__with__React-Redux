@@ -1,7 +1,7 @@
 
 
 ## Vkladovke - is a VKontakte clone created by using react + redux + axios
-
+### use this account for logIn - okretans2@mail.ru & password - nino375999
 
 
 
