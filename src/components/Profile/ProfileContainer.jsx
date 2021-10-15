@@ -15,6 +15,11 @@ const mapStateToProps = (state) => {
   };
 };
 
+const minimo =()=> {
+  console.log("hi there ");
+}
+
+// Hi there 
 class ProfileContainer extends React.PureComponent {
   //Рефреш нужен для получения пользователя и его данных и он вынесен в функцию т.к повторяется
 
