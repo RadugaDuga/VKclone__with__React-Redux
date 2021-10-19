@@ -2,5 +2,9 @@
     "editor.wordWrap": "on",
     "editor.autoClosingQuotes": "beforeWhitespace",
     "scm.alwaysShowActions": true,
-    "scm.alwaysShowRepositories": true
+    "scm.alwaysShowRepositories": true,
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+    "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+    "editor.fontFamily": "Ubuntu Mono",
+    "editor.fontSize": 15
 }

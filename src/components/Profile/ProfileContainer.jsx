@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 import { withAuthRedirect } from "../HOC/withAuthRedirect";
 import { compose } from "redux";
 
+
 const mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
@@ -15,9 +16,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const minimo =()=> {
-  console.log("hi there ");
-}
 
 // Hi there 
 class ProfileContainer extends React.PureComponent {
@@ -52,6 +50,7 @@ class ProfileContainer extends React.PureComponent {
     );
   }
 }
+
 
 export default compose(
   connect(mapStateToProps, { getUserProfile, getStatus }),
