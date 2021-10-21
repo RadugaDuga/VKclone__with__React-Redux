@@ -9,12 +9,12 @@ const GET_CAPTCHA_URL_SUCCESS = "auth/GET_CAPTCHA_URL_SUCCESS";
 
 
 let initialState = {
-  id: null as number | null,
-  email: null as string | null,
-  login: null as string | null,
-  isAuth: null as boolean | null,
-  authUserPhoto: null as string | null,
-  captchaURL: null as string | null,
+  id: 0 as number,
+  email: "" as string ,
+  login: "" as string ,
+  isAuth: false as boolean ,
+  authUserPhoto: "" as string ,
+  captchaURL: "" as string 
 };
 
 export const authReducer = (state = initialState,action: any) => {
@@ -41,17 +41,17 @@ export const authReducer = (state = initialState,action: any) => {
 };
 
 type SetAuthUserDataActionPayloadType = {
-  id: number | null;
-  email: string | null;
-  login: string | null;
-  isAuth: boolean | null;
+  id: number 
+  email: string 
+  login: string 
+  isAuth: boolean 
 };
 type SetAuthUserDataActionType = {
   type: typeof SET_AUTH_USER_DATA;
   data: SetAuthUserDataActionPayloadType;
 };
 
-export const setAuthUserData = (id: number | null,email: string | null,login: string | null,isAuth: boolean | null): SetAuthUserDataActionType => ({
+export const setAuthUserData = (id: number ,email: string ,login: string ,isAuth: boolean ): SetAuthUserDataActionType => ({
   type: SET_AUTH_USER_DATA,
   data: { id, email, login, isAuth }
 });
@@ -111,7 +111,7 @@ export const login = (email: any, password: any, rememberMe: any, captchaUrl: an
 export const logout = () => async (dispatch: any) => {
   let response = await authAPI.logout();
   if (response.data.resultCode === 0) {
-    dispatch(setAuthUserData(null, null, null, false));
+    dispatch(setAuthUserData(0, "", "", false));
   }
 };
 

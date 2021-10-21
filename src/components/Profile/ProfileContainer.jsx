@@ -23,7 +23,7 @@ class ProfileContainer extends React.PureComponent {
 
   refreshProfile() {
     let userId = this.props.match.params.userId;
-    if (!userId) {
+    if (userId !== 0) {
       userId = this.props.authorizedUserId;
     }
     this.props.getUserProfile(userId);

@@ -6,6 +6,7 @@ import LogoutBar from "./LogoutBar/LogoutBar";
 import { useSelector } from "react-redux";
 import  useClickOutside  from "../common/userHooks/useClickOutside";
 import imagePreloader from "../../images/imagePreloader.svg"
+import { NotificationsBar } from './NotificationsBar/NotificationsBar';
 
 const Header = (props) => {
 
@@ -34,7 +35,9 @@ const Header = (props) => {
 			</NavLink>
 			
 			<input className={s.search} placeholder="Поиск" />
-			<button className={s.notify_btn}></button>
+			<button style={{position:"relative"}} className={s.notify_btn}>
+				<NotificationsBar/>
+			</button>
 			<button className={s.music_btn}></button>
 			<div className={s.loginBlock}>
 				{props.isAuth ? (
